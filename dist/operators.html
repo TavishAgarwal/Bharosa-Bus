@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharosa Bus: operators</title>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:1000px;margin:1.5em auto;padding:0 1em;color:#222}
+ .nav{margin:.2em 0 .8em;font-size:.9em} table{border-collapse:collapse;width:100%;font-size:.88em} th,td{border-bottom:1px solid #eee;padding:.4em .5em;text-align:left} th{background:#f5f5f5}
+ .bar{margin:.8em 0} select{padding:.4em}
+</style></head><body><main>
+<h1>Where extra buses would help most</h1>
+<div class="nav"><a href="index.html">Plan a trip</a> · <a href="routes.html">Route map</a> · <a href="operators.html">Operators</a></div>
+<h2 style="font-size:1.1em">If you add one bus: standing time saved per day</h2>
+<div style="overflow-x:auto"><table><thead><tr><th>Route</th><th>Time</th><th>Day</th><th>Bus</th><th>Buses now</th><th>Standing passenger-min / day</th><th>Saved by +1 bus</th><th>Saved, cautious estimate</th><th>Busiest stretch</th></tr></thead><tbody id="xb"></tbody></table></div>
+<p style="color:#666;font-size:.85em">Each stretch: people above the seat count &times; buses &times; minutes on that stretch. One more bus spreads the same riders over one more trip. "Cautious" uses the low end of the load range, so rows with a large cautious saving hold up even if our scale-up is too high. Ranked by the cautious saving.</p>
+<h2 style="font-size:1.1em">Routes with the most crowded stretches</h2>
+<div class="bar"><label>Day <select id="d"><option value="">all</option><option>weekday</option><option>weekend</option></select></label>
+ <label>Time <select id="b"><option value="">all</option></select></label></div>
+<div style="overflow-x:auto"><table><thead><tr><th>Route</th><th>Time</th><th>Day</th><th>Crowded stretches</th><th>Crowded even at low estimate</th><th>Max people/bus</th><th>Busiest stretch</th></tr></thead><tbody id="t" aria-live="polite"></tbody></table></div>
+<p style="color:#666;font-size:.85em">Ranked by stretches that stay crowded even at the low end of the estimate. Loads depend on assumed bus capacity, assumed ticket share, and scheduled trip counts (the schedule may undercount running buses). Use as a lead for checking, not as a count.</p>
+<script>
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));let D=[];fetch("data/operator_overload.json").then(r=>r.json()).then(d=>{D=d;[...new Set(d.map(x=>x.band))].forEach(v=>b.add(new Option(v,v)));[d,b].forEach(()=>{});["d","b"].forEach(i=>document.getElementById(i).addEventListener("input",draw));draw();}).catch(e=>t.innerHTML="<tr><td>Could not load data/operator_overload.json ("+esc(e)+"). Serve this folder over http (make web) instead of opening the file directly; run make export if the data is missing.</td></tr>");
+fetch("data/extra_bus.json").then(r=>r.json()).then(x=>{document.getElementById("xb").innerHTML=x.map(r=>`<tr><td>${esc(r.route)}</td><td>${esc(r.band)}</td><td>${esc(r.day_type)}</td><td>${esc(r.bus_class)}</td><td>${r.buses_in_day_part}</td><td>${Math.round(r.standing_min).toLocaleString()}</td><td><b>${Math.round(r.standing_min_saved).toLocaleString()}</b></td><td>${Math.round(r.standing_min_saved_low).toLocaleString()}</td><td>${esc(r.busiest_stretch)}</td></tr>`).join("");}).catch(()=>{});
+function draw(){const dd=d.value,bb=b.value;t.innerHTML=D.filter(x=>(!dd||x.day_type===dd)&&(!bb||x.band===bb)).map(x=>`<tr><td>${esc(x.route)}</td><td>${esc(x.band)}</td><td>${esc(x.day_type)}</td><td>${x.crowded_stretches} of ${x.stretches_with_evidence}</td><td>${x.crowded_even_at_low_estimate}</td><td>${x.max_load>100?"100+":x.max_load}</td><td>${esc(x.busiest_stretch)}</td></tr>`).join("");}
+</script></main></body></html>

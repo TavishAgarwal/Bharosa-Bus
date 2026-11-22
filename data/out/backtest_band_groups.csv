@@ -1,0 +1,17 @@
+day_type,group_by,group,cells_scored,wape,baseline_wape
+weekday,hour_band,am_peak_7-10,774632,0.4003674,0.71895456
+weekday,hour_band,early,124966,0.48918423,0.73581505
+weekday,hour_band,late,214561,0.54903966,0.8025364
+weekday,hour_band,midday,542289,0.43760663,0.7099628
+weekday,hour_band,pm_peak_17-20,652054,0.42261735,0.7225032
+weekday,route_volume,high_volume,1341826,0.36331478,0.6862772
+weekday,route_volume,low_volume,178667,0.6428607,0.9000937
+weekday,route_volume,mid_volume,788009,0.5158433,0.7691168
+weekend,hour_band,am_peak_7-10,149412,0.51432437,0.69794995
+weekend,hour_band,early,10974,0.4278243,0.617817
+weekend,hour_band,late,26563,0.49804407,0.68352807
+weekend,hour_band,midday,93011,0.41260284,0.6508094
+weekend,hour_band,pm_peak_17-20,107523,0.48257288,0.6589564
+weekend,route_volume,high_volume,304305,0.4506026,0.6593872
+weekend,route_volume,low_volume,2350,0.7296231,0.8038444
+weekend,route_volume,mid_volume,80828,0.6166452,0.73692185

@@ -1,0 +1,5 @@
+scenario,seats_cap,standing_cap,cells,share_seats,pax_share_seats,share_standing,pax_share_standing,share_crowded,pax_share_crowded,share_same_level_as_default
+9m,23,13,155143,0.6474,0.3651,0.198,0.2303,0.1546,0.4045,0.69
+12m,39,24,155143,0.8709,0.6374,0.0972,0.22,0.0319,0.1425,0.9893
+assumed_high,40,40,155143,0.8781,0.6498,0.1095,0.2796,0.0123,0.0706,0.9627
+per_route_inferred,per route,per route,155143,0.863,0.6288,0.1014,0.2216,0.0356,0.1496,1.0

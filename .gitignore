@@ -1,0 +1,18 @@
+data/raw/*
+data/interim/*
+data/out/*
+!data/*/.gitkeep
+# small result files, so the results can be read without rerunning the pipeline
+!data/out/*.json
+!data/out/*.csv
+!data/out/sanity/
+.env
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+.claude/
+blaze/

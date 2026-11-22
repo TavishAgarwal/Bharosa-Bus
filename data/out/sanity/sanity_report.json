@@ -1,0 +1,20 @@
+{
+  "weekday_am_peak_hour": 9,
+  "weekday_am_peak_in_7_10": true,
+  "weekday_pm_peak_hour": 18,
+  "weekday_pm_peak_in_17_20": true,
+  "avg_pax_per_weekday": 97630,
+  "avg_pax_per_weekend_day": 67305,
+  "weekend_to_weekday_ratio": 0.689,
+  "weekday_busier_than_weekend": true,
+  "weekday_peak_to_midday_ratio": 4.15,
+  "busiest_weekend_day": "2026-10-31 00:00:00",
+  "lowest_volume_days": [
+    "2026-10-18 00:00:00",
+    "2026-10-02 00:00:00",
+    "2026-10-11 00:00:00"
+  ],
+  "share_shown_cells_over_150_pax_per_bus": 0.005,
+  "note": "Shown loads above 150 people per bus are rare after the ticket-based trip floor, but absolute loads remain unvalidated: the floor is only a lower bound on buses and the scale-up is assumed.",
+  "all_pass": true
+}

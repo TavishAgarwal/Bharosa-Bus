@@ -1,0 +1,148 @@
+{
+  "min_tickets_for_scoring": 30,
+  "capacity_scenario_for_levels": [
+    39,
+    24
+  ],
+  "summary_by_day_type": {
+    "weekday": {
+      "wape": 0.481,
+      "baseline_wape": 0.7709,
+      "route_hour_baseline_wape": 0.6218,
+      "bias": 0.0753,
+      "level_exact": 0.859,
+      "level_within_one": 0.9845,
+      "cells_scored": 104931.9091
+    },
+    "weekend": {
+      "wape": 0.5317,
+      "baseline_wape": 0.724,
+      "route_hour_baseline_wape": 0.6061,
+      "bias": 0.1358,
+      "level_exact": 0.8234,
+      "level_within_one": 0.98,
+      "cells_scored": 43053.6667
+    }
+  },
+  "days_scored": 31,
+  "stability": {
+    "weekday": {
+      "cells": 107356,
+      "spearman_odd_vs_even_days": 0.942,
+      "spearman_first_vs_second_half": 0.8986
+    },
+    "weekend": {
+      "cells": 47849,
+      "spearman_odd_vs_even_days": 0.7102,
+      "spearman_first_vs_second_half": 0.8177
+    }
+  },
+  "levels_leave_one_day_out": {
+    "weekday": {
+      "cells": 2308502,
+      "level_exact": 0.859,
+      "always_seats_exact": 0.828,
+      "kappa": 0.495,
+      "actual_busy_share": 0.172,
+      "busy_recall": 0.6074,
+      "busy_precision": 0.7141,
+      "crowded_recall": 0.4627
+    },
+    "weekend": {
+      "cells": 387483,
+      "level_exact": 0.8246,
+      "always_seats_exact": 0.836,
+      "kappa": 0.3352,
+      "actual_busy_share": 0.164,
+      "busy_recall": 0.4728,
+      "busy_precision": 0.5711,
+      "crowded_recall": 0.2679
+    }
+  },
+  "levels_split_half": {
+    "weekday": {
+      "cells": 107356,
+      "level_exact": 0.9261,
+      "always_seats_exact": 0.8572,
+      "kappa": 0.7149,
+      "actual_busy_share": 0.1428,
+      "busy_recall": 0.8345,
+      "busy_precision": 0.7918,
+      "crowded_recall": 0.7721,
+      "wape": 0.2091
+    },
+    "weekend": {
+      "cells": 47849,
+      "level_exact": 0.8958,
+      "always_seats_exact": 0.8508,
+      "kappa": 0.5369,
+      "actual_busy_share": 0.1492,
+      "busy_recall": 0.5458,
+      "busy_precision": 0.807,
+      "crowded_recall": 0.4752,
+      "wape": 0.2718
+    }
+  },
+  "week_vs_rest_of_month": {
+    "weekday": [
+      {
+        "iso_week": 41,
+        "days": 5,
+        "spearman_vs_rest": 0.8714,
+        "level_exact": 0.901,
+        "kappa": 0.6395
+      },
+      {
+        "iso_week": 42,
+        "days": 5,
+        "spearman_vs_rest": 0.866,
+        "level_exact": 0.8941,
+        "kappa": 0.6144
+      },
+      {
+        "iso_week": 43,
+        "days": 5,
+        "spearman_vs_rest": 0.8932,
+        "level_exact": 0.9173,
+        "kappa": 0.663
+      },
+      {
+        "iso_week": 44,
+        "days": 5,
+        "spearman_vs_rest": 0.889,
+        "level_exact": 0.9114,
+        "kappa": 0.6731
+      }
+    ],
+    "weekend": [
+      {
+        "iso_week": 40,
+        "days": 2,
+        "spearman_vs_rest": 0.793,
+        "level_exact": 0.8917,
+        "kappa": 0.5382
+      },
+      {
+        "iso_week": 41,
+        "days": 2,
+        "spearman_vs_rest": 0.6059,
+        "level_exact": 0.8817,
+        "kappa": 0.4607
+      },
+      {
+        "iso_week": 42,
+        "days": 2,
+        "spearman_vs_rest": 0.8099,
+        "level_exact": 0.9035,
+        "kappa": 0.5482
+      },
+      {
+        "iso_week": 43,
+        "days": 2,
+        "spearman_vs_rest": 0.8371,
+        "level_exact": 0.8871,
+        "kappa": 0.5453
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+route,from_stop,to_stop,hour,day_type,load,lo,hi,n_tickets
+718UP,Kapashera Crossing,Kapashera Village,9,weekday,305.0,91.0,489.0,358
+718UP,Kapashera Village,Kapashera Border,9,weekday,304.0,91.0,485.0,357
+718UP,Samalkha Village,Kapashera Crossing,9,weekday,296.0,87.0,475.0,348
+718UP,Samalkha Crossing,Samalkha Village,9,weekday,287.0,84.0,462.0,336
+718UP,Pushpanjali,Samalkha Crossing,9,weekday,269.0,78.0,436.0,315
+413UP,Sri Niwaspuri / PG DAV College,Lajpat Nagar Ring Road / VINOBA PURI METRO STATAION,9,weekday,266.0,78.0,434.0,425
+413UP,Nehru Nagar,Sri Niwaspuri / PG DAV College,9,weekday,262.0,78.0,427.0,418
+413UP,Lajpat Nagar Ring Road / VINOBA PURI METRO STATAION,Gupta Market,9,weekday,261.0,76.0,428.0,416
+310DOWN,Lalita Park,Rainy Well,9,weekday,254.0,93.0,433.0,94
+400DOWN,Maharani Bagh,Maharani Bagh / Ashram,9,weekday,251.0,80.0,450.0,87
+400DOWN,Nehru Nagar,Sri Niwaspuri / PG DAV College,9,weekday,251.0,81.0,434.0,87
+310DOWN,Rainy Well,Delhi Secretariat,9,weekday,249.0,91.0,422.0,92
+400DOWN,Gupta Market,Andrews Ganj,9,weekday,246.0,79.0,422.0,85
+400DOWN,Lajpat Nagar Ring Road / VINOBA PURI METRO STATAION,Gupta Market,9,weekday,246.0,79.0,422.0,85
+605BDOWN,ICSSR,JNU / Sanchar Office,9,weekday,243.0,68.0,402.0,70
+605BDOWN,JNU / Sanchar Office,FAI,9,weekday,243.0,68.0,402.0,70
+610DOWN,PS Tughlaq Road,Sena Bhawan,9,weekday,243.0,100.0,403.0,400
+400DOWN,Sri Niwaspuri / PG DAV College,Lajpat Nagar Ring Road / VINOBA PURI METRO STATAION,9,weekday,243.0,78.0,417.0,84
+400DOWN,Maharani Bagh / Ashram,Nehru Nagar,9,weekday,243.0,78.0,426.0,84
+605BDOWN,JNU Sec-13,ICSSR,9,weekday,243.0,67.0,407.0,70
+413UP,Gupta Market,Andrews Ganj Shiv Mandir / Ansal Plaza,9,weekday,242.0,70.0,404.0,385
+718UP,Puspanjali G Block,Pushpanjali,9,weekday,242.0,72.0,389.0,284
+413UP,Ashram (Hari Nagar),Nehru Nagar,9,weekday,241.0,71.0,389.0,383
+310DOWN,Ramesh Park,Lalita Park,9,weekday,241.0,88.0,412.0,89
+605BDOWN,Sanskrit Vidyapeeth,Katwaria Sarai,9,weekday,236.0,66.0,393.0,67
+605BDOWN,NCERT,Adhchini Village,9,weekday,236.0,66.0,398.0,67
+605BDOWN,Qutab Hotel,NCERT,9,weekday,236.0,66.0,402.0,67
+605BDOWN,FAI,Sanskrit Vidyapeeth,9,weekday,236.0,66.0,393.0,68
+740UP,Rainy Well,Delhi Secretariat,8,weekday,236.0,98.0,392.0,195
+434UP,Asian Market,Saket Crossing,8,weekday,234.0,92.0,405.0,383

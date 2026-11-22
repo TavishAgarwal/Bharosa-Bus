@@ -1,0 +1,38 @@
+[
+ {
+  "from": "Anand Vihar",
+  "to": "Connaught Place"
+ },
+ {
+  "from": "Connaught Place",
+  "to": "Anand Vihar"
+ },
+ {
+  "from": "Kashmere Gate ISBT",
+  "to": "Nehru Place"
+ },
+ {
+  "from": "Rohini Sector 22",
+  "to": "Nehru Place"
+ },
+ {
+  "from": "Dwarka Sector 10",
+  "to": "Connaught Place"
+ },
+ {
+  "from": "Laxmi Nagar",
+  "to": "Hauz Khas"
+ },
+ {
+  "from": "Saket",
+  "to": "Karol Bagh"
+ },
+ {
+  "from": "Mayur Vihar Phase 1",
+  "to": "Connaught Place"
+ },
+ {
+  "from": "Badarpur",
+  "to": "Nehru Place"
+ }
+]

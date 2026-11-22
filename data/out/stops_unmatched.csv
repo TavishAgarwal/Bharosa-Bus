@@ -1,0 +1,1296 @@
+stop_name,tickets,routes,example_route
+Shadi Pur Metro Station,7039,35,990ADOWN
+Government Model School,6866,19,534AUP
+Jahangir Puri Metro Station,6798,66,125UP
+"Mahvir Enclave Part Ii,Iii",6705,19,761UP
+Laxmi Nagar Xing,4267,14,85DOWN
+Begam Pur,3901,16,413UP
+Nhai / District Court / Ig Hospital Dwarka Sec 10,3681,12,775LINKSTLUP
+P.S. Pahar Gunj,3581,38,166DOWN
+Madhuvan Chowk,3453,25,761DOWN
+B Block Mangol Puri Ring Road,3137,13,OMS(-)DOWN
+Mangla Puri,2958,4,761DOWN
+Toda Pur,2683,6,310UP
+Health Center,2594,20,578DOWN
+G.T.K By Pass,2408,35,144DOWN
+Gupta Colony,2210,23,711DOWN
+Majlis Park,2027,6,978UP
+P.S. D.B. Gupta Road,2018,41,166DOWN
+Sarvpriya Vihar / Hauz Khas Metro Station,1983,9,D-046UP
+Dhansa Stand Najaf Garh,1959,2,578UP
+Hazrat Nizamuddin Extn,1932,20,429DOWN
+Ats Tower,1902,4,D-1103DOWN
+Shani Mandir / Vasant Village,1860,7,774DOWN
+Hiran Kudna More,1819,23,934DOWN
+Vasant Village / Shani Mandir,1806,8,D-034UP
+Okhla Extn Abdul Fazal Encl.,1803,11,403DOWN
+Swaran Takies,1802,9,GL-23UP
+S.J. Terminal,1786,6,605BUP
+Qutab Enclave,1741,7,523UP
+Dwarka Flyover Railway Crossing,1695,2,D-9101UP
+Mother School,1640,20,502UP
+Anand Pravat,1620,20,966UP
+Punjabi Bagh Terminal,1573,21,569UP
+Najafgarh Health Centre / Delhi Gate,1562,20,539DOWN
+Tilak Nagar,1464,12,832UP
+Reddison Hotel Mahipal Pur / Rang Puri (Nh8 Circle),1441,14,743BDOWN
+Madanpur X-Ing,1424,2,460DOWN
+Delhi Sect.,1389,27,623DOWN
+Aerocity,1384,2,D-9101DOWN
+Ina Cly,1375,17,0502(NS)UP
+Y Block Mangol Puri,1337,2,982UP
+Narauji Nagar,1318,2,578UP
+L.S.R. Collage,1289,17,425UP
+Tamoor Nagar,1287,4,534DOWN
+Shyam Lal College,1272,13,720UP
+B- Blcok Mangol Puri Ring Road,1247,3,879UP
+Azad Pur Gt Road,1225,6,138UP
+Babar Pur Extn,1222,9,213UP
+V V Depot,1179,4,604DOWN
+Sultan Puri Crossing/Nangloi,1173,14,991STLDOWN
+Seikh Sarai Ph-Ii,1157,4,448DOWN
+Mohammed Pur,1140,5,623DOWN
+Dda Flats Kalkaji,1122,2,425DOWN
+Loriyal Ind.Encl./Kaushik Encl.,1115,4,162DOWN
+Kanti Nagar Extn. / Bihari Colony,1099,16,211UP
+Kashmere Gate City Terminal,1080,4,842UP
+Mukand Pur More,1077,4,165UP
+B-Block Mangol Puri Ring Road,1031,5,879ADOWN
+Dwarka Sec-21 Metro Station,1022,6,D-9904DOWN
+Shahin Bagh,1012,11,403DOWN
+Sahabad Daulatpur,1008,14,165DOWN
+Janak Puri C-1,1006,12,718UP
+Khanpur Extension / Devli Xing,990,4,434DOWN
+Dashghera,947,5,725DOWN
+Isbt K.Gate,939,20,213DOWN
+Ansari Stadium,937,12,894UP
+Gahevra X-Ing,935,4,708DOWN
+Kapashera X-Ing,924,3,718DOWN
+Guru Govind Singh X-Ing (Faiz Road),914,4,208DOWN
+Rajendra Place / Karol Bagh Telephone Exchange,913,4,522BUP
+Kakrola More / Nawada Housing Society,910,30,828EUP
+Santoor Hotel,906,6,D-1103UP
+Dk Depot,890,8,978UP
+Kashmere Gate City (T),861,3,502UP
+Db College Kalkaji,842,4,425UP
+Sfs Flat Sector 2,839,10,740ADOWN
+Subhash Place Depot Punjab Kesri,832,7,901DOWN
+Chhawala Stand N.Garh,826,7,578DOWN
+Okhla Phi,806,2,774DOWN
+Jharera Village,802,8,0729(NS)UP
+Bakoli,796,13,144DOWN
+Barwala,786,21,990CUP
+New Seema Puri Depot Cluster,752,9,OMS(+)BURARI-DHAULAKUAN
+Mckr Hospital,737,20,445ADOWN
+Jahangripuri Metro Station,735,3,175UP
+Kalyan Puri Crossing (Ghazipur Road),729,4,33UP
+Power House Badarpur,725,6,0405(NS)DOWN
+Hill Area /Mall,722,4,604UP
+Khajoori,714,11,208AUP
+Rm Stadium,711,2,D-3302UP
+Janak Puri C 1,700,7,761UP
+Jeewan Park,696,24,718UP
+Babar Pur Extension (T),695,2,254UP
+Prahladpur,684,3,D-9101UP
+Liberty Cimena,682,17,966DOWN
+Sb Mills,681,11,78UP
+Itpo Office,678,23,419UP
+Najafgarh Health Center,673,3,978UP
+Nilothi X-Ing,672,8,907DOWN
+R.P. Bagh,666,15,144UP
+Mangol Pur Kalan,665,16,901DOWN
+Shakur Pur Shiv Mandir,663,7,891DOWN
+District Centre Najafghar Road,658,23,861ADOWN
+Kalkaji Mode,654,15,473DOWN
+Old Seema Puri / Dilshad Garden J N K Pocket,654,6,OMS(+)BURARI-DHAULAKUAN
+Arjun Path / Subroto Park,652,8,774UP
+Sant Sarover,645,6,192DOWN
+Hamid Pur,642,4,138DOWN
+Jahangir Puri,636,11,144AUP
+Mundka,622,12,236EXTDOWN
+Princess Park/ Airforce Noval Office Enclave,621,14,774BUP
+Rajoukari X-Ing,618,1,578UP
+Jaitpur X-Ing,613,2,460DOWN
+Nangal Rai,612,7,703DOWN
+Dtc Colony Shadi Pur,607,10,73DOWN
+Bh-Blk. Shalimar Bagh,604,4,166DOWN
+Navada Village,603,9,821DOWN
+Tara Apartment Ternimal G.K.-2,600,1,540DOWN
+Vinod Nagar Nh-24,598,6,543AUP
+Palam Rly Fly Over,592,8,D-7901DOWN
+Qutabgarh Village Terminal,591,4,988DOWN
+Dwarka Sec6/7,589,16,S1DOWN
+Narela Railway X-Ing,583,7,708UP
+Samalkha X-Ing,566,2,718DOWN
+Najafgarh Delhi Gate,557,15,885EUP
+Sfs Flat Sector-2,552,8,778DOWN
+Subroto Park / Arjun Path,551,2,578DOWN
+Khazoori,547,9,165DOWN
+Janakpuri C2B,545,9,724UP
+Khanpur Extn.,542,1,434UP
+Sec D Vasant Kunj,540,7,715DOWN
+Goela Dairy More,533,7,845DOWN
+Sagar Pur Vashisht,531,2,879UP
+Dwarka 21/25,530,2,718UP
+Lado Sarai Terminal,521,5,534AUP
+D.P.S School,520,18,429UP
+Distrist Centre Janak Puri,511,2,OMS(+)UP
+Nanak Piao,506,10,D-9902UP
+Kalyan Puri Xing,499,1,33DOWN
+Andheria Bagh More / Chhatarpur Metro Station,496,1,428DOWN
+Jawahar Lal Nehru Marg,496,16,918DOWN
+P S Vasant Kunj,496,5,D-7101UP
+Kanjhawla Chowk / School,495,4,979UP
+Nhw 8,484,5,715DOWN
+Psri Hospital,477,2,448UP
+Lado Sarai X Ing,477,4,715DOWN
+Bunny Camp,475,9,978UP
+Azad Pur Nai Subzi Mandi,467,27,982DOWN
+Ram Prastha,462,17,473DOWN
+Sarai Rohella,459,6,0236(NS)DOWN
+Gurudwara Moti Bagh,454,13,794ADOWN2
+Wazirpur Depot / Subhash Place Depot,448,6,141DOWN
+Mehram Nagar Police Station,448,2,D-9101UP
+Dda Flat Kalkaji Alakhnanda,447,4,429DOWN
+S Block Mangol Puri,447,11,940DOWN
+Karala X-Ing,446,2,182ADOWN
+Rup Nagar,439,15,199DOWN
+Nazafgarh Dhansa More,434,6,942DOWN
+Delhi Sectt,432,2,918UP
+B Block Mangol Puri,423,8,989ADOWN
+P S Paharganj,421,5,953UP
+Dhansa Stand / Jharoda Crossing,412,15,817NSTLUP
+Kamaruddin Nagar,408,4,978UP
+Band Road,408,2,D-2001DOWN
+Shakar Pur X-Ing,407,7,352DOWN
+Rohini Sec-18 Police Chowki,398,4,165ADOWN
+Outer Ring Road Makbara Chowk,396,12,165UP
+Babar Pur Extn.,389,7,353DOWN
+Sannoth X-Ing,386,6,708UP
+Dwarka Sec 26,386,10,727DOWN
+Rohini Sec 7 And 8 Crossing,383,6,141DOWN
+R R Line,370,19,783DOWN
+Rohini Sec 24 / Dear Satguru Sewaram Crossing,369,2,990EXTDOWN
+Jalebi Chowk Sultan Puri Ab Block,369,9,569DOWN
+Chhawala Camp/Bsf,367,2,578DOWN
+Ashok Vihar X-Ing,366,12,144ADOWN
+Kalka Ji Extn.Dda Flat,366,2,OMS(+)UP
+Burari,365,4,185DOWN
+Kakrola Bridge / Dwarka More,364,9,628STLUP
+Dhansa Stand Metro Station,359,2,D-9907UP
+Jln Stdm (S.Pullah Nallah Parking),356,5,408UP
+Cargo Terminal Gate No.6,349,4,D-1103DOWN
+Rawta X-Ing,346,5,D-9902DOWN
+Shahajahan Road,342,6,166UP
+Kazi Pur,342,2,835DOWN
+Ujwa Gaon,338,4,628STLDOWN
+Saroop Nagar,338,2,144ADOWN
+K Block Jahangir Puri,337,12,891DOWN
+Dwarka Sector 2/6 Xing,334,10,778DOWN
+Gazi Pur Dairy Dda Flat,334,5,211UP
+R K Puram Sec-4,333,5,523DOWN
+Jharoda More,332,2,578UP
+Gpo K. Gate,325,9,429DOWN
+Tri Nagar Jai Mata Market Terminal,324,4,39DOWN
+Jahangir Puri Crossing,319,3,BPEXPUP
+National Art Gallery,317,10,0502(NS)UP
+Mahipal Pur X-Ing,316,1,539ADOWN
+R K Puram Sec-3,316,4,623DOWN
+Engineering College,315,5,106AUP
+Janak Puri C 2,314,5,761UP
+Ramprashta Mandir,313,3,33DOWN
+Kd Block Pitampura,312,6,889DOWN
+Akshardham Mandir,310,13,543AUP
+St Xavier School Daulatpur,306,9,165DOWN
+Ghevra More,303,4,D-3901UP
+Police Lines / Rohini Depot Iii,298,10,254DOWN
+Samay Pur,298,3,199DOWN
+Loknayak Puram / Bakkarwala,296,4,998DOWN
+S.K.V.Dhansa,294,2,835DOWN
+Tri Ngr Jai Mata Mkt Terminal,293,2,832DOWN
+Dlf Crossing,293,8,OMS(+)UP
+R.K. Puram Sec-7(Som Vihar),288,2,448DOWN
+Saidla Jab,288,2,356UP
+Prahladpur/ Badar Pur Border,286,1,34DOWN
+Bijwasan School-/ Golak Dham,286,1,539ADOWN
+Rohini Sec 23 Pkt X-Ing,282,1,972DOWN
+Quzi Pur,280,2,D-9913DOWN
+R K Puram Sec-2,280,5,623DOWN
+Gamri Extention Pusta No.5,280,2,208AUP
+A Block Inder Puri,279,1,721DOWN
+Harewali Gaon (T),279,8,191ADOWN2
+Bijwasan Railway Xing (Before Flyover),278,1,539ADOWN
+Rk Puram Sec 1,277,6,523AUP
+Bdo Office Najafgarh,273,4,539ADOWN
+Shopping Center,267,2,D-7101DOWN
+Qumruddin Nagar Crossing,263,5,934ADOWN
+Nidhi Apartment,262,8,534UP
+Dhansa Bus Stop,262,2,D-9915DOWN
+Ae-Block Shalimar Bagh,261,2,166DOWN
+Singhola,261,2,144DOWN
+Rohini Sec 24/25 Corner,260,5,990CUP
+National Art Gailary,257,1,966UP
+Nand Nagri (T.),255,6,333UP
+Mangol Puri Q Block,255,11,937AUP
+I.S.B.T Nityanand Marg,252,2,211DOWN
+Mohamed Pur,246,4,611DOWN
+Bakoli Village X-Ing,244,2,144ADOWN
+I.T.O,244,2,356DOWN
+A 5/6 Narela Xing,241,4,193DOWN
+Igi Stadium,240,12,39DOWN
+Palam Rly Flyover,236,4,947DOWN
+Vayusena Bad Tigri,233,2,974DOWN
+Paschim Vihar Super Bazar,232,23,953UP
+Narela A9,232,13,ML96DOWN
+Dsidc Bawana/ Dhakewala,230,12,D-2301DOWN
+Qamruddin Nagar Crossing,229,14,567ADOWN
+Barwala Pathshala,227,16,130DOWN
+Kalyanpuri Crossing (Ghazipur Road),226,2,D-4503UP
+Ram Nagar Colony Bqs,225,4,923DOWN
+Okhla Ind. Area,222,2,434UP
+Dariyapur Gaon,221,18,188DOWN
+Tuglaka Bad Villlage,219,2,34UP
+E Block Jahangir Puri,218,6,804UP
+Liver Hospital,218,2,424DOWN
+Shyam Vihar,217,2,873DOWN
+Taj Hotel,216,14,740UP
+Gurudawara Nanak Pura,215,6,OMS(-)DOWN
+Mundka Crossing,214,11,949DOWN
+Netaji Subhash University Technology,213,2,D-9906(+)UP
+Qutub Vihar Phasei Kikar Stand,213,4,S1DOWN
+Kidwai Nagar Metro Station,211,5,605UP
+Shanti Nagar / Tri Nagar,211,3,141UP
+Chhatarpur Village,210,4,434UP
+Okhla Ph-I,210,1,434UP
+Jhundpura Village Noida Sector-11,209,4,33UP
+Sulabh Centre,208,4,772UP
+Chhawala Camp,208,3,578UP
+Goela Dairy X-Ing,208,2,873DOWN
+Dwarka Sec-8 Apj School,207,2,D-9905UP
+Welcome Colony Metro Station,207,7,143UP
+Burari X Ing,207,1,OMS(-)DOWN
+I G Stadium,206,10,964UP
+Jharonda X-Ing,204,1,539ADOWN
+Netaji Subash Place/Wazirpur Depot,203,6,861UP
+Shahadara Border Road No-62,203,1,33DOWN
+S.J. Madarsa,203,10,725DOWN
+Lajpat Nagar X Ing,202,1,OMS(-)DOWN
+Old Kondli,201,2,206ADOWN
+Mangolpuri S Block,200,8,946DOWN
+Sabhapur Village/ Chuhan Patti,199,1,258SPLUP
+Rohini Sec- 21 Xing,197,1,D-3302DOWN
+Crpf Camp Jharoda,195,1,D-9907UP
+Unani Research Center,193,10,463UP
+Vasant Vihar Police Station,192,2,D-1104DOWN
+Shalimar Bagh X-Ing,192,9,208UP
+Inst. Area W.Pur,191,4,166DOWN
+Prahladpur / Badar Pur Border,189,1,34UP
+K.G. Marg Xing,189,12,740UP
+Priya X-Ing,189,2,D-1104DOWN
+Noida Sec 20(Police Station),188,2,33DOWN
+Sultanpuri X Ing,187,4,934UP
+R.K. Puram Sec 7 (Som Vihar),187,3,OMS(-)DOWN
+Tees Hazari Animal Hospital Mori Gate,184,9,929UP
+Vasant Kunj Seca Ilbs,184,4,539UP
+Safdarjang Hospital,183,3,711ADOWN
+Madhuben Chowk,183,4,114EXTUP
+Tughlkabad Extn.,182,1,OMS(-)DOWN
+Bakkarwala X-Ing,180,4,931UP
+Gpo K.Gate,180,7,205UP
+Najafgarh Chhawala Stand,179,5,818DOWN
+P S Desh Bandhu Gupta Road,178,3,610AUP
+A Block Jahangir Puri,178,2,891DOWN
+Rawta More,178,2,D-9901UP
+Deen Pur,176,2,873DOWN
+Pusta No-4 Gatta Factory,176,2,258SPLDOWN
+Dhauli Piao,175,2,OMS(+)UP
+Bhorgarh Village,173,2,175DOWN
+Khanpur Village,172,2,546ADOWN
+Princes Apartment Sec-7,172,10,D-1901DOWN
+Raj Rif Line Ring Road,170,5,711DOWN
+Narayan Dharam Kanta,169,4,567BSTLUP
+B.D Office / Roshan Pura,168,1,873UP
+Gazipur D D A Flate,168,5,33DOWN
+Anand Vihar Out Gate,168,1,D-5503UP
+D D A Flats Madangir,167,2,D-7702UP
+Sector 24 Pocket 5,163,1,972DOWN
+Savda J.J. Colony,163,4,949EXTDOWN
+Kendriya Terminal / Gurudwara Rakab Gunj,163,4,729BUP
+"Dwarka Sec-20, 21 Crossing",162,1,718UP
+Kalyan Puri Crossing (Chand Cinema Road),162,5,311AUP
+Noida Sector 28 29,161,4,34DOWN
+Sarvodya School,161,2,192DOWN
+Issa Pur M C School,160,2,D-9913DOWN
+Trilok Puri Blk-20/23,159,1,307DOWN
+Sarwan Park,159,4,236EXTDOWN
+Dhansa Village / Issa Pur Village,159,1,D-9901DOWN
+Mayapuri Depot / Mayapuri X-Ing,158,2,83UP
+Indian Air Lines Colony Vasant Vihar,157,1,623DOWN
+B Block Sultan Puri,157,1,937ADOWN
+Shankar Vihar Nh-8,156,1,D-1103DOWN
+R.K. Puram Sec-4 (Andh Vidyalaya),153,1,578DOWN
+Jharoda School,151,2,D-9907DOWN
+Kureni,150,3,948DOWN
+Y-Blk. Mangol Puri,150,2,921UP
+P.S. Paharganj,148,5,353UP
+Talkatora Garden,148,17,740UP
+Mukand Pur X Ing,147,1,OMS(-)DOWN
+Cd Block Pitam Pura,146,3,990DOWN
+Rohini Sec-7/8 Xing,146,1,879AUP
+Qmamaruddin Nagar Xing,145,8,949UP
+Khan Pur,144,1,356UP
+Ggs Kashmiri Gate,143,1,347DOWN
+Jyoti Colony / Durga Puri,143,4,213UP
+N.D.Railway Station Gate No 1,141,1,19DOWN
+F-Block Vasant Vihar,140,1,623DOWN
+Rohini Sec 23 Pkt 1 (Green Hill Aptt.),140,1,114CDOWN
+Savda Ghevra J.J. Colony,138,1,236EXTUP
+Desu Colony Janak Puri,137,7,794AUP2
+Netaji Subhas Place/Wazirpur Depot,137,3,861UP
+Nangli Jalib,136,10,835UP
+New Basti,135,10,402DOWN
+Lodhi Colony 18,135,7,970UP
+Krishi Bhawan / Rail Bhawan Metro Station,135,5,783UP
+Sultanpuri X,134,1,978UP
+P S Db Gupta Road,134,2,352DOWN
+Indira Colony,133,2,523DOWN
+Rohini Sec-25 Pocket-6,133,2,D-3302DOWN
+Punjab Khore,133,5,114EXTDOWN
+Qutab Metro Station,131,3,506STLUP
+Rail Bhawan Metro Station / Krishi Bhawan,131,5,D-040DOWN
+Karala Jain Nagar,128,2,D-3301DOWN
+A Block Shalimar Bagh,128,8,166DOWN
+Vikas Puri X Ing,127,2,972DOWN
+Jai Vihar Block 2,127,2,539DOWN
+Babar Pur Extention,127,2,218UP
+Basai Darapur / Ramesh Nagar,126,9,828UP
+Saidulajab,125,4,D-036UP
+Dispensary Pahar Gunj,125,1,949DOWN
+Mangol Puri Police Line,125,3,247UP
+Vyas Bhawan,125,2,523DOWN
+R.K. Puram Sector-4,125,2,448DOWN
+Deep Marketu01789,124,4,235UP
+Mitraon Crossing / Extension,124,14,942DOWN
+K.Gate Isbt,122,2,247UP
+Sec-D Vasant Kunj,121,2,539ADOWN
+Karkardooma X-Ing,121,8,353UP
+Br Ambedkar College (Loni Road Xing),121,4,YMSPLUS
+Delhi Gate / Ambedkar Std.,119,1,347DOWN
+Deep Market Ashok Vihar,116,1,D-3202UP
+Shiv Puri,116,7,39UP
+B3 Centeral School,115,1,424DOWN
+Nangloi Stand/Health Center,115,1,835DOWN
+R K Puram Sec 4,115,1,OMS(-)DOWN
+Chand Pur Crossing,115,1,708DOWN
+R.K. Ashram Marg,114,4,352DOWN
+"Palam Village , Dwarka Gate X-Ing",113,2,716DOWN
+Rupali Enclave -Rs Satsang,112,5,247DOWN
+Sanskrit Vidhalaya,110,1,424UP
+Shakkur Pur Crossing / Britannia,108,4,861UP
+Os Communication / Masjid Moth,108,2,D-044DOWN
+Budh Pur Village,108,2,138STLDOWN
+J.L. Nehru Marg,108,4,39ADOWN
+Cargo Gate,106,1,772UP
+Mangol Puri E Block,106,8,568DOWN
+Parlaiment House Complex,105,2,610SPLUP
+Maya Puri Chowk Ring Road,105,1,974DOWN
+Sheikh Sarai Ph-Ii,104,1,534ADOWN
+Dhaula Peer,104,4,D-036UP
+Pusa Road Petrol Pump Sadhu Vaswani Marg,103,1,522BDOWN2
+Aya Nagar,103,2,517DOWN
+Arbindo Collage,102,2,D-7702DOWN
+Netaji Subhash Place Metro Station,101,4,964UP
+Dwarkasec-9/10 X-Ing,101,1,718UP
+Mangol Puri P-Block,100,4,568DOWN
+Sheikh Sarai Ph 2,100,1,521DOWN
+Punchkuain Road,100,2,522AUP
+Dera X-Ing,99,1,434UP
+B1 Pitam Pura,99,4,254UP
+Pusa Qtr.(Idbl),98,4,721DOWN
+South Moti Bagh Ring Road,98,2,974UP
+Y Blk. Mangol Puri,98,1,972DOWN
+Kamaruddin Nagar Crossing,97,3,708DOWN
+Kotla Gaon,96,4,378DOWN
+D.K Depot,96,2,968UP
+B-8-9Vasant Kunj,96,1,424DOWN
+Babar Pur Ext Terminal,95,1,33UP
+Sec-B1 Vasant,94,1,534AUP
+Ramprashta,94,6,221UP
+R.K. Puram Sec 2,93,2,611DOWN
+Bajit Pur X-Ing,93,3,708DOWN
+Ru Block Power House,93,2,114CDOWN
+Babar Pur,92,3,374DOWN
+Princess Park,92,2,D-9101UP
+Nagia Park,92,2,913UP
+Indian Oil,91,1,D-9101DOWN
+Prithviraj Road Crossing,91,2,522BUP
+Vashisht Park Sagar Pur,91,1,703DOWN
+Hazrat Nizamuddin,90,8,166UP
+Bhalaswa X Ing,90,1,OMS(-)DOWN
+Mandella Marg,90,2,424DOWN
+Avantika X-Ing,90,4,114EXTDOWN
+Dav Public School,90,8,889UP
+Rohini Sec-24/25 X-Ing,90,2,D-3302DOWN
+Seelampur Market,89,1,946UP
+Qutub,89,2,516DOWN
+Janpath Market / Indian Oil Bhawan,89,1,522BUP
+Dwarka Sec 34,89,3,727UP
+Vasant Kunj Sec A Pkt Bc,89,3,715UP
+Dwarka Sec-23 Pochanpur,89,2,716DOWN
+Jain Shukla Mandir,88,8,130DOWN
+Indira Service Center,88,4,D-9913UP
+Rohini Sec 11 Agarwal Sabha,88,2,140DOWN
+Old Sectariate/ Vidhansabha,88,2,258SPLDOWN
+C Block Sultan Puri,88,1,937ADOWN
+Central Sectt.,87,2,783EXTUP
+Alipur Block Bdo Office,87,4,103DOWN
+Haidar Pur Badli Mor Metro Station,87,2,D-3202DOWN
+Mangol Puri P Block,85,4,940DOWN
+Bharthal Yashobhumi,85,1,D-9904DOWN
+Mata Ka Mandir,84,1,894DOWN
+National Art Gailery,84,4,894UP
+Wazir Pur J J Colony,84,1,352UP
+Vasant Vihar Crossing/R.K.Puram Sec-5,83,1,578DOWN
+Amir Shusaro Park,82,2,425UP
+Sultanpuri Crossing,81,7,991ASTLUP
+Avantika X Ing,81,1,972UP
+Lajpat Nagar X-Ing,81,2,243DOWN
+Tikri Piou,81,1,949DOWN
+Gd Goenka School,81,2,424UP
+P.S.Kamla Market,80,1,307DOWN
+Banarasi Dass Estate,80,8,258SPLUP
+Badli X-Ing,80,6,D-6301UP
+Vikas Puri Crossing,79,7,972EXTDOWN
+Nirman Vihar X-Ing,79,1,D-4501UP
+Mangol Puri Y Block,79,6,972EXTUP
+Bakhargarh More,79,2,D-9901DOWN
+Tugalkabad Extention,79,2,D-8803UP
+Prem Badi Pur,78,2,978UP
+Wazirabad X-Ing,77,4,913UP
+Cisf,77,2,D-7102DOWN
+Ig Stadium,76,5,D-056DOWN
+A-5/6 Narela,76,2,173DOWN
+Ranholla Extn.,75,4,968UP
+Madipur Jj Colony Metro Station,75,4,950UP
+Rohini Sec 23 Pkt-C,75,1,972UP
+Jahangir Puri Gt Roadmetro St,75,1,140DOWN
+Bharthal Hanuman Mandir,75,2,D-9904UP
+Taj Pur More Palla Village Xing,74,2,154DOWN
+Kg Marg Crossing,74,4,391UP
+Rajpur X-Ing,74,1,D-7701UP
+Shahdra Shyam Lal Collage,74,2,208UP
+Deen Dayal Upadhya Hospital,74,1,D-6102UP
+Kali Bari Marg X Ing,74,2,610UP
+Noida Sec -21,74,1,319DOWN
+Rohini Sec-17 Xing,73,1,889UP
+Mundka Xing,73,7,567ADOWN
+Qazi Pur,73,2,D-9901DOWN
+Y-Blk Mangol Puri,73,2,114EXTUP
+Sagar Pur,73,1,703UP
+M B Road Tugalkabad,73,1,434UP
+Britania Factory,72,1,610DOWN
+I P Power Station / I T O,72,3,244DOWN
+Jaitpur Mor,72,1,422DOWN
+Dichaon Chowk,71,1,968DOWN
+Sundar Nagar,71,3,893DOWN
+Jhatikara X-Ing,71,1,539ADOWN
+R.K. Puram Sec 3,71,2,611DOWN
+Sec.B-Ii Vasant Kunj,71,1,424DOWN
+Fruit Mandi Khampur,71,1,ML96DOWN
+13 Block Trilok Puri,70,1,356DOWN
+I P Power House,70,1,261UP
+Rohini Sec-24 Pocket-9,70,2,D-3302UP
+Vikas Puri X-Ing,70,7,873UP
+Bhatnagar Public School,70,2,424DOWN
+Inst. Of Pharmacy,70,1,434DOWN
+Mayur Vihar Ph Iii Terminal,69,5,611UP
+Bbm Cluster Depot,69,4,ML06DOWN
+R K Puram Sec-7,68,1,604UP
+B.D.O Office Alipur,68,1,144AUP
+Shastri Nagar (Tri Nagar),68,1,352UP
+Faiz Rosd Crossing,68,1,949DOWN
+Khera Dabar Bus Stop,67,1,D-9915UP
+Cargo Terminal Gate No.3,67,2,D-1103DOWN
+South Patel Nagar Metro Station,67,5,930DOWN
+Bakkar Garh X-Ing,67,2,968DOWN
+Vivek Vihar Police Station,66,1,340DOWN
+Mangol Puri R Block,66,2,908DOWN
+Air Force School Bani Camp,66,2,968DOWN
+Netaji Subhash Inst Of Techni,66,3,764STLUP
+Muneem Ka Bagh,66,2,103DOWN
+Anand Parvat Ind. Area,66,4,950UP
+Mahipal Pur Extn.By Pass,65,1,D-1103UP
+Lsr Collage,65,2,244DOWN
+Ip Depot,64,11,261UP
+Lad Pur,64,7,0114(NS)UP
+Issa Pur More,64,1,D-9901DOWN
+Rupali Enclave-Rs Satsang,64,5,114EXTDOWN
+Mayur Vihar Pkt A-1,64,2,211DOWN
+Ps Paharganj,64,2,19DOWN
+Ghumanhera Village More,63,2,D-9910DOWN
+Dwarka Sec 2/6 Crossing,63,4,715UP
+R K Puram Sec-2 (Residental Complex Lok Sabha Secretariat ),63,2,610SPLDOWN
+Janak Puri C-2,63,4,OMS(+)UP
+F.A.I,62,1,424DOWN
+South Extension I,62,1,544ADOWN
+P. S. Paharganj,61,2,83UP
+Dwarka Sec6/10 X-Ing,61,1,718UP
+Red Course Road,60,1,604DOWN
+Jn University,60,1,424DOWN
+Samas Pur Kalan,60,2,D-9902DOWN
+Narouji Nagar,60,3,578ADOWN
+Nangla Charan Dass Village,60,2,8DOWN
+Lado Sarai D D A Flats,59,2,D-7104UP
+B B Block Shalimar Bagh,59,2,D-3202DOWN
+Mother Dairy X Ing,59,1,534AUP
+Vikaspuri Crossing,59,8,872UP
+I.T.P.O Pragati Maidan,59,1,356UP
+Nosena Bhawan,58,2,D-9102DOWN
+Seelam Garh & Geeta Cly. Road Crossing,58,4,274UP
+Prahlad Pur Shekawati Line,58,2,716DOWN
+Sultanpuri X-Ing,58,4,947DOWN
+Metro Station Kashmere Gate,58,1,241DOWN
+Homeopathic Hospital,57,2,580DOWN
+Maruti,57,1,34AUP
+Sfs Quarters Ghazipur,57,2,D-4503UP
+Surera X-Ing,57,4,D-9902DOWN
+Mayur Vihar Ph 3 Pocket A 1,56,2,611UP
+E-Block Nand Nagri,55,8,333UP
+Babosa Chowk,55,2,D-3301UP
+Janakpuri C2A,55,4,724UP
+Kanjhawala Sub Station,55,3,708UP
+Sultan Puri X-Ing,55,5,913UP
+I.T.O (R.C Aggarwal Chowk),55,2,241DOWN
+D Block Janak Puri,55,7,724BDOWN3
+Garhi Mendu,54,2,208AUP
+Mauj Pur X-Ing,54,3,992UP
+Madipur Jj Colony,54,8,849UP
+E-Block Jahangir Puri,53,1,142UP
+Ekta Enclave-Harijan Basti,53,2,192DOWN
+Maharaja Agrasen Hospital / Dwarka Crossing,53,2,775LINKSTLUP
+Tri Nagar /Wazir Pur Jj Colony,52,1,144AUP
+Air Station,52,5,522BDOWN2
+Dr. Ambedkar Stadium / Delhi Gate,52,1,261UP
+Samas Pur Jagir Gaon,52,3,347DOWN
+Malik Pur Zar Crossing,52,2,D-9912DOWN
+Jnu Campus,52,2,D-7104UP
+Qutubgarh Village Terminal,52,1,114CDOWN
+Prem Piao,52,2,708DOWN
+I P Metro Station,52,4,244DOWN
+Dera Bhati Road,51,2,D-7701DOWN
+Syed Nangloi,51,3,233DOWN
+P S Vivek Vihar,50,2,243DOWN
+Sfs Quarter Gazipur,50,6,D-4503DOWN
+Mangolpuri Y Block,50,4,972AEXTDOWN
+Dwarka Sec 21 Metro Station,50,2,D-068UP
+R.K. Puram Sec 4,50,2,611UP
+S.F.S Quarters Gazi Pur,50,1,206AUP
+Isbt,50,2,103DOWN
+Gov Saryoda Kanya Vidhalay,50,2,832UP
+Prahlad Pur,49,4,988DOWN
+Fare Station,49,1,206ADOWN
+Samey Pur,48,3,100ADOWN
+S. Pawansahani Chowk,48,2,83DOWN
+Postal Account Office,47,2,61UP
+R. K Puram Sec-7,47,1,974DOWN
+Mangol Puri Kalan,47,3,972UP
+Mahavir Enclave,47,3,947DOWN
+Garhi Mandoo,47,5,253DOWN
+Sai-Dul Zeb,47,1,D-7104DOWN
+Palam Crossing,47,2,OMS(+)UP
+Delhi Sectt.,46,4,356UP
+Burari X-Ing,46,2,907UP
+Art Gallery,46,5,605UP
+Mukand Pur,45,2,907UP
+Begumpur Village,45,1,D-3302UP
+Dwarka Sec 2/6 Crossing Depot,45,2,727STLUP
+Dwarka Sec 20/21/22 Crossing,45,4,717STLDOWN2
+S Raja Harischandra Hospital X-Ing,45,3,120EDOWN
+Mundhela X-Ing,44,2,968UP
+Kend. Terminal,44,4,988UP
+Rohini Sec-9 /7,44,3,114CDOWN
+Ibrahim Pur Xing,44,2,192DOWN
+Paschim Pur Extension Jal Board P/S,44,1,D-3301DOWN
+Sec A Vasant Kunj,44,1,534ADOWN
+Usman Pur Zero Pusta,44,1,208AUP
+Palam Rly Flyover-Dc1925,44,2,947ADOWN
+Jagat Pur X Ing,43,1,OMS(-)DOWN
+Desu Colony Janakpuri,43,4,724BDOWN3
+Shankar Raod,43,1,521UP
+Anand Parvat,43,1,950UP
+Q Block Mangolpuri,43,2,939LSTLUP
+Rk Puram Sector 3,42,2,711AUP
+Thana Narela,42,2,120BDOWN
+Vasundhara Enclave Satyam Apptt.,41,1,378DOWN
+G.T.K. By Pass,41,1,907UP
+Isbt Nityanand Marg,40,5,144DOWN
+Punjab Kesri-S Palace Depot,40,2,114BDOWN
+Sarai Rohilla Industrial Area,40,1,D-6001DOWN
+National Malariya Anusandhan K,40,1,783EXTDOWN
+Khebar Pass,40,2,D-0001UP
+Hasan Pur,39,2,D-9911DOWN
+G.P.O,39,4,241UP
+Ajadpur,39,1,130DOWN
+Rk Puram Sector 1,39,1,711AUP
+Janak Puri B1,39,1,OMS(-)DOWN
+R.K Puram Sec-9,39,1,974DOWN
+D C Chowk Sec-9,38,2,D-6301UP
+Khajooi,38,2,913DOWN
+Mundhela More,38,2,D-9901DOWN
+Haider Pur Badli Metro Station,38,1,D-6301DOWN
+Issa Pur X-Ing,37,2,968DOWN
+Ranhola Vill.,37,1,963DOWN
+Birtania,37,2,913UP
+District Centre Outer Ring Road / Kangra Niketan,37,4,DW-3UP
+Sultanpuri More,36,1,567ADOWN
+Dwarka Sec-19/20 X-Ing,36,2,716UP
+Khichdipur,36,2,543BUP
+Racab Ganj Gurdwara,36,2,716UP
+I P Power Station / Ito,36,1,964UP
+Indira Sabishu Station,35,1,D-9917DOWN
+High Court,35,2,966BUP
+Andheria Bagh Crossing(Vasant Kunj Road),35,2,947AUP
+R K Puram Sec 2,35,4,544AUP
+Maidan Garhi X-Ing,35,2,356UP
+K K Xing,35,2,340UP
+Pooth Kalan Xing,35,2,D-3302UP
+Paschim Puri Market,34,2,567DOWN
+Tilak Nagar X-Ing,34,2,793DOWN
+Pochanpur Mandir,34,2,716DOWN
+Alipur Block-Bdo Office,34,1,175DOWN
+Rohini Sec 7 And 8,34,3,990B_UP
+Kashmiri Gate Isbt Ring Road,34,1,244UP
+Khakahri Nehar Village,34,2,D-9910DOWN
+Sayyed Nagar Dilshad Garden,34,1,208UP
+Chhattarpur Village,34,1,D-7701DOWN
+Princes Apartment Sector-7,34,2,716DOWN
+Shyam Lal Collage,34,2,352DOWN
+Kaushalya Devi Blind Ashram,33,6,708UP
+Malik Pur X-Ing,33,2,D-9902UP
+L.S.R Collage,33,2,930UP
+Govt. School,33,1,D-5503DOWN
+Mayur Vihar - Iii Xing Brd,33,1,319DOWN
+Kanhiya Nagar Metro Station,33,1,352UP
+Rajdoot Hotal,33,3,166DOWN
+Pooth Khurd Village,32,1,988DOWN
+B-Blk Yamua Vihar,32,1,YMS(-)DOWN
+Matel Forging,32,1,D-6102UP
+Rohini Sec 17/16,32,1,140UP
+Surera More,32,2,D-9901DOWN
+Shakur Pur A-Block,32,2,930UP
+Lodhi Colony 1213 Block,32,3,D-034UP
+Rk Puram Sec 9,32,4,523ADOWN
+Sonia Vihar F Block,32,1,33ADOWN
+Prem Nursery,32,2,D-9915DOWN
+Ashok Park Main (Rohtak Road),32,2,GL-91AUP
+D.P.School,32,4,423UP
+Sultan Pur Xing,32,3,937AUP
+N.D.P.O,32,4,930DOWN
+Anand Vihar Main Stand,31,1,D-5401UP
+Vasant Kunj,31,1,D-7102UP
+R.K. Asharam Marg,31,1,521UP
+Ps Madan Gir,31,1,580DOWN
+Nagia Park (Shakti Nagar ),30,2,142DOWN
+Sahin Bagh,30,4,465DOWN
+Najafgarh Chawla Xing,30,1,845UP
+Vasant Kunj Sec-A Pkt.Bc,30,1,539ADOWN
+School Block S-1,30,1,356DOWN
+Rewla Khanpur Crossing,30,4,885EUP
+Nehru Vihar X-Ing,30,4,145UP
+Chacha Nehru Hospital,30,2,D-4502UP
+Khanpur Extension / Devli Crossing,29,1,717LINKSTLUP
+R.R. Line,29,2,703UP
+P S Timar Pur,29,4,913DOWN
+Delhi Pub. School (Matiala),29,2,727STLUP
+Isbt K. Gate,29,2,116DOWN
+Officer Falts (Enclave),29,2,793UP
+Nangfgarh Delhi Gate,29,2,764STLUP
+Tolstoy Road,29,1,522AUP
+Nariana Vihar,29,3,567ADOWN
+Sunehari Pulla Depot / Jawaharlalnehru Stadium Terminal,29,1,794AUP2
+I.T.O (R.C. Aggarwal Chowk),29,2,793UP
+Shahbad Daulatpur,29,1,130UP
+Isbt Kashmiri Gate Ring Road,29,1,964DOWN
+Nagia Park Gali No.10,28,2,D-0004UP
+Jind Pur X-Ing,28,1,144ADOWN
+Surajmal Vihar,28,2,243UP
+South Avenue,28,2,793DOWN
+Don Basco School / Narmada Appartement,28,1,540UP
+Vasant Kunj Sec-A Pkt Bc,28,1,604UP
+Shadi Pur,28,1,D-6001UP
+Dwarka Sector-21 Metro Station,28,2,DCS(+)UP
+Ghevra Savda J.J. Colony,28,2,947ADOWN
+Pandwala More,28,2,D-9910DOWN
+Nangli Sakrawati Village,27,2,764STLDOWN
+Vasant Kunj Fortis Hospital,27,1,D-7102DOWN
+Old Nangal Bridge Pankha Road,27,2,711AUP
+Pitampura Jd Block,27,3,164BDOWN
+Yamuna Vihar Brij Puri,27,1,33AUP
+Moj Pur Crossing,27,1,374DOWN
+Mandi Road,27,1,D-7103DOWN
+Mayur Vihar Ph-Iii X-Ing,27,2,356UP
+Ghevra X-Ing,27,1,D-3601UP
+Anpurna Mandir Sonia Vihar,27,2,258SPLUP
+Kakorla Bridge,27,3,764STLDOWN
+Crpf Kesho Pur Depot,27,2,D-6603DOWN
+Mehar Chand Market,27,2,580UP
+District Center Janak Puri,27,1,D-6901UP
+Jhujhuli X-Ing,27,2,D-9902DOWN
+Jhatikara More,27,1,D-9908DOWN
+Dda Flat Munirka Fpai,27,1,974DOWN
+I P Collage,27,7,164UP
+Madan Pur Xing,27,1,465AUP
+Darya Ganj Golcha Cinema,27,5,405EUP
+C.R.P.F Camp,26,2,356UP
+Sh. Ram Institute Civil Line,26,1,D-0002(+)UP
+Prahalad Pur (Shekhawati Line),26,3,947DOWN
+Rohini Deopt-2,26,4,988UP
+Harewali X-Ing,26,2,D-3305DOWN
+Shakar Pur S-3 Block,26,1,356UP
+Mangol Puri -Police Line,26,1,182AUP
+Isbt K.Gate Ring Road,26,1,964UP
+Kirby Place,26,1,D-9102UP
+Bblock Mangolpuri,26,1,939LSTLUP
+Primary School Bawana,26,1,708DOWN
+Chand Pur X-Ing,26,1,708UP
+Check Post Sonia Vihar,25,1,258SPLDOWN
+Samarvilla School,25,2,D-4405(+)UP
+Delhi Sect,25,2,949ADOWN
+B.K. Road Metro Station,25,2,703DOWN
+Chanchal Park-1,25,2,931DOWN
+Mubarak Pur Dabas X-Ing,25,2,567ADOWN
+Chaula Stand,25,1,845UP
+R K Puram Sec 3,24,2,610AUP
+Ashoka Park Metro Station,24,4,906UP
+Samalkha More,24,2,743BDOWN
+Geeta Colony Block No.6,24,1,D-4502UP
+A-Block Jahangir Puri,24,2,142DOWN
+Bawana / Bawana Sec 5 / Nayaroad X-Ing,24,1,113AUP
+Pitampura Power House,24,1,BPEXPUP
+Netaji Subhash Inst Of Technic,24,2,727STLDOWN
+G. Raqab Ganj,23,2,703UP
+Rohini Sec-15 Pkt-E,23,1,183UP
+Mayur Vihar Phase Ii,23,3,349DOWN
+Khaira Village,23,1,D-9911DOWN
+Sadar Bazar Delhi Cantt.,23,1,804UP
+Shalimar Bagh,23,2,117UP
+Rama Road,23,1,D-6001UP
+Bal Bikshu Ghar,23,1,948DOWN
+Lee Maiden Hotel,22,1,793DOWN
+Chandan Apartment,22,2,D-8803UP
+R. R. Line,22,1,711AUP
+P S Kamla Market,22,1,953UP
+Prahalad Pur,22,2,765UP
+Bankner Crossing / Narela Terminal,22,2,131AUP2
+Dasrath Puri Dwarka Puri,22,1,813DOWN
+Nawada Village,22,1,845UP
+Jawala Puri / N.L Depot,22,1,907UP
+Mourice Nagar R.Nj,22,2,D-0002(-)DOWN
+Jeevan Park,22,6,711AUP
+New Anaj Mandi Narela,22,1,103UP
+Nangal Village X-Ing (Dariya Pur),21,2,D-3304DOWN
+Bankner School,21,2,175DOWN
+Goyanka School Vasant Kunj,21,2,605BDOWN
+Geeta Colony 2-Block,21,1,310DOWN
+Subhash Place Depot -Punjab Ke,21,2,114EXTDOWN
+Tilak Marg,21,2,703DOWN
+Dabri Village / Seetapuri Ext,21,2,794AUP2
+C.O.D,21,2,974UP
+C 5A Janak Puri,21,2,832DOWN
+G. Bangla Sahib,21,2,703DOWN
+P.Vihar Power Houe,21,2,BPEXPUP
+Tri Nager Jai Mata Mkt Terminal,21,2,970BDOWN
+Haider Pur W. Works,21,1,907DOWN
+Shalimar Garden X-Ing,21,2,243DOWN
+Bakkargarh,20,2,D-9914DOWN
+Cargo Terminal,20,1,392BDOWN
+Super Bazar Kalyanpuri,20,1,378UP
+Bangalow Road P/S Roop Nagar,20,1,D-0002(-)DOWN
+P S Mandir Marg,20,3,316UP
+Shri Krishna Dairy Farm,20,2,708DOWN
+Geeta Colony 6 Block,20,1,39UP
+Ps Db Gupta Rd,20,2,963UP
+B.D. Estate,20,2,913DOWN
+I T O,20,2,164DOWN
+Jahangir Puri X-Ing,19,3,19DOWN
+D.P.S / Neela Gumbad,19,2,930DOWN
+R.K. Puram Sec 1/4,19,3,610ADOWN
+Vasant Kunj-A,19,1,D-7102DOWN
+Nanak Sar More,19,1,258SPLUP
+Saket X-Ing,19,1,356DOWN
+S.N.P. Depot,19,2,964DOWN
+Maujpur X-Ing,19,1,241UP
+Trilok Puri 13 Block,19,3,118EXTNDOWN
+Sabziwala Chowk,19,1,218UP
+Kotla Vihar Phase Ii,19,2,940STLDOWN
+Nhw-8 Crossing-Dc4317,19,1,947ADOWN
+Dan Basco,19,1,D-9917UP
+Bhalswa X-Ing,19,2,907UP
+Skv Bakhtawar Pur,19,2,D-2201DOWN
+S.P Marg,18,1,703DOWN
+Institute Of Pharmesy,18,1,356UP
+Highland Apptt.,18,1,378DOWN
+18-Blk Lodhi Colony,18,2,580UP
+Rohini Sec 18 Police Chowki,18,1,130DOWN
+Sai Baba Chowk Rohini Sec 7/8 Crossing,18,1,102UP
+Punjabi Bagh Terminal (Rohtak Road),18,1,GL-91ADOWN
+Welcome / Seelam Pur,18,2,241DOWN
+Hari Nagar (Mohan Mandir),18,1,83DOWN
+R.K.Puram Sec 3,18,2,610ADOWN
+Dsidc Sec-1 Bawana,18,1,116UP
+Police Check Post (Chhawla Kakrola Nalah),18,2,715ADOWN
+Rani Khera,18,4,941DOWN
+Panchayat Ghar Bawana,18,1,708DOWN
+Jaydev Park,18,2,966DOWN
+Rithala Village Crossing,17,1,990CDOWN
+Kishan Ganj Dispencery,17,2,247UP
+Palam Mode Cgoa,17,1,D-9102DOWN
+Center Market,17,1,03UP
+Cg Hospital K Road,17,1,D-9102UP
+Surehra X-Ing,17,1,821DOWN
+Shajhan Road,17,2,173DOWN
+Virat Cinema,17,2,580DOWN
+Seelam Pur Market,17,1,241DOWN
+National Art Galery,17,1,344DOWN
+Tegoure Garden,17,1,D-6603UP
+Dwarka Sec-1 Mahalaxmi Apartment,17,2,911DOWN
+Deepali Chowk Saraswati Vihar A-Block,17,2,164DOWN
+Don Bosco,17,2,D-9902UP
+Mayur Vihar Ph-3 Pkt. A-1,17,1,378DOWN
+Shri Nagar / Bharat Nagar More,17,1,03DOWN
+Gpo,16,2,131DOWN
+Rohini Sec-D-2 Sector-15,16,1,879AUP
+Dev Nagar Khalsa Collage,16,1,D-0005DOWN
+Dwarka Mode,16,3,715ADOWN
+80' Road (Singola Village),16,3,120EDOWN
+Banarsi Das Estate,16,1,258SPLDOWN
+Bhajan Pura-2,16,1,248DOWN
+Tigres Road Jn,16,1,D-9102UP
+I T O (Lala R.C. Aggarwal Chowk),16,3,167UP
+Ghitorni Bus Stop,16,1,D-7103UP
+Lado Sarai Extention,16,2,D-7104UP
+Rohini Sec- 24 Main Road,16,1,D-3301UP
+Main Market Road,16,1,D-7103DOWN
+Mayur Vihar Ph-3 A-Block,16,1,206AUP
+Katevara X-Ing,15,4,D-3304DOWN
+Mata Daan Kaurschool,15,2,835LSTLUP
+Akshardham,15,1,D-5401UP
+Ganesh Nagar East,15,1,U-SPL-20UP
+Deepali Chowk Sraswati Vihar A-Block,15,2,964DOWN
+Neelwal X-Ing,15,2,934ADOWN
+Harewali More,15,2,701DOWN
+Vayu Sena Bad (Tigri),15,1,717LINKSTLUP
+A-Blk Inder Puri,15,1,725UP
+Road 29 /30 Ing,15,1,567ADOWN
+A-2 Paschim Vihar,15,2,913DOWN
+Matclf House,15,1,964DOWN
+Swada,15,2,983DOWN
+Janak Puri C 2A,15,2,711AUP
+Lakshmi Nagar,15,1,374UP
+Survo Priya Vihar,15,3,512DOWN
+18Block Lodhi Colony,15,2,D-034UP
+Banwari Lal Hosp.,15,1,521DOWN
+Sfs Flats Dwarka Sec2 P House,15,1,813UP
+Mangol Puri - Police Line,15,2,114EXTUP
+Sanatan Dharam Mandir Rajinder Nagar,15,2,D-6101UP
+R.K. Puram Sec-7 (Som Vihar),15,1,448BDOWN
+P S D.B Gupta Road,15,1,318UP
+Bh-Blk Shalimar Bagh,14,3,183DOWN
+Akshardham Temple / Pusta X-Ing,14,1,243DOWN
+Lado Sarai X-Ing,14,1,356DOWN
+Rohini Sec 24 Dear Satguru Sewaram Crossing,14,3,141ADOWN
+Qumaruddin Nagar X-Ing,14,1,907DOWN
+Pargati Vihar Lodhi Estate,14,2,173UP
+J A Block Ashok Vihar Phase-2,14,1,D-3202UP
+R Block Mangol Puri,14,7,953DOWN
+Meera Bagh Apartments,14,2,972EXTDOWN
+Gagan Cinema Wazirabad Road,14,1,D-0501UP
+Netaji Subhash Palace (Wazirpur Depot) Road No 41,14,4,164BDOWN
+A-3 Paschim Vihar Mother Dairy,14,2,233DOWN
+Shaheed B.S. Marg,14,1,950UP
+Noida Sec 12/22 T Point,14,1,492UP
+Goela Dairy,14,1,715ADOWN
+Mukarba Fly Over,13,2,907UP
+Peera Garhi Fly Over,13,2,992UP
+National Highway-24 X-Ing,13,2,D-5401UP
+National Institute Of Health & Family Welfare,13,2,765DOWN
+Mohamed Pur Village,13,2,162DOWN
+Jahangir Puri More,13,1,142DOWN
+Ashok Vihar Central Mall,13,1,D-3202DOWN
+I P Depot,13,4,03DOWN
+Delhi Pub School Matiala,13,1,765DOWN
+Santpura,13,1,813DOWN
+P.S. Vikas Puri,13,2,793DOWN
+Uday Park/Anand Lok,13,2,580DOWN
+Jal Board Mangol Puri Y Block,12,1,D-6301DOWN
+Safiabad Border Shiv Mandir,12,4,112STLDOWN
+Dwarka Sec 4/5 & 11/12 Xing,12,2,724EXTUP
+Ramleela Ground Geeta Colony,12,1,D-018DOWN
+Mangol Puri A Block,12,1,992UP
+Shalmar Bagh X-Ing Ring Road,12,1,03UP
+B-Block Sutan Puri,12,1,992DOWN
+B-Block Jahangir Puri,12,1,142DOWN
+Suraj Mal Vihar Block-A,12,1,340DOWN
+Sunehari Pulla Depot,12,1,719UP
+B 8 Vasant Kunj,12,2,0604(NS)UP
+Mayur Vihar Phase-1 Xing,12,2,443UP
+Mayur Vihar Phase-3 Xing Border,12,1,319ADOWN
+Bharthal Village Gali No.2,12,1,D-9904DOWN
+Anand Vihar I.S.B.T.,12,1,D-5401UP
+Khazori Khas,12,1,248DOWN
+Ps Old Subzi Mandi,12,4,19BDOWN
+D B Gupta Road,12,1,D-0005UP
+Jona Pur Crossing,12,1,D-7103UP
+Jhundpura Vill Noida Sec.-6 Xing,12,1,319DOWN
+Quamruddin Nagar Crossing,12,1,983DOWN
+Mata Daan Kaur School,11,3,835LSTLDOWN
+Alipur Block -Bdo Office,11,1,148DOWN
+Mejer Dhaynchand Stadium,11,1,D-1102DOWN
+Areo City Hotel,11,1,D-7102UP
+Vasundhra Enclave Dr. Apptt.,11,1,378UP
+Nangloi J J Colony No.3,11,2,963UP
+West Enclave / Sansad Viharterminal,11,1,164UP
+Nangli Zalib,11,2,813DOWN
+Qutub Garh,11,2,941UP
+P A Office / Old Sectt.,11,2,964DOWN
+P.S. Db Gupta Road,11,1,83UP
+Isbt N N Marg,11,2,134UP
+Govt. Quarters Sarai Rohilla,11,1,992UP
+Summer Villa School,11,1,0118EXT(NS)UP
+Subash Place Depot / Punjab Kesri,11,1,964UP
+I.T.I Khichri Pur,11,2,356UP
+Ramzaan Pur,11,2,D-2201DOWN
+B-2 Narela,10,2,173DOWN
+Metro Vihar,10,1,173DOWN
+N N Depot,10,2,973UP
+Munirka D D A Flats,10,1,D-7104DOWN
+Jharoda X-Ing,10,2,715AUP
+S.B.Mills,10,1,813DOWN
+Sattam Vihar,10,1,963UP
+Jwahar Lal Nehru Marg,10,1,185UP
+Max Muller,10,1,D-1102UP
+Noida Sector -11,10,1,319DOWN
+B.Lal Hospital P. Road,10,2,316UP
+Lal Quarters,10,1,D-6301UP
+New Friends Colony,10,2,0405(NS)UP
+Paschim Pur Extention Jal Board P/S,10,1,D-3301UP
+S J Enclave,9,3,610ADOWN
+Master Prithvi Nath Marg,9,2,100AUP
+Dholi Piau,9,1,BYPASSEXPRESSUP
+Kirorimal Collage,9,2,913UP
+Nai Mangla Puri,9,2,517DOWN
+Yamuna Bridge / G G S I P University,9,2,244UP
+West Block Frinds Encl.,9,2,941DOWN
+Nangloi Syed,9,2,233STLDOWN
+Airport,9,2,765DOWN
+Bartania,9,2,168DOWN
+C-3 Janak Puri,9,1,740UP
+Kotli Vihar Ph-1,9,1,931UP
+Dhauli Pio,9,2,793DOWN
+Postel Account Office / Old Sectt.,9,3,164DOWN
+C-5A Janak Puri,9,1,720DOWN
+Kendriya School,9,2,244DOWN
+Kanjhawala Desu,9,2,D-3901UP
+Sfs Quarter Gazi Pur,9,1,33ADOWN
+Dda Market Prashant Vihar,9,1,D-6604(-)DOWN
+Sar Chhotu Ram,9,2,D-3901DOWN
+R.K. Puram Sec 10,9,1,611UP
+Shalmar Bagh A-Block,8,1,03UP
+D Block Janak Puri (Pankha Road),8,2,850BUP
+Bakkar Wala Flat,8,2,963DOWN
+Ashok Vihar More,8,2,945UP
+Arya Samaj Road,8,1,D-0005DOWN
+Anand Parbat,8,1,963UP
+Dwarka Sec-2/6 X-Ing Depot,8,2,794ASTLUP
+Sfs Flats Dwarka Sec2 P.House,8,1,813DOWN
+A I R Pusa,8,1,310UP
+Shiv Vatika,8,1,D-6001UP
+Gali Dak Khana Wali,8,1,19DOWN
+Noida Sec-24 Chowk,8,1,323UP
+Mayur Vihar Extention Metro Station,8,2,D-4401UP
+I.P Power House Ito Ring Road,8,1,03DOWN
+Kapashera Village Bijwasan Road,8,2,719UP
+New Rajender Nagar / Sanatan Dham Mandir,8,1,168DOWN
+Mangol Puri R-Block,8,1,992DOWN
+Mayapuri Chowk Ring Road,8,1,529SPLDOWN
+K.N. College,8,2,544ADOWN
+Mata Dhan Kaur School,8,1,D-9901UP
+I.G.I. Stadium,8,1,03UP
+Rani Khera Depot X-Ing,8,2,567ADOWN
+Rithala More,8,2,984AUP
+Primary School Shahbad,8,3,106AUP
+Jhilmil X-Ing / Dilshad Garden Gt Road,8,1,208DOWN
+Khalsa Coolage,8,1,D-0002(-)DOWN
+New Delhi Railway Station Gate,8,1,19ADOWN
+M. Aggarwal Hospital,8,1,233STLDOWN
+New Sabji Mandi,7,2,945UP
+M S Market R.K. Puram Sector-6,7,1,621DOWN
+Netaji Subhash Institute Of Technology,7,1,765DOWN
+Mundka X Ing,7,1,949AUP
+West Block Friends Enclave,7,2,941AUP
+Jhilmil X-Ing,7,1,208UP
+"Vasant Kunj Sector D 3,4",7,2,0604(NS)DOWN
+Verma Farm Isic Hospital,7,2,717LINKSTLUP
+Bhatnagar School,7,2,605ADOWN
+Ravi Dass Marg,7,2,490UP
+Qmaruddin Nagar X-Ing,7,2,941ADOWN
+Avtar Enclave / New Multan Nagar,7,2,849UP
+Azad Pur Ring Road,7,1,167DOWN
+Mayur Vihar Ph-Iii More Noida X-Ing,7,1,356UP
+Inderlok Metro Station,7,2,141AUP
+Gole Market Peshwa Marg,7,1,803UP
+J L Nehru Marg,7,1,03UP
+Budhela Village / C Block Vikas Puri,7,1,D-070UP
+Chand Pur Xing,7,4,924DOWN
+Y.M.C.A.,7,1,703DOWN
+Jayanti X-Ing,7,2,114BDOWN
+Raja Park S. Basti,7,1,945UP
+Mayur Vihar Phase-3 X-Ing,6,1,D-4403DOWN
+Mayur Vihar Phase-I Pkt-5,6,1,378UP
+Dda Flats Kakarduma,6,2,473UP
+R K Puram Sec 10,6,1,719DOWN
+Samas Pur Jagir Village,6,1,344UP
+Durga Mandirtegoure Garden,6,1,D-6603DOWN
+National Highway 8 Crossing,6,1,765UP
+Mitraun Extention,6,1,968DOWN
+Ba Blk Hari Nagar,6,2,808DOWN
+India Gate,6,2,580UP
+R K Puram Sector-3,6,1,536DOWN
+A-Block Ph-Iii Mayur Vihar,6,1,356UP
+S.P.M Collage,6,1,233STLDOWN
+Paschim Vihar A 3,6,1,910AUP
+Police Station Tughlaq Road,6,1,D-040UP
+Gali Dak Khanna Wali,6,3,19BDOWN
+Nizam Pur,6,2,983DOWN
+Rohini Sec-18 Blk,6,1,145UP
+Extn. Gali No.4,6,1,913DOWN
+Avantika Sec 1,6,4,932DOWN
+Knichdi Pur Village,6,1,319ADOWN
+Majra Dabas School,6,3,962SPLDOWN
+Mubarak Pur Crossing,6,4,954ASTLUP
+Ranjeet Appartement Pochan Pur Dwarka,6,2,D-9904UP
+Chotu Ram Park,6,2,984AUP
+Jonti,6,3,0114(NS)UP
+Panjab Khor,6,2,941AUP
+D-Block Sutan Puri,6,1,992UP
+Bakarwala Jj Cly.,6,1,765DOWN
+Udyog Vihar,5,1,907UP
+Isbt N.N. Marg,5,1,202ADOWN
+Jhilmil X Ing,5,1,0236(NS)UP
+Postel Account Office,5,2,D-0001UP
+Pitampura (Nd Block),5,1,988DOWN
+Maharaja Uggarsain Hos.,5,1,963DOWN
+Karawal Nagar Extn. Gali No. - 4,5,1,248DOWN
+Nirankari Sarovar,5,2,61UP
+Vasant Kunj Sec-Apkt Bc,5,1,0604(NS)DOWN
+D.D.A Office / T.V Tower,5,1,167DOWN
+Power House Lawrance Road,5,1,610UP
+R P Bagh,5,2,D-0003UP
+P.S. Kamla Market,5,1,03UP
+Mool Chand Hospital,5,2,0419(NS)UP
+G D Gonika School Prashant Vihar,5,1,D-6604(-)DOWN
+Dwarka Sector-4/5 X-Ing,5,1,DCS(+)UP
+Gurudwara Majnu Ka Tila,5,1,D-0001DOWN
+Vivekanand Mahila Collage,5,1,243DOWN
+Banarsi Dass Estate,5,1,145DOWN
+Rr Lines,5,1,588LSTLUP
+Rohini Sec-3/4 Xing,5,2,932DOWN
+Sahid Bhagat Singh,5,1,963UP
+S.J. Air Port,5,2,0502(NS)UP
+Dlf Chhattar Pur Farm,5,1,D-7103DOWN
+"P.S, D.B Gupta Road",5,1,353DOWN
+Nehru Appartments,5,2,445UP
+E-Blcok Nand Nagri,4,2,992UP
+A-3 Paschim Vihar Water Tank,4,1,233DOWN
+Sullabh,4,1,947ADOWN
+Shivam Apartment Vikas Puri,4,1,863UP2
+Yamuna Vihar Ablock,4,2,D-5501UP
+Noida Sec,4,1,319ADOWN
+Munirka Appartement,4,2,DCS(+)UP
+Ghuman Hera X-Ing,4,1,821DOWN
+Roshan Pura Najafgarh,4,1,892UP
+Fortige Hospital,4,1,323DOWN
+Noida Sect - 12,4,1,319DOWN
+Indraprastha Park,4,2,412UP
+Rohini Sec-11 B-2,4,1,D-3201UP
+Khakahri More,4,1,D-9910UP
+Isbt K. Gate Shyam Nath Marg,4,1,164DOWN
+B1 Vasant Kunj,4,1,947ADOWN
+Bharthal Yaso Bhoomi,4,1,D-9916UP
+Swaroop Nagar,4,2,138STLUP
+Rajinder Place,4,1,D-6101DOWN
+Water Tank / Ekta Enclave,4,1,913DOWN
+Mayur Vihar Phiii,4,1,611BUP
+States Man,4,2,167DOWN
+Vaishali,4,2,964DOWN
+Sant Pura,4,1,861DOWN
+Sadat Nagar,4,1,913UP
+Ramjan Pur Village,4,1,162DOWN
+Mangol Puri Ind Area,4,1,945UP
+S.P.M. Collage,4,2,913UP
+Railway Museum,4,2,0604(NS)UP
+Old Rajinder Nagar,3,1,D-6101DOWN
+Bhero Enclave,3,1,913UP
+Shashtri Park Nh-1,3,1,973DOWN
+Mangol Puri C-Block,3,1,950DOWN
+Super Bazar Con Place,3,1,0604(NS)UP
+Banwari Lal Hospital,3,1,490DOWN
+Pb Station,3,1,D-9102UP
+Sri Niwaspuri / Pg Dav College Lajpat Nagar,3,1,543BUP
+P.S Kamla Market,3,1,144AUP
+Madi Pur J J Colony Metro Station,3,1,233STLDOWN
+Lsr College,3,1,529SPLDOWN
+Sri Govind Singh Collage,3,1,167UP
+Kotla Vihar Phase I,3,1,923A_UP
+Khedi Baba Pull / Akash Ganga Hospital,3,2,863STL-HND-3DOWN
+Agaha Kha Hall,3,2,355DOWN
+Dps School,3,1,374UP
+Dsidc Sec 1 Bawana,3,1,106AUP
+Safiyabad Crossing,3,2,112STLUP
+Ram Prasth X-Ing,3,1,202AUP
+Mubarak Pur X-Ing,3,1,701UP
+S.Raja Harish Chander Hosp. A-7 Blk.,3,1,173UP
+Mukarba Chowk Crossing,3,1,945UP
+Grudwara Nanak Piau,3,1,D-2203(+)UP
+Dwarka Sec-11 Pkt-2,3,1,D-9903(+)UP
+Rupali Enclave Rs Satsang,3,3,962SPLDOWN
+Nangloi J .J. Colony,3,1,913UP
+Y Blk Mangol Puri,3,1,0114(NS)UP
+Nangloi Bus Stand,3,1,D-0002STLDOWN
+Govt. Quarters / Sarai Rohilla,3,1,925UP
+G.P.O.,3,1,925DOWN
+Don Basco,3,1,D-9915DOWN
+Darya Ganj / Subhash Nagar,3,1,118EXTNUP
+Tuglak Cresent,3,2,168DOWN
+Apeejee Collage Dwarka Sector-8,3,1,DCS(+)UP
+Mayur Vihar Phase 1 Xing,3,1,355UP
+D 2/3 Vasant Kunj,3,1,947ADOWN
+Uadsin Ashram,3,1,D-9915UP
+K.D Block,3,1,03UP
+New Subzi Mandi,3,2,145DOWN
+D D A Buster Pump Station Sec-23,3,1,716DOWN
+Shahabad Dairy A Block,3,1,012(NS)UP
+Jahangir Puri M/S,3,1,945DOWN
+Amik Vihar / Nihal Vihar,3,1,233UP
+Vasisht Park Sagar Pur,3,1,D-6901UP
+Tirath Ram Hospital,3,1,D-0001DOWN
+Din Dayal Upadhaya Marg,3,3,0740(NS)DOWN
+West Block Friends Enclve Mundka,2,2,567AUP
+Udashin Asram,2,1,D-9908UP
+Nai Anaz Mandi,2,1,175UP
+Nathu Pura More,2,2,134DOWN
+Than Singh Marg,2,1,D-0005UP
+Mangla Puri Xing (Health Center) / Palam Village,2,1,947AUP
+Mukherjee Park,2,1,072(NS)UP
+Water Tank Nangloi,2,1,923A_DOWN
+Bal Bhikshu Ghar,2,1,948UP
+Balmiki Mandir Marg,2,1,712DOWN
+Noida Sec -43 P.C. Sadar Pur,2,1,319DOWN
+Mangol Puri T-Block,2,2,950DOWN
+A.K Stadium,2,1,793UP
+Garrison Engineers,2,1,567DOWN
+Maha.Suraj Mal Stadium,2,1,905UP
+East Of Kailash,2,1,930UP
+Ram Mandir /Gh-13,2,1,233STLDOWN
+Shakkar Pur School Block,2,1,349AUP
+Prithvi Raj Road Crossing,2,2,605ADOWN
+Keshav Nagar (Mukti Ashram),2,2,61DOWN
+Chitranjan Park B-Block,2,2,490DOWN
+Gpo Kashmere Gate,2,1,0405(NS)UP
+Dwarka Sec-7 Princess Park,2,1,783EXTUP
+Power House R U Block,2,1,D-6301UP
+Dwarka Sector-16 Guru Govind Singh University,2,1,DCS(-)DOWN
+Kodiya Pul Bus Stand,2,1,175UP
+Punchkuain Road / Banwari Lal Hosp.,2,1,966BUP
+Dhaka Gaon,2,2,61UP
+Madi Pur Vill.,2,2,963UP
+L R X-Ing,2,1,D-5505UP
+Dera Satguru Sewaram Sahai Sec 24/25 Crossing,2,1,141ADOWN
+G G S I P University,2,1,164DOWN
+Geeta Colony 2 Block,2,1,310UP
+Bawana Depot Sec.-1,2,1,D-3305DOWN
+Nanak Sar Gurudwara,2,1,121UP
+Bawana Thana,2,1,948DOWN
+Janak Puri Center Market,2,2,D-9102DOWN
+Bijwason Rly. St. Crossing (After Cross Bridge),2,1,U-SPL-22DOWN
+Subhash Place Depot Punjab Kesary,2,1,0114(NS)UP
+Jag Pravesh Chandra Hospital,2,1,D-5504DOWN
+South Park Apartment,2,2,445UP
+Sanjay Colony Gali No 10,1,1,112AUP
+Amrawati Piou,1,1,D-9911DOWN
+Anand Parwat Industrial Area 1,1,1,976DOWN
+Dhirpur C.V Raman I.T.I,1,1,907DOWN
+I.S.B.T K.Gate,1,1,117DOWN
+Sanoth Village Chowk,1,1,120CUP
+Vidyut Bhawan Raja Bazar Road,1,1,D-6101UP
+Netaji Nagar-Africa Avenue,1,1,536DOWN
+Dilshad Garden Gt Road,1,1,214BDOWN
+Daulat Pur Crossing,1,1,818ASTLDOWN
+Dmrc Depot,1,1,218DOWN
+I P Power House ( I T O Ring Road ),1,1,318UP
+Dwarka Sec 4/5 &11/12 X-Ing,1,1,794ASTLUP
+I G Delhi Tech. University,1,1,167UP
+Ram Prasth Mandir,1,1,202AUP
+Yamuna Bridge / G G S University,1,1,964DOWN
+Gh14 Paschim Vihar,1,1,153DOWN
+N Blk.Rajender Place,1,1,857DOWN
+Rohini Sec11 (Aggarwal Sabha) / Rohini Sfs Flats,1,1,889STLDOWN
+A-1 Janakpuri-Dc2228,1,1,947ADOWN
+Education Office (Lucknow Rd),1,1,108DOWN
+Nangloi Jj Colony,1,1,926AUP
+E-Blk Nand Nagri,1,1,340DOWN
+S .P Marg 11 Murti,1,1,703UP
+Nangloi Railway X-Ing,1,1,976UP
+Rao Tularam College,1,1,D-002(-)DOWN
+A-2B Akta Appartement,1,1,233STLDOWN
+Wazirabad,1,1,121UP
+Janak Puri C-6,1,1,D-9102UP
+Ranhola 2,1,1,922UP
+Sabzi Mandi Kabir Basti,1,1,D-0003UP
+Gurudwara Vikas Puri,1,1,793DOWN
+Janak Puri C-5,1,1,D-9102DOWN
+Vardhman Mall,1,1,DCS(+)UP
+Dansa Crossing Najafgarh,1,1,072(NS)UP
+Andra Café Old Rajinder Nagar,1,1,D-6101UP
+Tilak Nagar Terminal / Tilak Nagar,1,1,818BSTLUP
+Center Market ( Deep Market),1,1,168UP
+Kishan Ganj Govt. Quarter,1,1,D-0004UP
+Gazi Pur Police Station,1,1,211CDOWN
+Shopping Complex Nelson Mandela Marg,1,1,MBS-6UP
+Old Chandrawal Village,1,1,907DOWN
+Tees Hazari Court,1,1,102DOWN
+Shyam Lal College Shahdara,1,1,236ADOWN
+C 3 Janak Puri,1,1,832UP
+Mata Chandan Devi Hospital,1,1,863DOWN2
+Pastel Account Office / Old Sectt.,1,1,907DOWN
+Paschim Vihar Road No 29,1,1,567BDOWN2
+Parteek Apartment Prashant Vihar,1,1,D-6604(-)DOWN
+Lal Market Prashant Vihar,1,1,D-6604(-)DOWN
+Surhera Community Center,1,1,D-9915DOWN
+Subzi Mandi,1,1,D-0003DOWN
+P S Sansad Marg,1,1,950DOWN
+Bawana Primary School,1,1,U-SPL-11UP
+Barakhamba Road M. Station,1,1,349ADOWN
+Prashant Vihar Road No.-29,1,1,D-6604(-)DOWN
+Prehlad Market,1,1,966BDOWN
+Prince Park Apartments,1,1,783EXTDOWN
+Croons Factory,1,1,134UP
+Qumaruddin Nagar,1,1,907UP
+Sec6 Telephone Exchang,1,1,728BUP
+New Police Line Kigsway Camp,1,1,D-2203(+)UP
+Vasant Goan,1,1,D-9102UP
+D.D.A Booster Pump,1,1,D-9904UP
+Ashok Vihar B A Block,1,1,117DOWN
+D D A Flats Munirka,1,1,MBS-6UP
+D D A Booster Pump,1,1,DCS(-)DOWN
+Classic Apartement,1,1,716DOWN
+B-4 Narela,1,1,173UP
+Shahid Bhagat Singh Mg.,1,1,966BUP
+China Ammbesy,1,1,793UP
+Avantika Sec 2,1,1,932UP
+Chhota Majra,1,1,D-3303DOWN
+Azad Market / Dcm,1,1,236ADOWN
+Nidhi Appartment,1,1,319ADOWN
+Kasmiri Gate Isbt ( Metro Station),1,1,164UP
+Shakur Pur A Block,1,1,945DOWN
+Najafgarh Dhansa More,1,1,922UP

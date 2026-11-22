@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharosa Bus</title>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:900px;margin:1.5em auto;padding:0 1em;color:#222}
+ h1{margin:0 0 .2em} .sub{color:#555;margin-bottom:1em}
+ .bar{display:flex;gap:.8em;flex-wrap:wrap;align-items:center;margin:1em 0}
+ select{padding:.4em;font-size:1em}
+ .opt{border:1px solid #ddd;border-radius:10px;padding:.8em 1em;margin:.7em 0}
+ .opt.best{border-color:#1a7f37;box-shadow:0 0 0 2px #1a7f3722}
+ .head{display:flex;justify-content:space-between;font-weight:600}
+ .legs{margin-top:.5em;display:flex;flex-wrap:wrap;gap:.4em;align-items:center}
+ .chip{padding:.15em .6em;border-radius:12px;font-size:.85em;color:#fff}
+ .seats{background:#1a7f37}.standing{background:#8a5a00}.crowded{background:#c62828}.unknown{background:#6b6b6b}
+ .walk{color:#666;font-size:.85em}
+ .note{background:#fff8e1;border:1px solid #f0d78c;border-radius:8px;padding:.6em .9em;font-size:.88em;margin-top:1.2em}
+ .small{color:#666;font-size:.82em}
+ .nav{margin:.2em 0 .6em;font-size:.9em} details{margin-top:.4em;font-size:.85em} details p{margin:.25em 0;color:#444}
+</style></head>
+<body><main>
+<h1>Bharosa Bus</h1>
+<div class="nav"><a href="index.html">Plan a trip</a> · <a href="routes.html">Route map</a> · <a href="operators.html">Operators</a></div>
+<div class="sub">Bus options with how full they usually are. Grey means we don't have enough tickets to say.</div>
+<div class="bar">
+ <label>Trip <select id="trip"></select></label>
+ <label>Leaving <select id="time"></select></label>
+ <label>Labels <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option></select></label>
+ <label style="flex:1;min-width:260px">Faster <input type="range" id="w" min="0" max="1" step="0.05" value="0" style="width:60%"> More comfortable</label>
+</div>
+<div class="bar" id="live" hidden>
+ <b>Any trip:</b> <input id="cf" list="stops" placeholder="From stop" style="padding:.4em"> <input id="ct" list="stops" placeholder="To stop" style="padding:.4em">
+ <input id="ctime" type="time" value="18:00" style="padding:.4em"> <select id="cday"><option>weekday</option><option>weekend</option></select>
+ <button id="cgo" style="padding:.4em .9em">Plan</button><datalist id="stops"></datalist></div>
+<div id="out" aria-live="polite"></div>
+<div class="note" id="assume"></div>
+<script>
+const LEVEL_EN={seats:"Seats likely",standing:"Standing room",crowded:"Crowded",unknown:"Not enough data"};
+const LEVEL_HI={seats:"सीट मिलेगी",standing:"खड़े होने की जगह",crowded:"भीड़",unknown:"पक्का नहीं"};
+let LEVEL_TEXT=LEVEL_EN;
+let DATA=null, CUSTOM=null;
+const RANK={seats:0,standing:1,crowded:2};
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+fetch("data/demo_journeys.json").then(r=>r.json()).then(d=>{DATA=d;init();}).catch(e=>{document.getElementById("out").textContent="Could not load data/demo_journeys.json ("+e+"). Serve this folder over http (make web) instead of opening the file directly; run make export if the data is missing.";});
+function trips(){return [...new Set(DATA.queries.map(q=>q.from+" → "+q.to))];}
+function init(){
+ const tr=document.getElementById("trip"); trips().forEach(t=>tr.add(new Option(t,t)));
+ const times=[...new Set(DATA.queries.map(q=>q.day_type+" "+q.depart))]; const tm=document.getElementById("time");
+ times.forEach(t=>tm.add(new Option(t,t)));
+ ["trip","time"].forEach(id=>document.getElementById(id).addEventListener("input",()=>{CUSTOM=null;render();}));
+ document.getElementById("w").addEventListener("input",render);
+ document.getElementById("lang").addEventListener("input",e=>{LEVEL_TEXT=e.target.value==="hi"?LEVEL_HI:LEVEL_EN;render();});
+ fetch("api/health").then(r=>r.ok?r.json():null).then(h=>{if(!h)return; document.getElementById("live").hidden=false;
+  fetch("api/stops").then(r=>r.json()).then(names=>{const dl=document.getElementById("stops"); names.forEach(n=>dl.appendChild(new Option(n)));});
+  document.getElementById("cgo").addEventListener("click",()=>{const f=cf.value.trim(),t=ct.value.trim(); if(!f||!t)return;
+   document.getElementById("out").textContent="Planning…";
+   fetch(`api/plan?from=${encodeURIComponent(f)}&to=${encodeURIComponent(t)}&time=${encodeURIComponent(ctime.value||"18:00")}&day=${encodeURIComponent(cday.value)}`)
+    .then(r=>r.json()).then(q=>{CUSTOM=q.error?{options:[],error:q.error}:q;render();});});}).catch(()=>{});
+ const a=DATA.assumptions;
+ document.getElementById("assume").innerHTML="<b>How to read this.</b> Times are scheduled GTFS times, not live. Crowding comes from "+
+  "about 2.5M October 2026 e-tickets (a small share of all rides), scaled up with assumed ranges (ticket share "+a.sample_rate.join("–")+
+  ", pass-holder uplift "+a.pass_holder_uplift.join("–")+"). Bus capacity (\"crowded\" means over the rated seats + standing) comes from "+a.capacity_source+". Loads above 100 are shown as 100+. A cell needs at least "+a.min_tickets_per_cell+" tickets to show a level. Generated "+DATA.generated+".";
+ render();
+}
+const busTxt=e=>e.bus?` Bus: ${e.bus==="9m"?"9 m DEVI (inferred from a short D-route)":"12 m"}, ${e.seats} seats + ${e.rated_standing} standing.`:"";
+function why(o){
+ const rows=o.legs.filter(l=>l.type==="ride").map(l=>{
+  const e=l.evidence;
+  if(!e) return `<p><b>${esc(l.route)}</b>: not enough tickets to estimate (${Math.round(l.evidence_coverage*100)}% of stretches covered, need 50%).</p>`;
+  const cap=v=>v>100?"100+":v;
+  if(e.grain==="route typical") return `<p><b>${esc(l.route)}</b>: too few stretches on this ride have data, so this is the route's typical level at this time of day (busier-quarter stretch about ${cap(e.load)} people; ${e.stretches_with_data} stretches, ${e.tickets} tickets). Less precise than a stretch estimate.${busTxt(e)}</p>`;
+  return `<p><b>${esc(l.route)}</b>: busiest stretch ${esc(e.stretch)}. About ${cap(e.load)} people on board (range ${cap(e.low)}–${cap(e.high)}), from ${e.tickets} tickets over ${e.days} days`+
+   `${e.grain==="hour"?"":" (pooled across the day part because the single hour had too few tickets)"}. ${e.pooled_stretches}/${e.stretches} stretches use pooled data.${busTxt(e)}</p>`;}).join("");
+ return `<details><summary>Why this estimate?</summary>${rows}<p>The range mixes day-to-day variation with assumed ticket share and pass-holder uplift. Capacity is assumed.</p></details>`;
+}
+function render(){
+ const [from,to]=document.getElementById("trip").value.split(" → "); const [dt,dep]=document.getElementById("time").value.split(" ");
+ const w=parseFloat(document.getElementById("w").value);
+ const q=CUSTOM||DATA.queries.find(q=>q.from===from&&q.to===to&&q.depart===dep&&q.day_type===dt);
+ const out=document.getElementById("out"); out.innerHTML="";
+ const rl=document.createElement("div"); rl.className="small"; rl.textContent=q&&q.from_resolved?`Searched stops: ${q.from_resolved} → ${q.to_resolved}`:""; out.appendChild(rl);
+ if(!q||!q.options.length){out.textContent="No bus journey found for this trip and time.";return;}
+ const opts=q.options.map(o=>({...o,score:o.minutes_from_request+4*o.transfers+2*w*o.crowd_penalty_min})).sort((a,b)=>a.score-b.score).slice(0,4);
+ const fastest=opts.reduce((a,b)=>a.minutes_from_request<=b.minutes_from_request?a:b);
+ const tag=o=>{if(o===fastest||o.worst_crowding==="unknown"||fastest.worst_crowding==="unknown")return o===fastest?"Fastest":"";
+  const dm=Math.round(o.minutes_from_request-fastest.minutes_from_request), better=RANK[o.worst_crowding]<RANK[fastest.worst_crowding];
+  return better?`${dm>0?"+"+dm+" min":"same time"}, less crowded than the fastest`:"";};
+ opts.forEach((o,i)=>{
+  const d=document.createElement("div"); d.className="opt"+(i===0?" best":"");
+  const legs=o.legs.map(l=>l.type==="walk"?`<span class="walk">walk ${Math.round(l.minutes)} min</span>`:
+    `<span class="chip ${l.crowding}" title="${esc(l.board)} → ${esc(l.alight)}${l.peak_load?` · busiest stretch ≈${l.peak_load>100?"100+":l.peak_load} people (assumption-based)`:""}">${esc(l.route)} · ${l.minutes.toFixed(0)} min · ${LEVEL_TEXT[l.crowding]}${l.basis==="route"?(LEVEL_TEXT===LEVEL_HI?" (रूट औसत)":" (route average)"):""}</span>`).join(" › ");
+  d.innerHTML=`<div class="head"><span>${esc(o.leave_origin)} → ${esc(o.arrive)}</span><span>${Math.round(o.minutes_from_request)} min · ${o.transfers} change${o.transfers===1?"":"s"}</span></div>
+   ${tag(o)?`<div class="small" style="color:#1a7f37;font-weight:600">${tag(o)}</div>`:""}
+   <div class="legs">${legs}</div><div class="small">${Math.round(o.crowding_known_share*100)}% of ride time has enough tickets to estimate crowding</div>${why(o)}`;
+  out.appendChild(d);
+ });
+}
+</script>
+</main></body></html>

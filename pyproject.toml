@@ -1,0 +1,12 @@
+[project]
+name = "bharosa-bus"
+version = "0.0.1"
+description = "Auditable bus crowding estimates and a crowding-aware planner for Delhi (Transport Stack Hackathon 2026, PS2)"
+requires-python = ">=3.10"
+dependencies = ["duckdb", "polars", "pandas", "numpy", "rapidfuzz", "matplotlib", "python-dotenv"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

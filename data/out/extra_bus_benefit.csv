@@ -1,0 +1,41 @@
+route,band,day_type,bus_class,seats,buses_in_day_part,stretches,standing_min,crowded_stretches,max_load,busiest_stretch,tickets,standing_min_saved,standing_min_saved_low
+188DOWN,am peak 7-10,weekday,12m,39,10.0,73,52314.0,47.0,101.0,Majnu Ka Tila Outer Ring Road to Raksha Vigyan Kendra / Metcalf House,27789.0,4938.0,2843.0
+539DOWN,am peak 7-10,weekday,12m,39,44.0,73,180059.0,34.0,99.0,Shri Golok Dham Bijwasan School to Kapashera Village Bijwasan Road,97347.0,4683.0,2839.0
+717AUP,am peak 7-10,weekday,12m,39,73.0,51,252278.0,37.0,101.0,Asian Market to Saket Crossing,167153.0,3418.0,2607.0
+706DOWN,am peak 7-10,weekday,12m,39,23.0,45,88428.0,29.0,101.0,Radission Hotel to Mahipal Pur (NH8) / MAHIPAL PUR CROSSING,41355.0,3456.0,2532.0
+717ADOWN,pm peak 17-20,weekday,12m,39,55.0,45,160455.0,31.0,101.0,Maidan Garhi Crossing (SDM Court) to Saket Crossing,100694.0,3259.0,2380.0
+254UP,am peak 7-10,weekday,12m,39,18.0,45,52739.0,26.0,98.0,Bhalaswa Crossing / Bhalaswa Golf Course to Shaheed Captain Vikram Batra Flyover / Mubark chowk,27560.0,2835.0,2223.0
+717BDOWN,pm peak 17-20,weekday,12m,39,43.0,44,103734.0,29.0,101.0,Saket Crossing to Asian Market,73546.0,2567.0,1832.0
+706UP,pm peak 17-20,weekday,12m,39,22.0,45,38965.0,15.0,79.0,Rajokari Crossing NH8 / Shiv Murti to Samlakha Xing,22107.0,2556.0,1771.0
+717ADOWN,am peak 7-10,weekday,12m,39,61.0,45,143058.0,19.0,82.0,Verma Farm to Kathuria Public School/Vasant Kunj D7,97536.0,3342.0,1751.0
+729DOWN,am peak 7-10,weekday,12m,39,56.0,45,141138.0,16.0,101.0,Shiv Murti (NH8) to Rang puri (NH8),76075.0,2691.0,1749.0
+801UTTKAPUP,am peak 7-10,weekday,12m,39,18.0,44,47587.0,22.0,101.0,Govt Boys Sr Sec School (Shahbad) to Bharat Petrolium (Dwarka Link Road),25289.0,1899.0,1637.0
+DW5DOWN,am peak 7-10,weekday,12m,39,7.0,35,18802.0,26.0,101.0,Raj Rif Line to Golf Club,11231.0,2040.0,1574.0
+729DOWN,am peak 7-10,weekend,12m,39,50.0,45,109862.0,14.0,98.0,Uppal Hotel to Shiv Murti (NH8),24995.0,3080.0,1569.0
+717BUP,am peak 7-10,weekday,12m,39,43.0,41,91408.0,24.0,101.0,Asian Market to Saket Crossing,65864.0,2736.0,1564.0
+717AUP,am peak 7-10,weekend,12m,39,64.0,51,156915.0,31.0,101.0,Asian Market to Saket Crossing,50563.0,3365.0,1512.0
+RL77DOWN,am peak 7-10,weekday,12m,39,10.0,39,20578.0,23.0,88.0,Dhaula Kuan to OFFICER ENCLAVE S.P MARG / Sardar Patel Marg,14005.0,2458.0,1508.0
+522UP,am peak 7-10,weekday,12m,39,39.0,53,61748.0,20.0,94.0,Sheikh Sarai Phase II / Shaheed Bhagat Singh College to Chirag Delhi,52339.0,1790.0,1458.0
+8UP,am peak 7-10,weekday,12m,39,42.0,34,90675.0,18.0,101.0,Ali Village to Maruti Factory /  Haldiram,47819.0,1442.0,1407.0
+717UP,am peak 7-10,weekday,12m,39,30.0,57,71459.0,26.0,101.0,Asian Market to Saket Crossing,57598.0,2622.0,1393.0
+258DOWN,am peak 7-10,weekend,12m,39,32.0,29,98534.0,25.0,101.0,Banarsi Daas Estate Timarpur to Mall Road,23183.0,1323.0,1220.0
+717AUP,early 5-6,weekday,12m,39,17.0,51,26615.0,21.0,80.0,Asian Market to Saket Crossing,27855.0,2620.0,1219.0
+717ADOWN,pm peak 17-20,weekend,12m,39,46.0,45,78856.0,21.0,79.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),27373.0,2872.0,1207.0
+RL77EXTDOWN,am peak 7-10,weekday,12m,39,4.0,41,9219.0,25.0,92.0,P.S. Sadar Bazar / Chhawani Hospital to Kabul Line,6281.0,2559.0,1177.0
+801STLDW2UP,am peak 7-10,weekday,12m,39,19.0,24,24551.0,10.0,85.0,Rang puri (NH8) to Centaur Hotel / New Custom House,12984.0,1618.0,1154.0
+511AUP,am peak 7-10,weekday,12m,39,51.0,46,102665.0,17.0,101.0,okhla xing to Tehkhand Depot DTC,79266.0,2462.0,1143.0
+894UP,am peak 7-10,weekday,12m,39,24.0,39,64997.0,17.0,101.0,Nizamuddin Extension to POLICE STATION NIZAMUDDIN (DARGAH),24309.0,1661.0,1143.0
+729UP,pm peak 17-20,weekday,12m,39,58.0,46,72780.0,8.0,73.0,Rajokari Crossing NH8 / Shiv Murti to Samlakha Xing,49096.0,2202.0,1114.0
+680DOWN,am peak 7-10,weekday,12m,39,16.0,52,31210.0,21.0,101.0,Moti Bagh 1 to Rail Museum,28217.0,2064.0,1109.0
+258UP,pm peak 17-20,weekday,12m,39,29.0,28,46638.0,19.0,101.0,Banarsi Daas Estate Timarpur to Timarpur,33582.0,1486.0,1090.0
+525UP,am peak 7-10,weekday,12m,39,21.0,29,34404.0,17.0,101.0,Vayusenabad (Tigri) to Khanpur Extension / Devli Road Xing  / Dakshin Puri G-Block,23896.0,1609.0,1081.0
+544DOWN,am peak 7-10,weekday,12m,39,54.0,45,91697.0,16.0,101.0,Sheikh Sarai Phase II / Shaheed Bhagat Singh College to Chirag Delhi,67040.0,1367.0,1066.0
+720DOWN,am peak 7-10,weekday,12m,39,9.0,53,18460.0,23.0,100.0,Dhaula Kuan to OFFICER ENCLAVE S.P MARG / Sardar Patel Marg,11780.0,1627.0,1062.0
+740UP,am peak 7-10,weekday,12m,39,7.0,49,23955.0,15.0,101.0,Rainy Well to Delhi Secretariat,8230.0,1304.0,1046.0
+801IGIINDDOWN,early 5-6,weekday,12m,39,8.0,38,16997.0,7.0,101.0,Cargo / Express Terminal Gate 6 to Aero City Metro Station,5908.0,1256.0,1043.0
+258DOWN,midday 11-16,weekday,12m,39,35.0,29,38972.0,17.0,91.0,Banarsi Daas Estate Timarpur to Mall Road,33547.0,1120.0,984.0
+801STLDW2UP,early 5-6,weekday,12m,39,12.0,20,11321.0,7.0,81.0,Rang puri (NH8) to Centaur Hotel / New Custom House,6315.0,1194.0,966.0
+258DOWN,midday 11-16,weekend,12m,39,35.0,29,33989.0,17.0,84.0,Banarsi Daas Estate Timarpur to Mall Road,12457.0,1120.0,965.0
+894DOWN,pm peak 17-20,weekday,12m,39,16.0,40,36478.0,19.0,101.0,Sunder Nagar to Delhi Public School,15374.0,1566.0,958.0
+227ADOWN,am peak 7-10,weekday,12m,39,26.0,19,37324.0,13.0,101.0,Kaithwara / Zero Pusta to Shastri Park GT Road,18636.0,1147.0,955.0
+85UP,am peak 7-10,weekday,12m,39,36.0,50,98641.0,16.0,101.0,Delhi Secretariat to ITO AGCR /  ITO,41961.0,1610.0,941.0
