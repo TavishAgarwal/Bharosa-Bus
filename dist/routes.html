@@ -1,36 +1,86 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bharosa Bus: route map</title>
-<style>
- body{font-family:system-ui,sans-serif;max-width:900px;margin:1.5em auto;padding:0 1em;color:#222}
- .nav{margin:.2em 0 .8em;font-size:.9em} .bar{display:flex;gap:.8em;flex-wrap:wrap;margin:.8em 0} select{padding:.4em;font-size:1em}
- svg{width:100%;height:520px;border:1px solid #ddd;border-radius:8px;background:#fafafa}
- .key span{display:inline-block;margin-right:1em;font-size:.9em} .dot{display:inline-block;width:12px;height:12px;border-radius:6px;vertical-align:middle;margin-right:4px}
- #info{min-height:1.5em;margin:.5em 0;color:#444}
-</style></head><body><main>
-<h1>Route map</h1>
-<div class="nav"><a href="index.html">Plan a trip</a> · <a href="routes.html">Route map</a> · <a href="operators.html">Operators</a></div>
-<div class="bar"><label>Route <select id="r"></select></label><label>Day <select id="d"><option>weekday</option><option>weekend</option></select></label><label>Time <select id="b"></select></label></div>
-<div class="key"><span><i class="dot" style="background:#1a7f37"></i>Seats likely</span><span><i class="dot" style="background:#8a5a00"></i>Standing room</span><span><i class="dot" style="background:#c62828"></i>Crowded</span><span><i class="dot" style="background:#9a9a9a"></i>Not enough tickets</span></div>
-<div id="info">Hover a segment.</div>
-<svg id="m" viewBox="0 0 800 520"></svg>
-<p class="small" style="color:#666;font-size:.85em">Segments are the stretches between consecutive stops, drawn straight (no road geometry). Levels use assumed bus capacity and assumed ticket-share scaling.</p>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+<main class="panel">
+ <div class="phead">
+  <div class="brand"><h1><span class="logo">BB</span>Route map</h1></div>
+  <div class="nav"><a href="index.html">Plan a trip</a> · <a href="operators.html">Operators</a> · <a href="https://github.com/TavishAgarwal/Bharosa-Bus">Method</a></div>
+  <p class="sub">How full each stretch of a route usually is. Pick a day and a time of day.</p>
+  <input id="q" class="search" type="search" placeholder="Find a route, e.g. 717AUP" aria-label="Find a route">
+  <div class="tabs" role="group" aria-label="Day" id="days">
+   <button data-v="weekday" aria-pressed="true">Weekday</button><button data-v="weekend" aria-pressed="false">Weekend</button>
+  </div>
+  <div class="tabs small" role="group" aria-label="Time of day" id="bands"></div>
+ </div>
+ <div class="list" id="out" aria-live="polite"></div>
+ <details class="note"><summary>How to read this</summary><div>Each coloured piece is the stretch between two stops, drawn straight between them. Levels use each route's inferred bus size and assumed ticket-share scaling; grey dashes mean too few tickets to say. Routes shown: the 40 busiest by tickets plus every route on the operators page.</div></details>
+</main>
+<section class="mapwrap" aria-label="Map of the selected route">
+ <div id="map"></div>
+ <div class="legend" id="legend"></div>
+ <div class="maptools"><a href="index.html">Plan a trip</a><a href="operators.html">Operators</a></div>
+ <div class="summary" id="summary" hidden></div>
+</section>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="app.js"></script>
 <script>
-const COL=["#1a7f37","#8a5a00","#c62828"],TXT=["Seats likely","Standing room","Crowded"];let D;
-fetch("data/route_profiles.json").then(r=>r.json()).then(d=>{D=d;const r=document.getElementById("r");Object.keys(d.routes).forEach(k=>r.add(new Option(k,k)));
- const b=document.getElementById("b");d.bands.forEach((n,i)=>b.add(new Option(n,i)));b.value=3;["r","d","b"].forEach(i=>document.getElementById(i).addEventListener("input",draw));draw();}).catch(e=>info.textContent="Could not load data/route_profiles.json ("+e+"). Serve this folder over http (make web); run make export if the data is missing.");
-function draw(){
- const R=D.routes[r.value],pts=R.stops,P=R.profile[d.value+"|"+b.value],svg=document.getElementById("m");svg.innerHTML="";
- if(pts.length<2)return;
- const la=pts.map(p=>p[0]),lo=pts.map(p=>p[1]),mnla=Math.min(...la),mxla=Math.max(...la),mnlo=Math.min(...lo),mxlo=Math.max(...lo);
- const k=Math.min(740/Math.max(mxlo-mnlo,1e-4),460/Math.max(mxla-mnla,1e-4));
- const X=p=>30+(p[1]-mnlo)*k,Y=p=>490-(p[0]-mnla)*k;
- for(let i=0;i<pts.length-1;i++){
-  const l=document.createElementNS("http://www.w3.org/2000/svg","line");
-  l.setAttribute("x1",X(pts[i]));l.setAttribute("y1",Y(pts[i]));l.setAttribute("x2",X(pts[i+1]));l.setAttribute("y2",Y(pts[i+1]));
-  const c=P.level[i];l.setAttribute("stroke",c<0?"#9a9a9a":COL[c]);l.setAttribute("stroke-width",c<0?3:6);l.setAttribute("stroke-linecap","round");
-  l.addEventListener("mouseenter",()=>info.textContent=`${pts[i][2]} → ${pts[i+1][2]}: `+(c<0?"not enough tickets":`${TXT[c]} (about ${P.load[i]>100?"100+":P.load[i]} people, assumption-based)`));
-  svg.appendChild(l);}
- [0,pts.length-1].forEach(i=>{const t=document.createElementNS("http://www.w3.org/2000/svg","text");t.setAttribute("x",X(pts[i])+6);t.setAttribute("y",Y(pts[i])-6);t.setAttribute("font-size","11");t.textContent=pts[i][2].slice(0,28);svg.appendChild(t);});
+let D=null,MAP=null,DAY="weekday",BAND=3,SEL=null;
+fetch("data/route_profiles.json").then(r=>r.json()).then(d=>{D=d;init();})
+ .catch(e=>{$("out").textContent="Could not load data/route_profiles.json ("+e+"). Serve this folder over http (make serve or make web).";});
+function init(){
+ MAP=makeMap("map"); $("legend").innerHTML=legendHTML();
+ $("bands").innerHTML=D.bands.map((n,i)=>`<button data-v="${i}" aria-pressed="${i===BAND}" title="${esc(n)}">${esc(n.replace(/ ?\d.*$/,"").replace("am peak","AM peak").replace("pm peak","PM peak").replace("early","Early").replace("midday","Midday").replace("late","Late"))}<br><small>${BANDS_SHORT[i]}</small></button>`).join("");
+ const h=new URLSearchParams(location.search); if(h.get("route")&&D.routes[h.get("route")])SEL=h.get("route");
+ if(h.get("day"))DAY=h.get("day"); if(h.get("band"))BAND=+h.get("band");
+ tabs("days",DAY); tabs("bands",String(BAND));
+ $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;DAY=b.dataset.v;tabs("days",DAY);render();});
+ $("bands").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;BAND=+b.dataset.v;tabs("bands",String(BAND));render();});
+ $("q").addEventListener("input",render);
+ render();
 }
-</script></main></body></html>
+function tabs(id,v){document.querySelectorAll(`#${id} button`).forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v?"true":"false"));}
+function stats(R){
+ const P=R.profile[DAY+"|"+BAND],lv=P?P.level:[],n=lv.length,known=lv.filter(c=>c>=0);
+ const worst=known.length?CODE[Math.max(...known)]:"unknown";
+ const cnt=k=>lv.filter(c=>c===k).length;
+ const tops=lv.map((c,i)=>({i,c,load:P.load[i]})).filter(x=>x.c>=0).sort((a,b)=>b.load-a.load).slice(0,3);
+ return {P,n,known:known.length,worst,crowded:cnt(2),standing:cnt(1),seats:cnt(0),max:known.length?Math.max(...tops.map(t=>t.load)):null,tops};
+}
+function render(){
+ const q=$("q").value.trim().toUpperCase().replace(/[\s\-_]/g,"");
+ const keys=Object.keys(D.routes).filter(k=>!q||k.includes(q));
+ const out=$("out"); out.innerHTML="";
+ if(!keys.length){out.innerHTML='<p class="empty">No route matches. The map has the 40 busiest routes plus those on the operators page.</p>';return;}
+ if(!SEL||!keys.includes(SEL))SEL=keys[0];
+ keys.forEach(k=>{
+  const R=D.routes[k],s=stats(R),st=R.stops,c=document.createElement("div");
+  c.className="card"+(k===SEL?" sel":""); c.tabIndex=0;
+  let h=`<div class="ctop"><div><div class="ctitle">${esc(k)}</div><div class="cmeta">${esc(st[0][2])} → ${esc(st[st.length-1][2])}</div></div>
+   <span class="badge b-${s.worst}">${esc(LABEL[s.worst])}</span></div>`;
+  if(k===SEL){
+   h+=`${stretchBar(s.P,s.n)}<div class="barkey"><span>${esc(st[0][2].slice(0,30))}</span><span>${esc(st[st.length-1][2].slice(0,30))}</span></div>
+    <div class="grid"><div>Stretches<b>${s.n}</b></div><div>Crowded<b>${s.crowded}</b></div><div>Standing<b>${s.standing}</b></div><div>Most on board<b>${s.max===null?"—":cap(s.max)}</b></div></div>
+    ${s.tops.length?`<ul class="tops">${s.tops.map(t=>`<li><span>${esc(st[t.i][2])} → ${esc(st[t.i+1][2])}</span><span>≈${cap(t.load)} · ${esc(LABEL[CODE[t.c]])}</span></li>`).join("")}</ul>`:`<p class="empty">Not enough tickets for this day and time.</p>`}`;
+  } else h+=stretchBar(s.P,s.n,"mini");
+  c.innerHTML=h;
+  if(k!==SEL){const pick=()=>{SEL=k;render();};c.addEventListener("click",pick);c.addEventListener("keydown",e=>{if(e.key==="Enter")pick();});}
+  out.appendChild(c);
+ });
+ const R=D.routes[SEL],s=stats(R),st=R.stops;
+ drawRoute(MAP,st,s.P,SEL);
+ const sm=$("summary");sm.hidden=false;
+ sm.innerHTML=`<div class="shead"><b>${esc(SEL)} · ${DAY} · ${esc(D.bands[BAND])}</b><span class="badge b-${s.worst}">${esc(LABEL[s.worst])}</span></div>
+  <div class="scols"><div>From<b>${esc(st[0][2])}</b></div><div>To<b>${esc(st[st.length-1][2])}</b></div>
+  <div>Stretches with data<b>${s.known} of ${s.n}</b></div><div>Seats / standing / crowded<b>${s.seats} / ${s.standing} / ${s.crowded}</b></div>
+  <div>Most on board<b>${s.max===null?"—":"≈"+cap(s.max)}</b></div><div>Busiest stretch<b>${s.tops.length?esc(st[s.tops[0].i][2]):"—"}</b></div></div>`;
+}
+</script>
+</body></html>

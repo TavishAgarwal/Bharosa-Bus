@@ -1,23 +1,89 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bharosa Bus: operators</title>
-<style>
- body{font-family:system-ui,sans-serif;max-width:1000px;margin:1.5em auto;padding:0 1em;color:#222}
- .nav{margin:.2em 0 .8em;font-size:.9em} table{border-collapse:collapse;width:100%;font-size:.88em} th,td{border-bottom:1px solid #eee;padding:.4em .5em;text-align:left} th{background:#f5f5f5}
- .bar{margin:.8em 0} select{padding:.4em}
-</style></head><body><main>
-<h1>Where extra buses would help most</h1>
-<div class="nav"><a href="index.html">Plan a trip</a> · <a href="routes.html">Route map</a> · <a href="operators.html">Operators</a></div>
-<h2 style="font-size:1.1em">If you add one bus: standing time saved per day</h2>
-<div style="overflow-x:auto"><table><thead><tr><th>Route</th><th>Time</th><th>Day</th><th>Bus</th><th>Buses now</th><th>Standing passenger-min / day</th><th>Saved by +1 bus</th><th>Saved, cautious estimate</th><th>Busiest stretch</th></tr></thead><tbody id="xb"></tbody></table></div>
-<p style="color:#666;font-size:.85em">Each stretch: people above the seat count &times; buses &times; minutes on that stretch. One more bus spreads the same riders over one more trip. "Cautious" uses the low end of the load range, so rows with a large cautious saving hold up even if our scale-up is too high. Ranked by the cautious saving.</p>
-<h2 style="font-size:1.1em">Routes with the most crowded stretches</h2>
-<div class="bar"><label>Day <select id="d"><option value="">all</option><option>weekday</option><option>weekend</option></select></label>
- <label>Time <select id="b"><option value="">all</option></select></label></div>
-<div style="overflow-x:auto"><table><thead><tr><th>Route</th><th>Time</th><th>Day</th><th>Crowded stretches</th><th>Crowded even at low estimate</th><th>Max people/bus</th><th>Busiest stretch</th></tr></thead><tbody id="t" aria-live="polite"></tbody></table></div>
-<p style="color:#666;font-size:.85em">Ranked by stretches that stay crowded even at the low end of the estimate. Loads depend on assumed bus capacity, assumed ticket share, and scheduled trip counts (the schedule may undercount running buses). Use as a lead for checking, not as a count.</p>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+<main class="panel">
+ <div class="phead">
+  <div class="brand"><h1><span class="logo">BB</span>Operators</h1></div>
+  <div class="nav"><a href="index.html">Plan a trip</a> · <a href="routes.html">Route map</a> · <a href="https://github.com/TavishAgarwal/Bharosa-Bus">Method</a></div>
+  <p class="sub">Where extra buses would help most, by route and time of day.</p>
+  <div class="tabs" role="group" aria-label="View" id="view">
+   <button data-v="xb" aria-pressed="true">If you add one bus</button><button data-v="cr" aria-pressed="false">Most crowded</button>
+  </div>
+  <div class="row"><select id="d" aria-label="Day"><option value="">All days</option><option>weekday</option><option>weekend</option></select>
+   <select id="b" aria-label="Time of day"><option value="">All times</option></select></div>
+  <div class="kpis" id="kpis"></div>
+ </div>
+ <div class="list" id="out" aria-live="polite"></div>
+ <details class="note"><summary>How to read this</summary><div id="how"></div></details>
+</main>
+<section class="mapwrap" aria-label="Map of the selected route">
+ <div id="map"></div>
+ <div class="legend" id="legend"></div>
+ <div class="maptools"><a href="index.html">Plan a trip</a><a href="routes.html">Route map</a></div>
+ <div class="summary" id="summary" hidden></div>
+</section>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="app.js"></script>
 <script>
-const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));let D=[];fetch("data/operator_overload.json").then(r=>r.json()).then(d=>{D=d;[...new Set(d.map(x=>x.band))].forEach(v=>b.add(new Option(v,v)));[d,b].forEach(()=>{});["d","b"].forEach(i=>document.getElementById(i).addEventListener("input",draw));draw();}).catch(e=>t.innerHTML="<tr><td>Could not load data/operator_overload.json ("+esc(e)+"). Serve this folder over http (make web) instead of opening the file directly; run make export if the data is missing.</td></tr>");
-fetch("data/extra_bus.json").then(r=>r.json()).then(x=>{document.getElementById("xb").innerHTML=x.map(r=>`<tr><td>${esc(r.route)}</td><td>${esc(r.band)}</td><td>${esc(r.day_type)}</td><td>${esc(r.bus_class)}</td><td>${r.buses_in_day_part}</td><td>${Math.round(r.standing_min).toLocaleString()}</td><td><b>${Math.round(r.standing_min_saved).toLocaleString()}</b></td><td>${Math.round(r.standing_min_saved_low).toLocaleString()}</td><td>${esc(r.busiest_stretch)}</td></tr>`).join("");}).catch(()=>{});
-function draw(){const dd=d.value,bb=b.value;t.innerHTML=D.filter(x=>(!dd||x.day_type===dd)&&(!bb||x.band===bb)).map(x=>`<tr><td>${esc(x.route)}</td><td>${esc(x.band)}</td><td>${esc(x.day_type)}</td><td>${x.crowded_stretches} of ${x.stretches_with_evidence}</td><td>${x.crowded_even_at_low_estimate}</td><td>${x.max_load>100?"100+":x.max_load}</td><td>${esc(x.busiest_stretch)}</td></tr>`).join("");}
-</script></main></body></html>
+const HOW={xb:"Standing time = people above the seat count × buses × minutes on each stretch, per day. One more bus spreads the same riders over one more trip. \"Cautious\" uses the low end of the load range, so rows with a large cautious saving hold up even if our scale-up is too high. Ranked by the cautious saving.",
+ cr:"Routes and times where many stretches are over the bus's rated capacity. Ranked by stretches that stay crowded even at the low end of the estimate. Loads depend on assumed bus capacity, assumed ticket share and scheduled trip counts: use as a lead for checking, not as a count."};
+let XB=[],CR=[],RP=null,MAP=null,VIEW="xb",SEL=0;
+Promise.all(["extra_bus","operator_overload","route_profiles"].map(n=>fetch(`data/${n}.json`).then(r=>r.json())))
+ .then(([x,c,r])=>{XB=x;CR=c;RP=r;init();})
+ .catch(e=>{$("out").textContent="Could not load the operator data ("+e+"). Serve this folder over http (make serve or make web).";});
+function init(){
+ MAP=makeMap("map"); $("legend").innerHTML=legendHTML();
+ RP.bands.forEach(n=>$("b").add(new Option(n,n)));
+ $("view").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;VIEW=b.dataset.v;SEL=0;
+  document.querySelectorAll("#view button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));render();});
+ ["d","b"].forEach(i=>$(i).addEventListener("input",()=>{SEL=0;render();}));
+ render();
+}
+const n0=v=>Math.round(v).toLocaleString("en-IN");
+function rows(){const d=$("d").value,b=$("b").value;return (VIEW==="xb"?XB:CR).filter(x=>(!d||x.day_type===d)&&(!b||x.band===b));}
+function render(){
+ const R=rows(),out=$("out");out.innerHTML="";$("how").textContent=HOW[VIEW];
+ if(VIEW==="xb"){const top=R[0];
+  $("kpis").innerHTML=`<div>Biggest saving<b>${top?n0(top.standing_min_saved):"—"}</b>min / day</div><div>Holds up when cautious<b>${R.filter(x=>x.standing_min_saved_low>0).length} of ${R.length}</b>routes</div><div>Standing time listed<b>${n0(R.reduce((s,x)=>s+x.standing_min,0)/60)}</b>hours / day</div>`;}
+ else $("kpis").innerHTML=`<div>Rows<b>${R.length}</b>route · time</div><div>Crowded even when cautious<b>${R.reduce((s,x)=>s+x.crowded_even_at_low_estimate,0)}</b>stretches</div><div>Most on board<b>${R.length?cap(Math.max(...R.map(x=>x.max_load))):"—"}</b>people / bus</div>`;
+ if(!R.length){out.innerHTML='<p class="empty">Nothing listed for this day and time.</p>';$("summary").hidden=true;if(MAP)MAP._bb.clearLayers();return;}
+ SEL=Math.min(SEL,R.length-1);
+ R.forEach((x,i)=>{
+  const c=document.createElement("div");c.className="card"+(i===SEL?" sel":"");c.tabIndex=0;
+  const lvKey=x.crowded_stretches>0?"crowded":"standing";
+  let h;
+  if(VIEW==="xb"){
+   h=`<div class="ctop"><div style="display:flex;align-items:center"><span class="rank">${i+1}</span><div><div class="ctitle">${esc(x.route)}</div><div class="cmeta">${esc(x.band)} · ${esc(x.day_type)} · ${esc(x.bus_class)} bus · ${x.buses_in_day_part} buses now</div></div></div>
+    <div style="text-align:right"><div class="big">${n0(x.standing_min_saved)}</div><div class="cmeta">min saved / day</div></div></div>`;
+   if(i===SEL)h+=`<div class="grid"><div>Cautious<b>${n0(x.standing_min_saved_low)}</b></div><div>Standing now<b>${n0(x.standing_min)}</b></div><div>Crowded<b>${x.crowded_stretches} of ${x.stretches}</b></div><div>Most on board<b>${cap(x.max_load)}</b></div></div>
+    <ul class="tops"><li><span>Busiest stretch</span><span>${esc(x.busiest_stretch)}</span></li></ul>`;
+  } else {
+   h=`<div class="ctop"><div style="display:flex;align-items:center"><span class="rank">${i+1}</span><div><div class="ctitle">${esc(x.route)}</div><div class="cmeta">${esc(x.band)} · ${esc(x.day_type)}</div></div></div>
+    <span class="badge b-crowded">${x.crowded_stretches} crowded</span></div>
+    <div class="mini"><span style="flex:${x.crowded_even_at_low_estimate};background:${COLOR.crowded}"></span><span style="flex:${x.crowded_stretches-x.crowded_even_at_low_estimate};background:#e8a3a3"></span><span style="flex:${x.stretches_with_evidence-x.crowded_stretches};background:#e4e4e1"></span></div>`;
+   if(i===SEL)h+=`<div class="grid"><div>Crowded<b>${x.crowded_stretches} of ${x.stretches_with_evidence}</b></div><div>Even when cautious<b>${x.crowded_even_at_low_estimate}</b></div><div>Most on board<b>${cap(x.max_load)}</b></div><div>Tickets<b>${n0(x.tickets)}</b></div></div>
+    <ul class="tops"><li><span>Busiest stretch</span><span>${esc(x.busiest_stretch)}</span></li></ul>`;
+  }
+  c.innerHTML=h;
+  if(i!==SEL){const pick=()=>{SEL=i;render();};c.addEventListener("click",pick);c.addEventListener("keydown",e=>{if(e.key==="Enter")pick();});}
+  out.appendChild(c);
+ });
+ const x=R[SEL],bi=RP.bands.indexOf(x.band),rt=RP.routes[x.route],P=rt?rt.profile[x.day_type+"|"+bi]:null;
+ if(rt)drawRoute(MAP,rt.stops,P,x.route); else if(MAP)MAP._bb.clearLayers();
+ const sm=$("summary");sm.hidden=false;
+ sm.innerHTML=`<div class="shead"><b>${esc(x.route)} · ${esc(x.day_type)} · ${esc(x.band)}</b><a href="routes.html?route=${encodeURIComponent(x.route)}&day=${encodeURIComponent(x.day_type)}&band=${bi}" style="font-size:.82em;color:var(--ink)">Open in route map →</a></div>
+  <div class="scols">${VIEW==="xb"
+   ?`<div>Saved by +1 bus<b>${n0(x.standing_min_saved)} min</b></div><div>Cautious<b>${n0(x.standing_min_saved_low)} min</b></div><div>Buses now<b>${x.buses_in_day_part}</b></div><div>Bus<b>${esc(x.bus_class)}, ${x.seats} seats</b></div><div>Standing now<b>${n0(x.standing_min)} min</b></div>`
+   :`<div>Crowded stretches<b>${x.crowded_stretches} of ${x.stretches_with_evidence}</b></div><div>Even when cautious<b>${x.crowded_even_at_low_estimate}</b></div><div>Share crowded<b>${Math.round(x.crowded_share*100)}%</b></div><div>Most on board<b>${cap(x.max_load)}</b></div><div>Tickets<b>${n0(x.tickets)}</b></div>`}
+   <div>Busiest stretch<b>${esc(x.busiest_stretch.split(" to ")[0])}</b></div></div>`;
+}
+</script>
+</body></html>

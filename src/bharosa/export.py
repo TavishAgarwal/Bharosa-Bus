@@ -122,6 +122,11 @@ def export_route_profiles(n_routes: int = 40, out_dir: Path | None = None) -> Pa
     con = duckdb.connect()
     bp = f"read_parquet('{od / 'crowding_band_levels.parquet'}')"
     routes = [r for (r,) in con.execute(f"SELECT route FROM {bp} GROUP BY route ORDER BY sum(n_tickets) DESC LIMIT {n_routes}").fetchall()]
+    # every route on the operators page also gets geometry, so selecting a row can show it on the map
+    for name in ("extra_bus_benefit.csv", "operator_overload.csv"):
+        f = od / name
+        if f.exists():
+            routes += [r for (r,) in con.execute(f"SELECT DISTINCT route FROM read_csv('{f}')").fetchall() if r not in routes]
     code = {"seats": 0, "standing": 1, "crowded": 2}
     out = {"bands": ["early 5-6", "am peak 7-10", "midday 11-16", "pm peak 17-20", "late 21-4"], "routes": {}}
     for r in routes:

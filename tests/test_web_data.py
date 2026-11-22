@@ -52,8 +52,17 @@ def test_pages_static_hygiene(page):
     assert len(ids) == len(set(ids))
 
 
-def test_operators_table_scrolls_on_narrow_screens():
-    assert "overflow-x:auto" in (WEB / "operators.html").read_text()
+def test_pages_share_one_stylesheet_that_fits_phones():
+    for page in ("index.html", "routes.html", "operators.html"):
+        assert 'href="app.css"' in (WEB / page).read_text(), page
+    css = (WEB / "app.css").read_text()
+    assert "@media (max-width:860px)" in css and "minmax(0,1fr)" in css
+
+
+def test_every_operator_row_has_a_route_to_draw():
+    routes = _load("route_profiles.json")["routes"]
+    for name in ("operator_overload.json", "extra_bus.json"):
+        assert all(r["route"] in routes for r in _load(name)), name
 
 
 def test_rides_carry_map_path_matching_stretch_levels():

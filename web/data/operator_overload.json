@@ -108,18 +108,6 @@
   "crowded_share":0.5
  },
  {
-  "route":"D7701ADOWN",
-  "band":"midday 11-16",
-  "day_type":"weekday",
-  "stretches_with_evidence":10,
-  "crowded_stretches":10.0,
-  "crowded_even_at_low_estimate":9.0,
-  "max_load":101.0,
-  "tickets":1265.0,
-  "busiest_stretch":"Gaushala Road to Satbari Village \/ X-ing",
-  "crowded_share":1.0
- },
- {
   "route":"DS20DOWN",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -129,6 +117,18 @@
   "max_load":101.0,
   "tickets":1262.0,
   "busiest_stretch":"ITO AGCR \/  ITO to Tilak Bridge",
+  "crowded_share":1.0
+ },
+ {
+  "route":"D7701ADOWN",
+  "band":"midday 11-16",
+  "day_type":"weekday",
+  "stretches_with_evidence":10,
+  "crowded_stretches":10.0,
+  "crowded_even_at_low_estimate":9.0,
+  "max_load":101.0,
+  "tickets":1265.0,
+  "busiest_stretch":"Gaushala Road to Satbari Village \/ X-ing",
   "crowded_share":1.0
  },
  {
@@ -180,18 +180,6 @@
   "crowded_share":0.85
  },
  {
-  "route":"525STLUP",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":28,
-  "crowded_stretches":10.0,
-  "crowded_even_at_low_estimate":8.0,
-  "max_load":101.0,
-  "tickets":51599.0,
-  "busiest_stretch":"Asian Market to Saket Crossing",
-  "crowded_share":0.36
- },
- {
   "route":"525STLDOWN",
   "band":"pm peak 17-20",
   "day_type":"weekday",
@@ -202,6 +190,18 @@
   "tickets":42959.0,
   "busiest_stretch":"Saket Crossing to Asian Market",
   "crowded_share":0.37
+ },
+ {
+  "route":"525STLUP",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":28,
+  "crowded_stretches":10.0,
+  "crowded_even_at_low_estimate":8.0,
+  "max_load":101.0,
+  "tickets":51599.0,
+  "busiest_stretch":"Asian Market to Saket Crossing",
+  "crowded_share":0.36
  },
  {
   "route":"717AUP",
@@ -360,18 +360,6 @@
   "crowded_share":0.4
  },
  {
-  "route":"8UP",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":34,
-  "crowded_stretches":18.0,
-  "crowded_even_at_low_estimate":5.0,
-  "max_load":101.0,
-  "tickets":47819.0,
-  "busiest_stretch":"Ali Village to Maruti Factory \/  Haldiram",
-  "crowded_share":0.53
- },
- {
   "route":"D028UP",
   "band":"pm peak 17-20",
   "day_type":"weekday",
@@ -382,6 +370,18 @@
   "tickets":13049.0,
   "busiest_stretch":"Don Bosco School to Narmada Apartments",
   "crowded_share":0.67
+ },
+ {
+  "route":"8UP",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":34,
+  "crowded_stretches":18.0,
+  "crowded_even_at_low_estimate":5.0,
+  "max_load":101.0,
+  "tickets":47819.0,
+  "busiest_stretch":"Ali Village to Maruti Factory \/  Haldiram",
+  "crowded_share":0.53
  },
  {
   "route":"D030DOWN",
@@ -408,18 +408,6 @@
   "crowded_share":0.24
  },
  {
-  "route":"525DOWN",
-  "band":"late 21-4",
-  "day_type":"weekday",
-  "stretches_with_evidence":31,
-  "crowded_stretches":10.0,
-  "crowded_even_at_low_estimate":5.0,
-  "max_load":101.0,
-  "tickets":10998.0,
-  "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
-  "crowded_share":0.32
- },
- {
   "route":"717ADOWN",
   "band":"late 21-4",
   "day_type":"weekday",
@@ -430,6 +418,18 @@
   "tickets":33279.0,
   "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
   "crowded_share":0.22
+ },
+ {
+  "route":"525DOWN",
+  "band":"late 21-4",
+  "day_type":"weekday",
+  "stretches_with_evidence":31,
+  "crowded_stretches":10.0,
+  "crowded_even_at_low_estimate":5.0,
+  "max_load":101.0,
+  "tickets":10998.0,
+  "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
+  "crowded_share":0.32
  },
  {
   "route":"525ASTLANDDOWN",
@@ -492,18 +492,6 @@
   "crowded_share":0.37
  },
  {
-  "route":"85UP",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":50,
-  "crowded_stretches":16.0,
-  "crowded_even_at_low_estimate":4.0,
-  "max_load":101.0,
-  "tickets":41961.0,
-  "busiest_stretch":"Delhi Secretariat to ITO AGCR \/  ITO",
-  "crowded_share":0.32
- },
- {
   "route":"729DOWN",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -514,6 +502,18 @@
   "tickets":76075.0,
   "busiest_stretch":"Shiv Murti (NH8) to Rang puri (NH8)",
   "crowded_share":0.36
+ },
+ {
+  "route":"85UP",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":50,
+  "crowded_stretches":16.0,
+  "crowded_even_at_low_estimate":4.0,
+  "max_load":101.0,
+  "tickets":41961.0,
+  "busiest_stretch":"Delhi Secretariat to ITO AGCR \/  ITO",
+  "crowded_share":0.32
  },
  {
   "route":"525DOWN",
@@ -624,18 +624,6 @@
   "crowded_share":0.65
  },
  {
-  "route":"D9919DOWN",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":29,
-  "crowded_stretches":7.0,
-  "crowded_even_at_low_estimate":3.0,
-  "max_load":67.0,
-  "tickets":3019.0,
-  "busiest_stretch":"BIJWASAN FLYOVER to BAMNOLI CROSSING",
-  "crowded_share":0.24
- },
- {
   "route":"D006DOWN",
   "band":"pm peak 17-20",
   "day_type":"weekday",
@@ -646,6 +634,18 @@
   "tickets":10057.0,
   "busiest_stretch":"Rainy Well to Laxmi Nagar Metro Station \/ Laxmi Nagar",
   "crowded_share":0.29
+ },
+ {
+  "route":"D9919DOWN",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":29,
+  "crowded_stretches":7.0,
+  "crowded_even_at_low_estimate":3.0,
+  "max_load":67.0,
+  "tickets":3019.0,
+  "busiest_stretch":"BIJWASAN FLYOVER to BAMNOLI CROSSING",
+  "crowded_share":0.24
  },
  {
   "route":"317DOWN",
