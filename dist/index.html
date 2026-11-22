@@ -13,13 +13,19 @@
    <select id="lang" aria-label="Label language"><option value="en">English</option><option value="hi">हिन्दी</option></select></div>
   <div class="nav"><a href="routes.html">Route map</a> · <a href="operators.html">Operators</a> · <a href="https://github.com/TavishAgarwal/Bharosa-Bus">Method</a></div>
   <p class="sub">How full each bus usually is, next to how long it takes. Grey means we don't have enough tickets to say.</p>
+  <div class="tabs mode" id="mode" role="group" aria-label="What to plan" hidden>
+   <button data-m="live" aria-pressed="false">Search any stop <small>· live</small></button><button data-m="demo" aria-pressed="true">Sample trips <small>· saved</small></button>
+  </div>
   <div id="live" hidden>
    <div class="row"><input id="cf" list="stops" placeholder="From stop" aria-label="From stop"><input id="ct" list="stops" placeholder="To stop" aria-label="To stop"></div>
    <div class="row"><input id="ctime" type="time" value="18:00" aria-label="Leaving at"><select id="cday" aria-label="Day type"><option>weekday</option><option>weekend</option></select><button class="go" id="cgo">Plan</button></div>
    <datalist id="stops"></datalist>
   </div>
-  <div class="row"><select id="trip" aria-label="Example trip"></select><select id="time" aria-label="Example time" style="flex:.6"></select></div>
-  <div class="tabs" role="group" aria-label="Rank by">
+  <div id="demo">
+   <div class="row"><select id="trip" aria-label="Sample trip"></select><select id="time" aria-label="Sample time" style="flex:.6"></select></div>
+   <p class="hint" id="demohint">Sample trips are saved with the site, so they work without the live server.</p>
+  </div>
+  <div class="tabs" id="rank" role="group" aria-label="Rank by">
    <button data-w="0" aria-pressed="true">Fastest</button><button data-w="0.5" aria-pressed="false">Balanced</button><button data-w="1" aria-pressed="false">Most comfortable</button>
   </div>
  </div>
@@ -34,12 +40,13 @@
 </section>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="resize.js"></script>
 <script>
 const LEVEL_EN={seats:"Seats likely",standing:"Standing room",crowded:"Crowded",unknown:"Not enough data"};
 const LEVEL_HI={seats:"सीट मिलेगी",standing:"खड़े होने की जगह",crowded:"भीड़",unknown:"पक्का नहीं"};
 const COLOR={seats:"#1a7f37",standing:"#b7791f",crowded:"#c62828",unknown:"#9e9e9e"};
 const RANK={seats:0,standing:1,crowded:2};
-let LT=LEVEL_EN, DATA=null, CUSTOM=null, W=0, SEL=0, MAP=null, LAYER=null;
+let LT=LEVEL_EN, DATA=null, CUSTOM=null, MODE="demo", LIVE=false, W=0, SEL=0, MAP=null, LAYER=null;
 const $=id=>document.getElementById(id);
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const hi=()=>LT===LEVEL_HI;
@@ -60,23 +67,35 @@ function init(){
  initMap(); legend();
  const pairs=[...new Set(DATA.queries.map(q=>q.from+" → "+q.to))]; pairs.forEach(t=>$("trip").add(new Option(t,t)));
  [...new Set(DATA.queries.map(q=>q.day_type+" "+q.depart))].forEach(t=>$("time").add(new Option(t,t)));
- ["trip","time"].forEach(id=>$(id).addEventListener("input",()=>{CUSTOM=null;SEL=0;render();}));
- document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));W=parseFloat(b.dataset.w);SEL=0;render();}));
+ ["trip","time"].forEach(id=>$(id).addEventListener("input",()=>{SEL=0;render();}));
+ document.querySelectorAll("#mode button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.m)));
+ document.querySelectorAll("#rank button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("#rank button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));W=parseFloat(b.dataset.w);SEL=0;render();}));
  $("lang").addEventListener("input",e=>{LT=e.target.value==="hi"?LEVEL_HI:LEVEL_EN;legend();render();});
- fetch("api/health").then(r=>r.ok?r.json():null).then(h=>{if(!h)return;$("live").hidden=false;
+ $("demohint").textContent="This copy of the site only has saved sample trips. Run make serve to search any stop.";
+ fetch("api/health").then(r=>r.ok?r.json():null).then(h=>{if(!h)return;LIVE=true;$("mode").hidden=false;
+  $("demohint").textContent="Saved with the site, so they also work without the live server.";
+  const q0=DATA.queries.find(q=>q.from==="Connaught Place")||DATA.queries[0];$("cf").value=q0.from;$("ct").value=q0.to;setMode("live");
   fetch("api/stops").then(r=>r.json()).then(n=>{const dl=$("stops");n.forEach(x=>dl.appendChild(new Option(x)));});
   $("cgo").addEventListener("click",()=>{const f=$("cf").value.trim(),t=$("ct").value.trim();if(!f||!t)return;$("out").textContent="Planning…";
    fetch(`api/plan?from=${encodeURIComponent(f)}&to=${encodeURIComponent(t)}&time=${encodeURIComponent($("ctime").value||"18:00")}&day=${encodeURIComponent($("cday").value)}`)
-    .then(r=>r.json()).then(q=>{CUSTOM=q.error?{options:[],error:q.error}:q;SEL=0;render();});});}).catch(()=>{});
+    .then(r=>r.json()).then(q=>{CUSTOM=q.error?{options:[],error:q.error}:q;SEL=0;render();}).catch(e=>{CUSTOM={options:[],error:"Live server did not answer ("+e+")."};render();});});
+  ["cf","ct"].forEach(id=>$(id).addEventListener("keydown",e=>{if(e.key==="Enter")$("cgo").click();}));
+  $("cgo").click();}).catch(()=>{});
  const a=DATA.assumptions;
  $("assume").innerHTML="Times are scheduled, not live. Crowding comes from about 2.5M October 2026 e-tickets (a small share of rides), scaled up with assumed ranges (ticket share "+esc(a.sample_rate.join("–"))+
   ", pass-holder uplift "+esc(a.pass_holder_uplift.join("–"))+"). \"Crowded\" means over the bus's rated seats + standing; bus capacity "+esc(a.capacity_source)+". A level needs at least "+esc(a.min_tickets_per_cell)+" tickets.";
  render();
 }
 
+function setMode(m){MODE=m;SEL=0;
+ document.querySelectorAll("#mode button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.m===m?"true":"false"));
+ $("live").hidden=m!=="live";$("demo").hidden=m!=="demo";render();}
+function srcBar(q){
+ if(MODE==="live")return `<div class="srcbar live"><span class="tag">LIVE</span><div><b>Your search: ${esc(q.from_resolved||q.from||"")} → ${esc(q.to_resolved||q.to||"")}</b>Planned just now on the full timetable (any stop to any stop), ${esc($("cday").value)} from ${esc($("ctime").value||"18:00")}.</div></div>`;
+ return `<div class="srcbar demo"><span class="tag">SAMPLE</span><div><b>Sample trip: ${esc(q.from)} → ${esc(q.to)}</b>One of ${new Set(DATA.queries.map(x=>x.from+x.to)).size} saved trips, ${esc(q.day_type)} at ${esc(q.depart)}.${LIVE?" Switch to <i>Search any stop</i> for your own trip.":""}</div></div>`;}
 function current(){
- if(CUSTOM)return CUSTOM;
+ if(MODE==="live")return CUSTOM;
  const [from,to]=$("trip").value.split(" → "),[dt,dep]=$("time").value.split(" ");
  return DATA.queries.find(q=>q.from===from&&q.to===to&&q.depart===dep&&q.day_type===dt);
 }
@@ -105,7 +124,8 @@ function why(o){
 
 function render(){
  const q=current(),out=$("out");out.innerHTML="";
- if(q&&q.from_resolved){const r=document.createElement("div");r.className="resolved";r.textContent=`Searched stops: ${q.from_resolved} → ${q.to_resolved}`;out.appendChild(r);}
+ if(MODE==="live"&&!q){out.innerHTML=`<p class="hint">Type two stops and press Plan.</p>`;$("summary").hidden=true;if(LAYER)LAYER.clearLayers();return;}
+ if(q&&!q.error)out.insertAdjacentHTML("beforeend",srcBar(q));
  if(!q||!q.options.length){out.insertAdjacentHTML("beforeend",`<p>${q&&q.error?esc(q.error):"No bus journey found for this trip and time."}</p>`);$("summary").hidden=true;if(LAYER)LAYER.clearLayers();return;}
  const opts=ranked(q),fastest=opts.reduce((a,b)=>a.minutes_from_request<=b.minutes_from_request?a:b);
  SEL=Math.min(SEL,opts.length-1);

@@ -23,6 +23,11 @@ NET = None
 
 
 class Handler(SimpleHTTPRequestHandler):
+    def end_headers(self) -> None:
+        # Always re-check files so a page edit shows on a normal reload.
+        self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
+
     def _json(self, obj, code: int = 200) -> None:
         body = json.dumps(obj).encode()
         self.send_response(code)

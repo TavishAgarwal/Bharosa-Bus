@@ -31,6 +31,7 @@
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="app.js"></script>
+<script src="resize.js"></script>
 <script>
 let D=null,MAP=null,DAY="weekday",BAND=3,SEL=null;
 fetch("data/route_profiles.json").then(r=>r.json()).then(d=>{D=d;init();})

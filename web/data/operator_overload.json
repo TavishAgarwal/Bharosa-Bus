@@ -156,18 +156,6 @@
   "crowded_share":0.25
  },
  {
-  "route":"463DOWN",
-  "band":"pm peak 17-20",
-  "day_type":"weekday",
-  "stretches_with_evidence":33,
-  "crowded_stretches":11.0,
-  "crowded_even_at_low_estimate":8.0,
-  "max_load":101.0,
-  "tickets":27147.0,
-  "busiest_stretch":"Saket Crossing to Asian Market",
-  "crowded_share":0.33
- },
- {
   "route":"772UP",
   "band":"late 21-4",
   "day_type":"weekday",
@@ -178,6 +166,18 @@
   "tickets":1561.0,
   "busiest_stretch":"Rang Puri (Airport Road) \/ Mahipal Pur Crossing to Centaur Hotel \/ New Custom House",
   "crowded_share":0.85
+ },
+ {
+  "route":"463DOWN",
+  "band":"pm peak 17-20",
+  "day_type":"weekday",
+  "stretches_with_evidence":33,
+  "crowded_stretches":11.0,
+  "crowded_even_at_low_estimate":8.0,
+  "max_load":101.0,
+  "tickets":27147.0,
+  "busiest_stretch":"Saket Crossing to Asian Market",
+  "crowded_share":0.33
  },
  {
   "route":"525STLDOWN",
@@ -396,16 +396,16 @@
   "crowded_share":0.41
  },
  {
-  "route":"717DOWN",
+  "route":"525DOWN",
   "band":"late 21-4",
   "day_type":"weekday",
-  "stretches_with_evidence":42,
+  "stretches_with_evidence":31,
   "crowded_stretches":10.0,
   "crowded_even_at_low_estimate":5.0,
   "max_load":101.0,
-  "tickets":11474.0,
-  "busiest_stretch":"Saket Crossing to Asian Market",
-  "crowded_share":0.24
+  "tickets":10998.0,
+  "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
+  "crowded_share":0.32
  },
  {
   "route":"717ADOWN",
@@ -420,16 +420,16 @@
   "crowded_share":0.22
  },
  {
-  "route":"525DOWN",
+  "route":"717DOWN",
   "band":"late 21-4",
   "day_type":"weekday",
-  "stretches_with_evidence":31,
+  "stretches_with_evidence":42,
   "crowded_stretches":10.0,
   "crowded_even_at_low_estimate":5.0,
   "max_load":101.0,
-  "tickets":10998.0,
-  "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
-  "crowded_share":0.32
+  "tickets":11474.0,
+  "busiest_stretch":"Saket Crossing to Asian Market",
+  "crowded_share":0.24
  },
  {
   "route":"525ASTLANDDOWN",
@@ -492,18 +492,6 @@
   "crowded_share":0.37
  },
  {
-  "route":"729DOWN",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":45,
-  "crowded_stretches":16.0,
-  "crowded_even_at_low_estimate":4.0,
-  "max_load":101.0,
-  "tickets":76075.0,
-  "busiest_stretch":"Shiv Murti (NH8) to Rang puri (NH8)",
-  "crowded_share":0.36
- },
- {
   "route":"85UP",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -514,6 +502,18 @@
   "tickets":41961.0,
   "busiest_stretch":"Delhi Secretariat to ITO AGCR \/  ITO",
   "crowded_share":0.32
+ },
+ {
+  "route":"729DOWN",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":45,
+  "crowded_stretches":16.0,
+  "crowded_even_at_low_estimate":4.0,
+  "max_load":101.0,
+  "tickets":76075.0,
+  "busiest_stretch":"Shiv Murti (NH8) to Rang puri (NH8)",
+  "crowded_share":0.36
  },
  {
   "route":"525DOWN",

@@ -4423,7 +4423,7 @@
      "door_to_door_min": 40.7,
      "transfers": 1,
      "routes": [
-      "359UP",
+      "241UP",
       "73DOWN"
      ],
      "legs": [
@@ -4433,213 +4433,7 @@
       },
       {
        "type": "ride",
-       "route": "359UP",
-       "board": "Shivaji Stadium Terminal ( Connaught Place )",
-       "alight": "Super Bazar",
-       "board_time": "08:30",
-       "alight_time": "08:32",
-       "minutes": 2.1,
-       "crowding": "seats",
-       "peak_load": 6,
-       "evidence_coverage": 1.0,
-       "evidence": {
-        "stretch": "Shivaji Stadium Terminal ( Connaught Place ) to Super Bazar",
-        "grain": "pooled band",
-        "tickets": 52,
-        "days": 22,
-        "load": 6,
-        "low": 3,
-        "high": 10,
-        "pooled_stretches": 1,
-        "stretches": 1,
-        "bus": "12m",
-        "seats": 39,
-        "rated_standing": 24
-       },
-       "basis": "stretch",
-       "path": [
-        [
-         28.6323,
-         77.2165
-        ],
-        [
-         28.63265,
-         77.22309
-        ]
-       ],
-       "seg_levels": [
-        "seats"
-       ]
-      },
-      {
-       "type": "ride",
-       "route": "73DOWN",
-       "board": "Super Bazar",
-       "alight": "ISBT Anand Vihar",
-       "board_time": "08:34",
-       "alight_time": "09:10",
-       "minutes": 36.2,
-       "crowding": "seats",
-       "peak_load": 29,
-       "evidence_coverage": 1.0,
-       "evidence": {
-        "stretch": "Preet Vihar Metro Station / New Rajdhani Enclave to KarKarDooma Crossing",
-        "grain": "hour",
-        "tickets": 166,
-        "days": 22,
-        "load": 29,
-        "low": 12,
-        "high": 49,
-        "pooled_stretches": 0,
-        "stretches": 19,
-        "bus": "12m",
-        "seats": 39,
-        "rated_standing": 24
-       },
-       "basis": "stretch",
-       "path": [
-        [
-         28.63265,
-         77.22309
-        ],
-        [
-         28.63047,
-         77.22378
-        ],
-        [
-         28.6297,
-         77.2252
-        ],
-        [
-         28.6278,
-         77.2285
-        ],
-        [
-         28.62564,
-         77.23428
-        ],
-        [
-         28.62541,
-         77.23949
-        ],
-        [
-         28.62814,
-         77.24504
-        ],
-        [
-         28.6283,
-         77.2514
-        ],
-        [
-         28.62832,
-         77.26065
-        ],
-        [
-         28.63087,
-         77.27789
-        ],
-        [
-         28.63363,
-         77.28206
-        ],
-        [
-         28.63561,
-         77.28493
-        ],
-        [
-         28.637,
-         77.28747
-        ],
-        [
-         28.63927,
-         77.29191
-        ],
-        [
-         28.64206,
-         77.29589
-        ],
-        [
-         28.64322,
-         77.29732
-        ],
-        [
-         28.63606,
-         77.30721
-        ],
-        [
-         28.63622,
-         77.31035
-        ],
-        [
-         28.64195,
-         77.31582
-        ],
-        [
-         28.64497,
-         77.31696
-        ]
-       ],
-       "seg_levels": [
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats"
-       ]
-      },
-      {
-       "type": "walk",
-       "minutes": 0.0
-      }
-     ],
-     "worst_crowding": "seats",
-     "crowd_penalty_min": 0.0,
-     "day_type": "weekday",
-     "crowding_known_share": 1.0,
-     "score": 44.7,
-     "origin": [
-      28.6323,
-      77.2165
-     ],
-     "dest": [
-      28.64497,
-      77.31696
-     ]
-    },
-    {
-     "from": "Shivaji Stadium Terminal ( Connaught Place )",
-     "to": "ISBT Anand Vihar",
-     "leave_origin": "08:30",
-     "arrive": "09:10",
-     "minutes_from_request": 40.7,
-     "door_to_door_min": 40.7,
-     "transfers": 1,
-     "routes": [
-      "139UP",
-      "73DOWN"
-     ],
-     "legs": [
-      {
-       "type": "walk",
-       "minutes": 0.0
-      },
-      {
-       "type": "ride",
-       "route": "139UP",
+       "route": "241UP",
        "board": "Shivaji Stadium Terminal ( Connaught Place )",
        "alight": "Super Bazar",
        "board_time": "08:30",
@@ -5059,26 +4853,67 @@
      "from": "Shivaji Stadium Terminal ( Connaught Place )",
      "to": "ISBT Anand Vihar",
      "leave_origin": "08:40",
-     "arrive": "09:25",
-     "minutes_from_request": 55.7,
-     "door_to_door_min": 45.4,
-     "transfers": 0,
+     "arrive": "09:20",
+     "minutes_from_request": 50.7,
+     "door_to_door_min": 40.7,
+     "transfers": 1,
      "routes": [
+      "359UP",
       "73DOWN"
      ],
      "legs": [
       {
        "type": "walk",
-       "minutes": 6.0
+       "minutes": 0.0
+      },
+      {
+       "type": "ride",
+       "route": "359UP",
+       "board": "Shivaji Stadium Terminal ( Connaught Place )",
+       "alight": "Super Bazar",
+       "board_time": "08:40",
+       "alight_time": "08:42",
+       "minutes": 2.1,
+       "crowding": "seats",
+       "peak_load": 6,
+       "evidence_coverage": 1.0,
+       "evidence": {
+        "stretch": "Shivaji Stadium Terminal ( Connaught Place ) to Super Bazar",
+        "grain": "pooled band",
+        "tickets": 52,
+        "days": 22,
+        "load": 6,
+        "low": 3,
+        "high": 10,
+        "pooled_stretches": 1,
+        "stretches": 1,
+        "bus": "12m",
+        "seats": 39,
+        "rated_standing": 24
+       },
+       "basis": "stretch",
+       "path": [
+        [
+         28.6323,
+         77.2165
+        ],
+        [
+         28.63265,
+         77.22309
+        ]
+       ],
+       "seg_levels": [
+        "seats"
+       ]
       },
       {
        "type": "ride",
        "route": "73DOWN",
-       "board": "Hanuman Mandir / Shivaji Stadium",
+       "board": "Super Bazar",
        "alight": "ISBT Anand Vihar",
-       "board_time": "08:46",
-       "alight_time": "09:25",
-       "minutes": 39.4,
+       "board_time": "08:44",
+       "alight_time": "09:20",
+       "minutes": 36.2,
        "crowding": "seats",
        "peak_load": 30,
        "evidence_coverage": 1.0,
@@ -5091,17 +4926,13 @@
         "low": 13,
         "high": 49,
         "pooled_stretches": 0,
-        "stretches": 20,
+        "stretches": 19,
         "bus": "12m",
         "seats": 39,
         "rated_standing": 24
        },
        "basis": "stretch",
        "path": [
-        [
-         28.63028,
-         77.21378
-        ],
         [
          28.63265,
          77.22309
@@ -5202,7 +5033,6 @@
         "seats",
         "seats",
         "seats",
-        "seats",
         "seats"
        ]
       },
@@ -5215,7 +5045,7 @@
      "crowd_penalty_min": 0.0,
      "day_type": "weekday",
      "crowding_known_share": 1.0,
-     "score": 55.7,
+     "score": 54.7,
      "origin": [
       28.6323,
       77.2165
@@ -43747,238 +43577,6 @@
     {
      "from": "MAYUR VIHAR PHASE 1",
      "to": "Shivaji Stadium Terminal ( Connaught Place )",
-     "leave_origin": "13:00",
-     "arrive": "13:50",
-     "minutes_from_request": 50.3,
-     "door_to_door_min": 49.9,
-     "transfers": 2,
-     "routes": [
-      "307DOWN",
-      "85UP",
-      "910UP"
-     ],
-     "legs": [
-      {
-       "type": "walk",
-       "minutes": 9.6
-      },
-      {
-       "type": "ride",
-       "route": "307DOWN",
-       "board": "Trilokpuri 27/31 block",
-       "alight": "Mother Dairy",
-       "board_time": "13:10",
-       "alight_time": "13:21",
-       "minutes": 11.1,
-       "crowding": "seats",
-       "peak_load": 9,
-       "evidence_coverage": 0.75,
-       "evidence": {
-        "stretch": "PANDAV NAGAR POLICE STATION to Patparganj / Patparganj More",
-        "grain": "pooled band",
-        "tickets": 157,
-        "days": 22,
-        "load": 9,
-        "low": 4,
-        "high": 14,
-        "pooled_stretches": 6,
-        "stretches": 8,
-        "bus": "12m",
-        "seats": 39,
-        "rated_standing": 24
-       },
-       "basis": "stretch",
-       "path": [
-        [
-         28.60342,
-         77.30234
-        ],
-        [
-         28.60817,
-         77.30625
-        ],
-        [
-         28.61269,
-         77.30542
-        ],
-        [
-         28.61318,
-         77.30147
-        ],
-        [
-         28.6128,
-         77.2976
-        ],
-        [
-         28.61345,
-         77.29406
-        ],
-        [
-         28.6142,
-         77.2911
-        ],
-        [
-         28.61618,
-         77.2881
-        ],
-        [
-         28.6191,
-         77.28625
-        ]
-       ],
-       "seg_levels": [
-        "unknown",
-        "unknown",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats"
-       ]
-      },
-      {
-       "type": "ride",
-       "route": "85UP",
-       "board": "Mother Dairy",
-       "alight": "ITO AGCR /  ITO",
-       "board_time": "13:22",
-       "alight_time": "13:37",
-       "minutes": 15.5,
-       "crowding": "standing",
-       "peak_load": 40,
-       "evidence_coverage": 1.0,
-       "evidence": {
-        "stretch": "Laxmi Nagar X-ing / Laxmi Nagar to Rainy Well",
-        "grain": "hour",
-        "tickets": 150,
-        "days": 22,
-        "load": 40,
-        "low": 16,
-        "high": 70,
-        "pooled_stretches": 0,
-        "stretches": 5,
-        "bus": "12m",
-        "seats": 39,
-        "rated_standing": 24
-       },
-       "basis": "stretch",
-       "path": [
-        [
-         28.6191,
-         77.28625
-        ],
-        [
-         28.62719,
-         77.27932
-        ],
-        [
-         28.62923,
-         77.2773
-        ],
-        [
-         28.62803,
-         77.26093
-        ],
-        [
-         28.62795,
-         77.25235
-        ],
-        [
-         28.62792,
-         77.24447
-        ]
-       ],
-       "seg_levels": [
-        "seats",
-        "seats",
-        "standing",
-        "seats",
-        "seats"
-       ]
-      },
-      {
-       "type": "ride",
-       "route": "910UP",
-       "board": "ITO AGCR /  ITO",
-       "alight": "Shivaji Stadium Terminal ( Connaught Place )",
-       "board_time": "13:40",
-       "alight_time": "13:50",
-       "minutes": 9.9,
-       "crowding": "seats",
-       "peak_load": 5,
-       "evidence_coverage": 0.0,
-       "evidence": {
-        "grain": "route typical",
-        "tickets": 2291,
-        "stretches_with_data": 33,
-        "load": 5,
-        "bus": "12m",
-        "seats": 39,
-        "rated_standing": 24
-       },
-       "basis": "route",
-       "path": [
-        [
-         28.62792,
-         77.24447
-        ],
-        [
-         28.6253,
-         77.2387
-        ],
-        [
-         28.62551,
-         77.234
-        ],
-        [
-         28.62787,
-         77.2281
-        ],
-        [
-         28.6294,
-         77.2253
-        ],
-        [
-         28.6303,
-         77.2239
-        ],
-        [
-         28.6323,
-         77.2165
-        ]
-       ],
-       "seg_levels": [
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats",
-        "seats"
-       ]
-      },
-      {
-       "type": "walk",
-       "minutes": 0.0
-      }
-     ],
-     "worst_crowding": "standing",
-     "crowd_penalty_min": 5.4,
-     "day_type": "weekday",
-     "crowding_known_share": 1.0,
-     "score": 58.3,
-     "origin": [
-      28.60474,
-      77.29688
-     ],
-     "dest": [
-      28.6323,
-      77.2165
-     ]
-    },
-    {
-     "from": "MAYUR VIHAR PHASE 1",
-     "to": "Shivaji Stadium Terminal ( Connaught Place )",
      "leave_origin": "13:10",
      "arrive": "14:00",
      "minutes_from_request": 60.3,
@@ -44407,6 +44005,207 @@
      "day_type": "weekday",
      "crowding_known_share": 0.87,
      "score": 72.8,
+     "origin": [
+      28.60474,
+      77.29688
+     ],
+     "dest": [
+      28.6323,
+      77.2165
+     ]
+    },
+    {
+     "from": "MAYUR VIHAR PHASE 1",
+     "to": "Shivaji Stadium Terminal ( Connaught Place )",
+     "leave_origin": "13:25",
+     "arrive": "14:15",
+     "minutes_from_request": 75.4,
+     "door_to_door_min": 50.0,
+     "transfers": 1,
+     "routes": [
+      "307DOWN",
+      "85UP"
+     ],
+     "legs": [
+      {
+       "type": "walk",
+       "minutes": 9.6
+      },
+      {
+       "type": "ride",
+       "route": "307DOWN",
+       "board": "Trilokpuri 27/31 block",
+       "alight": "Mother Dairy",
+       "board_time": "13:35",
+       "alight_time": "13:46",
+       "minutes": 11.1,
+       "crowding": "seats",
+       "peak_load": 9,
+       "evidence_coverage": 0.75,
+       "evidence": {
+        "stretch": "PANDAV NAGAR POLICE STATION to Patparganj / Patparganj More",
+        "grain": "pooled band",
+        "tickets": 157,
+        "days": 22,
+        "load": 9,
+        "low": 4,
+        "high": 14,
+        "pooled_stretches": 6,
+        "stretches": 8,
+        "bus": "12m",
+        "seats": 39,
+        "rated_standing": 24
+       },
+       "basis": "stretch",
+       "path": [
+        [
+         28.60342,
+         77.30234
+        ],
+        [
+         28.60817,
+         77.30625
+        ],
+        [
+         28.61269,
+         77.30542
+        ],
+        [
+         28.61318,
+         77.30147
+        ],
+        [
+         28.6128,
+         77.2976
+        ],
+        [
+         28.61345,
+         77.29406
+        ],
+        [
+         28.6142,
+         77.2911
+        ],
+        [
+         28.61618,
+         77.2881
+        ],
+        [
+         28.6191,
+         77.28625
+        ]
+       ],
+       "seg_levels": [
+        "unknown",
+        "unknown",
+        "seats",
+        "seats",
+        "seats",
+        "seats",
+        "seats",
+        "seats"
+       ]
+      },
+      {
+       "type": "ride",
+       "route": "85UP",
+       "board": "Mother Dairy",
+       "alight": "Shivaji Stadium Terminal",
+       "board_time": "13:47",
+       "alight_time": "14:13",
+       "minutes": 25.8,
+       "crowding": "crowded",
+       "peak_load": 101,
+       "evidence_coverage": 1.0,
+       "evidence": {
+        "stretch": "Delhi Secretariat to ITO AGCR /  ITO",
+        "grain": "hour",
+        "tickets": 302,
+        "days": 22,
+        "load": 101,
+        "low": 48,
+        "high": 101,
+        "pooled_stretches": 0,
+        "stretches": 11,
+        "bus": "12m",
+        "seats": 39,
+        "rated_standing": 24
+       },
+       "basis": "stretch",
+       "path": [
+        [
+         28.6191,
+         77.28625
+        ],
+        [
+         28.62719,
+         77.27932
+        ],
+        [
+         28.62923,
+         77.2773
+        ],
+        [
+         28.62803,
+         77.26093
+        ],
+        [
+         28.62795,
+         77.25235
+        ],
+        [
+         28.62792,
+         77.24447
+        ],
+        [
+         28.6253,
+         77.2387
+        ],
+        [
+         28.62551,
+         77.234
+        ],
+        [
+         28.62787,
+         77.2281
+        ],
+        [
+         28.6294,
+         77.2253
+        ],
+        [
+         28.6303,
+         77.2239
+        ],
+        [
+         28.63306,
+         77.21546
+        ]
+       ],
+       "seg_levels": [
+        "seats",
+        "seats",
+        "standing",
+        "seats",
+        "crowded",
+        "crowded",
+        "crowded",
+        "crowded",
+        "crowded",
+        "crowded",
+        "seats"
+       ]
+      },
+      {
+       "type": "walk",
+       "minutes": 2.3
+      }
+     ],
+     "worst_crowding": "crowded",
+     "crowd_penalty_min": 25.8,
+     "day_type": "weekday",
+     "crowding_known_share": 1.0,
+     "score": 79.4,
      "origin": [
       28.60474,
       77.29688
