@@ -54,3 +54,14 @@ def test_pages_static_hygiene(page):
 
 def test_operators_table_scrolls_on_narrow_screens():
     assert "overflow-x:auto" in (WEB / "operators.html").read_text()
+
+
+def test_rides_carry_map_path_matching_stretch_levels():
+    for q in _load("demo_journeys.json")["queries"]:
+        for o in q["options"]:
+            assert len(o["origin"]) == 2 and len(o["dest"]) == 2
+            for leg in o["legs"]:
+                if leg["type"] == "ride":
+                    assert len(leg["path"]) >= 2
+                    assert len(leg["seg_levels"]) == len(leg["path"]) - 1
+                    assert set(leg["seg_levels"]) <= CROWD

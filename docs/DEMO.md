@@ -5,7 +5,7 @@ Run first: `make crowding-all && make serve`, then open http://localhost:8000. T
 | Time | Show | Say |
 |---|---|---|
 | 0:00 | Plan a trip: Connaught Place → Anand Vihar, weekday 18:00 | "Planners rank by time. We add how full each bus usually is." |
-| 0:15 | The green line "+2 min, less crowded than the fastest" | "One line: what a seat costs you." |
+| 0:15 | The map: fastest option, red in the middle. Then "Most comfortable": the line turns green; card says "+2 min, less crowded than the fastest" | "Here is the crowded stretch, on the map. One tab, and two minutes buys a seat." |
 | 0:30 | Switch to Anand Vihar → Connaught Place, 18:00, then 08:30 | "Same corridor. Against the evening flow, seats. Into town at 8:30, crowded. Direction matters." |
 | 0:45 | Labels → हिन्दी | "Labels a commuter reads in a second, in their language." |
 | 0:55 | "Any trip": type two stops not in the list | "Not canned: any stop to any stop." |

@@ -211,6 +211,14 @@ def csa(net: Network, access: dict, egress: dict, t0: int, banned=frozenset(), w
     return {"arrival": best, "legs": legs, "local": (dep_s, arr_s, dep_t, arr_t, trip)}
 
 
+def _ll(net: Network, stop_id) -> list:
+    """[lat, lon] of a stop, rounded for compact JSON."""
+    if not hasattr(net, "_ix"):
+        net._ix = {s: i for i, s in enumerate(net.stop_ids)}
+    i = net._ix.get(stop_id)
+    return [round(float(net.lat[i]), 5), round(float(net.lon[i]), 5)] if i is not None else None
+
+
 def _bus(net: Network, route: str) -> dict:
     b = net.bus.get(route)
     return {"bus": b[0], "seats": b[1], "rated_standing": b[2]} if b else {}
@@ -221,7 +229,8 @@ def _leg_crowding(net: Network, route: str, board_stop: str, alight_stop: str, t
     pb, pa = net.canon_pos.get((route, board_stop), []), net.canon_pos.get((route, alight_stop), [])
     pairs = [(b, a) for b in pb for a in pa if a > b]
     if not pairs:
-        return {"level": "unknown", "peak_load": None, "coverage": 0.0, "evidence": None}
+        return {"level": "unknown", "peak_load": None, "coverage": 0.0, "evidence": None,
+                "path": [_ll(net, board_stop), _ll(net, alight_stop)], "seg_levels": ["unknown"]}
     b, a = min(pairs, key=lambda p: p[1] - p[0])
     hits, pooled = [], 0
     for seg in range(b, a):
@@ -233,21 +242,26 @@ def _leg_crowding(net: Network, route: str, board_stop: str, alight_stop: str, t
         if hit:
             hits.append((seg, grain, hit))
             pooled += grain != "hour"
+    path = [_ll(net, net.canon_stop(route, p)) for p in range(b, a + 1)]
+    by_seg = {h[0]: h[2][0] for h in hits}
     cov = len(hits) / max(a - b, 1)
     if cov < 0.5 or not hits:
         rb = net.route_band.get((route, band_of(int(t_board // 3600) % 24), day_type))
         if rb:   # too few evidenced stretches on this ride: use the route's typical crowding at this time of day
             return {"level": rb[0], "peak_load": min(round(rb[1]), 101), "coverage": round(cov, 2), "basis": "route",
+                    "path": path, "seg_levels": [by_seg.get(sg, rb[0]) for sg in range(b, a)],
                     "evidence": {"grain": "route typical", "tickets": int(rb[3]), "stretches_with_data": int(rb[2]),
                                  "load": min(round(rb[1]), 101), **_bus(net, route)}}
-        return {"level": "unknown", "peak_load": None, "coverage": round(cov, 2), "evidence": None}
+        return {"level": "unknown", "peak_load": None, "coverage": round(cov, 2), "evidence": None,
+                "path": path, "seg_levels": [by_seg.get(sg, "unknown") for sg in range(b, a)]}
     worst = max((h[2][0] for h in hits), key=lambda l: LEVEL_ORDER[l])
     seg, grain, (lv, ld, lo_, hi_, nt, nd) = max(hits, key=lambda h: h[2][1])
     ld, lo_, hi_ = min(ld, 101), min(lo_, 101), min(hi_, 101)   # display cap: anything above 100 is shown as 100+
     evidence = {"stretch": f"{net.stop_name(net.canon_stop(route, seg))} to {net.stop_name(net.canon_stop(route, seg + 1))}",
                 "grain": grain, "tickets": int(nt), "days": int(nd), "load": round(ld), "low": round(lo_), "high": round(hi_),
                 "pooled_stretches": pooled, "stretches": a - b, **_bus(net, route)}
-    return {"level": worst, "peak_load": round(ld), "coverage": round(cov, 2), "evidence": evidence, "basis": "stretch"}
+    return {"level": worst, "peak_load": round(ld), "coverage": round(cov, 2), "evidence": evidence, "basis": "stretch",
+            "path": path, "seg_levels": [by_seg.get(sg, "unknown") for sg in range(b, a)]}
 
 
 def _describe(net: Network, res: dict, t_request: int, day_type: str, o_label: str, d_label: str) -> dict:
@@ -268,7 +282,8 @@ def _describe(net: Network, res: dict, t_request: int, day_type: str, o_label: s
         legs.append({"type": "ride", "route": route, "board": net.stop_names[dep_s[bk]], "alight": net.stop_names[arr_s[k]],
                      "board_time": clock(dep_t[bk]), "alight_time": clock(arr_t[k]), "minutes": round(mins, 1),
                      "crowding": cr["level"], "peak_load": cr["peak_load"], "evidence_coverage": cr["coverage"],
-                     "evidence": cr["evidence"], "basis": cr.get("basis", "stretch")})
+                     "evidence": cr["evidence"], "basis": cr.get("basis", "stretch"),
+                     "path": cr["path"], "seg_levels": cr["seg_levels"]})
         rides.append(route)
     first_board = next(l for l in res["legs"] if l[0] == "ride")
     walk0 = res["legs"][0][1] if res["legs"][0][0] == "walk" else 0
@@ -306,6 +321,7 @@ def plan(origin, destination, depart: str = "08:30", day_type: str = "weekday", 
             options.append(opt)
         return opt
 
+    ends = {"origin": [round(olat, 5), round(olon, 5)], "dest": [round(dlat, 5), round(dlon, 5)]}
     base = attempt(t0)
     for off in (10, 20, 30):
         attempt(t0 + off * 60)
@@ -315,4 +331,6 @@ def plan(origin, destination, depart: str = "08:30", day_type: str = "weekday", 
     for o in options:
         o["score"] = round(o["minutes_from_request"] + TRANSFER_PENALTY_MIN * o["transfers"]
                            + 2 * comfort_weight * o["crowd_penalty_min"], 1)
+    for o in options:
+        o.update(ends)
     return sorted(options, key=lambda o: o["score"])[:max_options]

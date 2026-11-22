@@ -29,19 +29,19 @@ DW1DOWN,pm peak 17-20,weekday,22,13.0,7.0,87.0,5569.0,IOL to Palam Airport  / IG
 525DOWN,pm peak 17-20,weekend,33,12.0,6.0,101.0,8744.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.36
 706DOWN,am peak 7-10,weekday,45,29.0,5.0,101.0,41355.0,Radission Hotel to Mahipal Pur (NH8) / MAHIPAL PUR CROSSING,0.64
 680DOWN,am peak 7-10,weekday,52,21.0,5.0,101.0,28217.0,Moti Bagh 1 to Rail Museum,0.4
-D028UP,pm peak 17-20,weekday,27,18.0,5.0,71.0,13049.0,Don Bosco School to Narmada Apartments,0.67
 8UP,am peak 7-10,weekday,34,18.0,5.0,101.0,47819.0,Ali Village to Maruti Factory /  Haldiram,0.53
+D028UP,pm peak 17-20,weekday,27,18.0,5.0,71.0,13049.0,Don Bosco School to Narmada Apartments,0.67
 D030DOWN,am peak 7-10,weekday,32,13.0,5.0,74.0,12576.0,Poorvi Block Sector 7 to Mohammadpur Village,0.41
-717ADOWN,late 21-4,weekday,45,10.0,5.0,101.0,33279.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.22
 717DOWN,late 21-4,weekday,42,10.0,5.0,101.0,11474.0,Saket Crossing to Asian Market,0.24
 525DOWN,late 21-4,weekday,31,10.0,5.0,101.0,10998.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.32
+717ADOWN,late 21-4,weekday,45,10.0,5.0,101.0,33279.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.22
 525ASTLANDDOWN,pm peak 17-20,weekday,13,8.0,5.0,101.0,3171.0,Saket Crossing to Institute Of Pharmacy (DIPSAR),0.62
 801IGIINDDOWN,early 5-6,weekday,38,7.0,5.0,101.0,5908.0,Cargo / Express Terminal Gate 6 to Aero City Metro Station,0.18
 D7701ADOWN,pm peak 17-20,weekday,5,5.0,5.0,101.0,1541.0,Rajpur Crossing to Chhatarpur Extension,1.0
 717BUP,am peak 7-10,weekday,41,24.0,4.0,101.0,65864.0,Asian Market to Saket Crossing,0.59
 511AUP,am peak 7-10,weekday,46,17.0,4.0,101.0,79266.0,okhla xing to Tehkhand Depot DTC,0.37
-729DOWN,am peak 7-10,weekday,45,16.0,4.0,101.0,76075.0,Shiv Murti (NH8) to Rang puri (NH8),0.36
 85UP,am peak 7-10,weekday,50,16.0,4.0,101.0,41961.0,Delhi Secretariat to ITO AGCR /  ITO,0.32
+729DOWN,am peak 7-10,weekday,45,16.0,4.0,101.0,76075.0,Shiv Murti (NH8) to Rang puri (NH8),0.36
 525DOWN,pm peak 17-20,weekday,29,15.0,4.0,101.0,20615.0,Said ul zeb Village to Maidan Garhi Crossing (SDM Court),0.52
 D052DOWN,am peak 7-10,weekday,29,11.0,4.0,81.0,7888.0,RK Khanna Tennis Stadium Sec 3 /  RK Puram Sec 2 to R K Puram Sec2,0.38
 450DOWN,am peak 7-10,weekday,16,9.0,4.0,101.0,5533.0,Sewa Nagar Flyover to J L Nehru Stadium,0.56

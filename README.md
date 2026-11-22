@@ -37,7 +37,7 @@ Most Problem 2 entries will turn tickets into a load, colour it, and draw a plan
 ## What you get
 - `data/out/crowding_levels.parquet` (hour) and `crowding_band_levels.parquet` (day parts): level, load and range, tickets, days, bus class per route stretch.
 - `data/out/backtest*.json|csv`, `fare_check.json`, `sanity/`, `operator_overload.csv`, `extra_bus_benefit.csv`.
-- `web/`: planner, route map, operators page. `make serve` adds live planning for any trip.
+- `web/`: planner (option list beside a map that colours each trip stretch by stretch), route map, operators page. `make serve` adds live planning for any trip. The map uses OpenStreetMap tiles and the Leaflet library from a CDN, so it needs internet; without it the list still works.
 
 ## Status and limits
 All stages run on the real October tickets and GTFS. GPS cross-check not built. Absolute loads are not validated against an independent count: bus size per route is inferred, ticket share and pass-holder uplift are assumed ranges, and planner times are scheduled. See [docs/METHOD.md](docs/METHOD.md) §3-6.

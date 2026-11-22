@@ -360,18 +360,6 @@
   "crowded_share":0.4
  },
  {
-  "route":"D028UP",
-  "band":"pm peak 17-20",
-  "day_type":"weekday",
-  "stretches_with_evidence":27,
-  "crowded_stretches":18.0,
-  "crowded_even_at_low_estimate":5.0,
-  "max_load":71.0,
-  "tickets":13049.0,
-  "busiest_stretch":"Don Bosco School to Narmada Apartments",
-  "crowded_share":0.67
- },
- {
   "route":"8UP",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -384,6 +372,18 @@
   "crowded_share":0.53
  },
  {
+  "route":"D028UP",
+  "band":"pm peak 17-20",
+  "day_type":"weekday",
+  "stretches_with_evidence":27,
+  "crowded_stretches":18.0,
+  "crowded_even_at_low_estimate":5.0,
+  "max_load":71.0,
+  "tickets":13049.0,
+  "busiest_stretch":"Don Bosco School to Narmada Apartments",
+  "crowded_share":0.67
+ },
+ {
   "route":"D030DOWN",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -394,18 +394,6 @@
   "tickets":12576.0,
   "busiest_stretch":"Poorvi Block Sector 7 to Mohammadpur Village",
   "crowded_share":0.41
- },
- {
-  "route":"717ADOWN",
-  "band":"late 21-4",
-  "day_type":"weekday",
-  "stretches_with_evidence":45,
-  "crowded_stretches":10.0,
-  "crowded_even_at_low_estimate":5.0,
-  "max_load":101.0,
-  "tickets":33279.0,
-  "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
-  "crowded_share":0.22
  },
  {
   "route":"717DOWN",
@@ -430,6 +418,18 @@
   "tickets":10998.0,
   "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
   "crowded_share":0.32
+ },
+ {
+  "route":"717ADOWN",
+  "band":"late 21-4",
+  "day_type":"weekday",
+  "stretches_with_evidence":45,
+  "crowded_stretches":10.0,
+  "crowded_even_at_low_estimate":5.0,
+  "max_load":101.0,
+  "tickets":33279.0,
+  "busiest_stretch":"Asian Market to DIPSAR College of Pharmacy \/ Ambedkar Nagar (T.)",
+  "crowded_share":0.22
  },
  {
   "route":"525ASTLANDDOWN",
@@ -492,18 +492,6 @@
   "crowded_share":0.37
  },
  {
-  "route":"729DOWN",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":45,
-  "crowded_stretches":16.0,
-  "crowded_even_at_low_estimate":4.0,
-  "max_load":101.0,
-  "tickets":76075.0,
-  "busiest_stretch":"Shiv Murti (NH8) to Rang puri (NH8)",
-  "crowded_share":0.36
- },
- {
   "route":"85UP",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -514,6 +502,18 @@
   "tickets":41961.0,
   "busiest_stretch":"Delhi Secretariat to ITO AGCR \/  ITO",
   "crowded_share":0.32
+ },
+ {
+  "route":"729DOWN",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":45,
+  "crowded_stretches":16.0,
+  "crowded_even_at_low_estimate":4.0,
+  "max_load":101.0,
+  "tickets":76075.0,
+  "busiest_stretch":"Shiv Murti (NH8) to Rang puri (NH8)",
+  "crowded_share":0.36
  },
  {
   "route":"525DOWN",
