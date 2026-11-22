@@ -1,15 +1,15 @@
 route,band,day_type,stretches_with_evidence,crowded_stretches,crowded_even_at_low_estimate,max_load,tickets,busiest_stretch,crowded_share
 258DOWN,am peak 7-10,weekend,29,25.0,15.0,101.0,23183.0,Banarsi Daas Estate Timarpur to Mall Road,0.86
 DW1DOWN,am peak 7-10,weekday,20,15.0,15.0,101.0,13334.0,IOL to Palam Airport  / IGI Airport T1,0.75
-D028DOWN,am peak 7-10,weekday,28,17.0,14.0,80.0,20734.0,S Block Greater Kailash II to M Block Greater Kailash II,0.61
 258DOWN,am peak 7-10,weekday,21,17.0,14.0,101.0,45296.0,Mall Road to Khyber Pass,0.81
+D028DOWN,am peak 7-10,weekday,28,17.0,14.0,80.0,20734.0,S Block Greater Kailash II to M Block Greater Kailash II,0.61
 DW1UP,pm peak 17-20,weekday,18,14.0,10.0,101.0,7071.0,IOL to Indian Oil Station,0.78
 DW1DOWN,late 21-4,weekend,11,11.0,10.0,101.0,677.0,Air Traffic Control Office to IGI Airport Terminal 2 (Air India Office),1.0
 D7701AUP,am peak 7-10,weekend,10,10.0,10.0,101.0,2069.0,Gaushala Road to South Asian University,1.0
 258UP,pm peak 17-20,weekday,28,19.0,9.0,101.0,33582.0,Banarsi Daas Estate Timarpur to Timarpur,0.68
 D2202UP,pm peak 17-20,weekday,22,11.0,9.0,81.0,9355.0,Shahbad Daulatpur School to St Xavier School,0.5
-DS20DOWN,am peak 7-10,weekday,10,10.0,9.0,101.0,1262.0,ITO AGCR /  ITO to Tilak Bridge,1.0
 D7701ADOWN,midday 11-16,weekday,10,10.0,9.0,101.0,1265.0,Gaushala Road to Satbari Village / X-ing,1.0
+DS20DOWN,am peak 7-10,weekday,10,10.0,9.0,101.0,1262.0,ITO AGCR /  ITO to Tilak Bridge,1.0
 525UP,am peak 7-10,weekend,36,23.0,8.0,101.0,10930.0,Asian Market to Saket Crossing,0.64
 434DOWN,pm peak 17-20,weekday,55,14.0,8.0,101.0,14755.0,Maidan Garhi Crossing (SDM Court) to Saket Crossing,0.25
 463DOWN,pm peak 17-20,weekday,33,11.0,8.0,101.0,27147.0,Saket Crossing to Asian Market,0.33
@@ -20,8 +20,8 @@ D7701ADOWN,midday 11-16,weekday,10,10.0,9.0,101.0,1265.0,Gaushala Road to Satbar
 717BDOWN,pm peak 17-20,weekday,44,29.0,7.0,101.0,73546.0,Saket Crossing to Asian Market,0.66
 717UP,am peak 7-10,weekday,57,26.0,7.0,101.0,57598.0,Asian Market to Saket Crossing,0.46
 544DOWN,am peak 7-10,weekday,45,16.0,7.0,101.0,67040.0,Sheikh Sarai Phase II / Shaheed Bhagat Singh College to Chirag Delhi,0.36
-DW1DOWN,am peak 7-10,weekend,18,15.0,7.0,101.0,3144.0,IOL to Palam Airport  / IGI Airport T1,0.83
 740UP,am peak 7-10,weekday,49,15.0,7.0,101.0,8230.0,Rainy Well to Delhi Secretariat,0.31
+DW1DOWN,am peak 7-10,weekend,18,15.0,7.0,101.0,3144.0,IOL to Palam Airport  / IGI Airport T1,0.83
 DW1DOWN,pm peak 17-20,weekday,22,13.0,7.0,87.0,5569.0,IOL to Palam Airport  / IGI Airport T1,0.59
 630DOWN,am peak 7-10,weekday,11,11.0,7.0,101.0,1353.0,South Moti Bagh (Ring Road) / Moti Bagh / Rao Tula Ram Marg to Moti Bagh 1,1.0
 801UTTKAPUP,am peak 7-10,weekday,44,22.0,6.0,101.0,25289.0,Govt Boys Sr Sec School (Shahbad) to Bharat Petrolium (Dwarka Link Road),0.5
@@ -29,12 +29,12 @@ DW1DOWN,pm peak 17-20,weekday,22,13.0,7.0,87.0,5569.0,IOL to Palam Airport  / IG
 525DOWN,pm peak 17-20,weekend,33,12.0,6.0,101.0,8744.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.36
 706DOWN,am peak 7-10,weekday,45,29.0,5.0,101.0,41355.0,Radission Hotel to Mahipal Pur (NH8) / MAHIPAL PUR CROSSING,0.64
 680DOWN,am peak 7-10,weekday,52,21.0,5.0,101.0,28217.0,Moti Bagh 1 to Rail Museum,0.4
-D028UP,pm peak 17-20,weekday,27,18.0,5.0,71.0,13049.0,Don Bosco School to Narmada Apartments,0.67
 8UP,am peak 7-10,weekday,34,18.0,5.0,101.0,47819.0,Ali Village to Maruti Factory /  Haldiram,0.53
+D028UP,pm peak 17-20,weekday,27,18.0,5.0,71.0,13049.0,Don Bosco School to Narmada Apartments,0.67
 D030DOWN,am peak 7-10,weekday,32,13.0,5.0,74.0,12576.0,Poorvi Block Sector 7 to Mohammadpur Village,0.41
-717DOWN,late 21-4,weekday,42,10.0,5.0,101.0,11474.0,Saket Crossing to Asian Market,0.24
-717ADOWN,late 21-4,weekday,45,10.0,5.0,101.0,33279.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.22
 525DOWN,late 21-4,weekday,31,10.0,5.0,101.0,10998.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.32
+717ADOWN,late 21-4,weekday,45,10.0,5.0,101.0,33279.0,Asian Market to DIPSAR College of Pharmacy / Ambedkar Nagar (T.),0.22
+717DOWN,late 21-4,weekday,42,10.0,5.0,101.0,11474.0,Saket Crossing to Asian Market,0.24
 525ASTLANDDOWN,pm peak 17-20,weekday,13,8.0,5.0,101.0,3171.0,Saket Crossing to Institute Of Pharmacy (DIPSAR),0.62
 801IGIINDDOWN,early 5-6,weekday,38,7.0,5.0,101.0,5908.0,Cargo / Express Terminal Gate 6 to Aero City Metro Station,0.18
 D7701ADOWN,pm peak 17-20,weekday,5,5.0,5.0,101.0,1541.0,Rajpur Crossing to Chhatarpur Extension,1.0

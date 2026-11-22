@@ -1,14 +1,14 @@
 # Demo script (about 2.5 minutes) and judge Q&A
 
-Run first: `make crowding-all && make serve`, then open http://localhost:8000. The hosted static copy has demo trips only.
+Run first: `make crowding-all && make serve`, then open http://localhost:8000. The planner has two modes at the top: **Search any stop** (blue LIVE label, needs the server) and **Sample trips** (brown SAMPLE label, saved with the site). The hosted static copy has sample trips only. Drag the line between the panel and the map to resize the panel.
 
 | Time | Show | Say |
 |---|---|---|
-| 0:00 | Plan a trip: Connaught Place → Anand Vihar, weekday 18:00 | "Planners rank by time. We add how full each bus usually is." |
-| 0:15 | The map: fastest option, red in the middle. Then "Most comfortable": the line turns green; card says "+2 min, less crowded than the fastest" | "Here is the crowded stretch, on the map. One tab, and two minutes buys a seat." |
-| 0:30 | Switch to Anand Vihar → Connaught Place, 18:00, then 08:30 | "Same corridor. Against the evening flow, seats. Into town at 8:30, crowded. Direction matters." |
+| 0:00 | Sample trips: Rohini Sector 22 → Nehru Place, weekday 18:00 | "Planners rank by time. We add how full each bus usually is." |
+| 0:15 | The map: fastest option (121 min) has red stretches. Then "Most comfortable": the line turns green; card says "+4 min, less crowded than the fastest" | "Here is the crowded stretch, on the map. One tab, and four minutes buys a seat." |
+| 0:30 | Switch to Anand Vihar → Connaught Place, weekday 08:30, then 18:00 | "Same trip. Into town at 8:30, every option is crowded. At 18:00, against the evening flow, one extra minute gets a seat. Time and direction matter." |
 | 0:45 | Labels → हिन्दी | "Labels a commuter reads in a second, in their language." |
-| 0:55 | "Any trip": type two stops not in the list | "Not canned: any stop to any stop." |
+| 0:55 | "Search any stop" tab: type two stops not in the sample list | "Not canned: any stop to any stop, planned live on the full timetable." |
 | 1:10 | Open "Why this estimate?" | "Each label: the busiest stretch, a range, the tickets and days behind it, and the bus size. Grey means we refuse to guess." |
 | 1:30 | Operators page, top of the "+1 bus" table | "For DTC: one more bus on 188DOWN at the morning peak saves about 4,900 standing minutes a day, 2,800 even on our cautious estimate." |
 | 1:50 | METHOD.md §5 tables | "Most stretches really have seats, so accuracy alone is a trap. We beat an always-seats baseline with kappa 0.71, and the estimate holds from week to week." |

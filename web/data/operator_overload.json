@@ -24,18 +24,6 @@
   "crowded_share":0.75
  },
  {
-  "route":"D028DOWN",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":28,
-  "crowded_stretches":17.0,
-  "crowded_even_at_low_estimate":14.0,
-  "max_load":80.0,
-  "tickets":20734.0,
-  "busiest_stretch":"S Block Greater Kailash II to M Block Greater Kailash II",
-  "crowded_share":0.61
- },
- {
   "route":"258DOWN",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -46,6 +34,18 @@
   "tickets":45296.0,
   "busiest_stretch":"Mall Road to Khyber Pass",
   "crowded_share":0.81
+ },
+ {
+  "route":"D028DOWN",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":28,
+  "crowded_stretches":17.0,
+  "crowded_even_at_low_estimate":14.0,
+  "max_load":80.0,
+  "tickets":20734.0,
+  "busiest_stretch":"S Block Greater Kailash II to M Block Greater Kailash II",
+  "crowded_share":0.61
  },
  {
   "route":"DW1UP",
@@ -108,18 +108,6 @@
   "crowded_share":0.5
  },
  {
-  "route":"DS20DOWN",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":10,
-  "crowded_stretches":10.0,
-  "crowded_even_at_low_estimate":9.0,
-  "max_load":101.0,
-  "tickets":1262.0,
-  "busiest_stretch":"ITO AGCR \/  ITO to Tilak Bridge",
-  "crowded_share":1.0
- },
- {
   "route":"D7701ADOWN",
   "band":"midday 11-16",
   "day_type":"weekday",
@@ -129,6 +117,18 @@
   "max_load":101.0,
   "tickets":1265.0,
   "busiest_stretch":"Gaushala Road to Satbari Village \/ X-ing",
+  "crowded_share":1.0
+ },
+ {
+  "route":"DS20DOWN",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":10,
+  "crowded_stretches":10.0,
+  "crowded_even_at_low_estimate":9.0,
+  "max_load":101.0,
+  "tickets":1262.0,
+  "busiest_stretch":"ITO AGCR \/  ITO to Tilak Bridge",
   "crowded_share":1.0
  },
  {
@@ -156,18 +156,6 @@
   "crowded_share":0.25
  },
  {
-  "route":"772UP",
-  "band":"late 21-4",
-  "day_type":"weekday",
-  "stretches_with_evidence":13,
-  "crowded_stretches":11.0,
-  "crowded_even_at_low_estimate":8.0,
-  "max_load":101.0,
-  "tickets":1561.0,
-  "busiest_stretch":"Rang Puri (Airport Road) \/ Mahipal Pur Crossing to Centaur Hotel \/ New Custom House",
-  "crowded_share":0.85
- },
- {
   "route":"463DOWN",
   "band":"pm peak 17-20",
   "day_type":"weekday",
@@ -178,6 +166,18 @@
   "tickets":27147.0,
   "busiest_stretch":"Saket Crossing to Asian Market",
   "crowded_share":0.33
+ },
+ {
+  "route":"772UP",
+  "band":"late 21-4",
+  "day_type":"weekday",
+  "stretches_with_evidence":13,
+  "crowded_stretches":11.0,
+  "crowded_even_at_low_estimate":8.0,
+  "max_load":101.0,
+  "tickets":1561.0,
+  "busiest_stretch":"Rang Puri (Airport Road) \/ Mahipal Pur Crossing to Centaur Hotel \/ New Custom House",
+  "crowded_share":0.85
  },
  {
   "route":"525STLDOWN",
@@ -252,18 +252,6 @@
   "crowded_share":0.36
  },
  {
-  "route":"DW1DOWN",
-  "band":"am peak 7-10",
-  "day_type":"weekend",
-  "stretches_with_evidence":18,
-  "crowded_stretches":15.0,
-  "crowded_even_at_low_estimate":7.0,
-  "max_load":101.0,
-  "tickets":3144.0,
-  "busiest_stretch":"IOL to Palam Airport  \/ IGI Airport T1",
-  "crowded_share":0.83
- },
- {
   "route":"740UP",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -274,6 +262,18 @@
   "tickets":8230.0,
   "busiest_stretch":"Rainy Well to Delhi Secretariat",
   "crowded_share":0.31
+ },
+ {
+  "route":"DW1DOWN",
+  "band":"am peak 7-10",
+  "day_type":"weekend",
+  "stretches_with_evidence":18,
+  "crowded_stretches":15.0,
+  "crowded_even_at_low_estimate":7.0,
+  "max_load":101.0,
+  "tickets":3144.0,
+  "busiest_stretch":"IOL to Palam Airport  \/ IGI Airport T1",
+  "crowded_share":0.83
  },
  {
   "route":"DW1DOWN",
@@ -360,18 +360,6 @@
   "crowded_share":0.4
  },
  {
-  "route":"D028UP",
-  "band":"pm peak 17-20",
-  "day_type":"weekday",
-  "stretches_with_evidence":27,
-  "crowded_stretches":18.0,
-  "crowded_even_at_low_estimate":5.0,
-  "max_load":71.0,
-  "tickets":13049.0,
-  "busiest_stretch":"Don Bosco School to Narmada Apartments",
-  "crowded_share":0.67
- },
- {
   "route":"8UP",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -382,6 +370,18 @@
   "tickets":47819.0,
   "busiest_stretch":"Ali Village to Maruti Factory \/  Haldiram",
   "crowded_share":0.53
+ },
+ {
+  "route":"D028UP",
+  "band":"pm peak 17-20",
+  "day_type":"weekday",
+  "stretches_with_evidence":27,
+  "crowded_stretches":18.0,
+  "crowded_even_at_low_estimate":5.0,
+  "max_load":71.0,
+  "tickets":13049.0,
+  "busiest_stretch":"Don Bosco School to Narmada Apartments",
+  "crowded_share":0.67
  },
  {
   "route":"D030DOWN",
@@ -492,18 +492,6 @@
   "crowded_share":0.37
  },
  {
-  "route":"85UP",
-  "band":"am peak 7-10",
-  "day_type":"weekday",
-  "stretches_with_evidence":50,
-  "crowded_stretches":16.0,
-  "crowded_even_at_low_estimate":4.0,
-  "max_load":101.0,
-  "tickets":41961.0,
-  "busiest_stretch":"Delhi Secretariat to ITO AGCR \/  ITO",
-  "crowded_share":0.32
- },
- {
   "route":"729DOWN",
   "band":"am peak 7-10",
   "day_type":"weekday",
@@ -514,6 +502,18 @@
   "tickets":76075.0,
   "busiest_stretch":"Shiv Murti (NH8) to Rang puri (NH8)",
   "crowded_share":0.36
+ },
+ {
+  "route":"85UP",
+  "band":"am peak 7-10",
+  "day_type":"weekday",
+  "stretches_with_evidence":50,
+  "crowded_stretches":16.0,
+  "crowded_even_at_low_estimate":4.0,
+  "max_load":101.0,
+  "tickets":41961.0,
+  "busiest_stretch":"Delhi Secretariat to ITO AGCR \/  ITO",
+  "crowded_share":0.32
  },
  {
   "route":"525DOWN",

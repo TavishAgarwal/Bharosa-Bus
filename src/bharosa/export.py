@@ -65,7 +65,7 @@ def export_operator(out_dir: Path | None = None, top: int = 60) -> Path:
         FROM read_parquet('{od / 'crowding_band_levels.parquet'}') WHERE abstain_reason = ''
         GROUP BY route, band, day_type
         HAVING sum(CAST(level = 'crowded' AS INT)) > 0 AND count(*) >= 5
-        ORDER BY crowded_even_at_low_estimate DESC, crowded_stretches DESC LIMIT {top}""").df()
+        ORDER BY crowded_even_at_low_estimate DESC, crowded_stretches DESC, route, day_type, band LIMIT {top}""").df()
     df["crowded_share"] = (df["crowded_stretches"] / df["stretches_with_evidence"]).round(2)
     df.to_csv(od / "operator_overload.csv", index=False)
     web = ROOT / "web" / "data"
@@ -103,7 +103,7 @@ def export_extra_bus(out_dir: Path | None = None, top: int = 40) -> Path:
               FROM x GROUP BY route, band, day_type HAVING count(*) >= 5)
         SELECT *, round(standing_min - standing_min_after) AS standing_min_saved,
                round(standing_min_lo - standing_min_lo_after) AS standing_min_saved_low
-        FROM s WHERE standing_min > 0 ORDER BY standing_min_saved_low DESC, standing_min_saved DESC LIMIT {top}""").df()
+        FROM s WHERE standing_min > 0 ORDER BY standing_min_saved_low DESC, standing_min_saved DESC, route, day_type, band LIMIT {top}""").df()
     df["standing_min"] = df["standing_min"].round()
     df = df.drop(columns=["standing_min_after", "standing_min_lo", "standing_min_lo_after"])
     df.to_csv(od / "extra_bus_benefit.csv", index=False)
@@ -121,12 +121,12 @@ def export_route_profiles(n_routes: int = 40, out_dir: Path | None = None) -> Pa
     ix = {s: i for i, s in enumerate(net.stop_ids)}
     con = duckdb.connect()
     bp = f"read_parquet('{od / 'crowding_band_levels.parquet'}')"
-    routes = [r for (r,) in con.execute(f"SELECT route FROM {bp} GROUP BY route ORDER BY sum(n_tickets) DESC LIMIT {n_routes}").fetchall()]
+    routes = [r for (r,) in con.execute(f"SELECT route FROM {bp} GROUP BY route ORDER BY sum(n_tickets) DESC, route LIMIT {n_routes}").fetchall()]
     # every route on the operators page also gets geometry, so selecting a row can show it on the map
     for name in ("extra_bus_benefit.csv", "operator_overload.csv"):
         f = od / name
         if f.exists():
-            routes += [r for (r,) in con.execute(f"SELECT DISTINCT route FROM read_csv('{f}')").fetchall() if r not in routes]
+            routes += [r for (r,) in con.execute(f"SELECT DISTINCT route FROM read_csv('{f}') ORDER BY route").fetchall() if r not in routes]
     code = {"seats": 0, "standing": 1, "crowded": 2}
     out = {"bands": ["early 5-6", "am peak 7-10", "midday 11-16", "pm peak 17-20", "late 21-4"], "routes": {}}
     for r in routes:

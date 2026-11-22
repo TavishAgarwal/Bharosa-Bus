@@ -84,12 +84,12 @@ def load_network(gtfs_dir: Path, interim_dir: Path | None = None, out_dir: Path 
     con = duckdb.connect()
     secs = lambda c: (f"(TRY_CAST(split_part({c}, ':', 1) AS INTEGER) * 3600 + TRY_CAST(split_part({c}, ':', 2) AS INTEGER) * 60"
                       f" + coalesce(TRY_CAST(split_part({c}, ':', 3) AS INTEGER), 0))")
-    con.execute(f"""CREATE TABLE stops AS SELECT row_number() OVER () - 1 AS ix, stop_id, stop_name,
+    con.execute(f"""CREATE TABLE stops AS SELECT row_number() OVER (ORDER BY stop_id) - 1 AS ix, stop_id, stop_name,
                     CAST(stop_lat AS DOUBLE) AS lat, CAST(stop_lon AS DOUBLE) AS lon FROM {rd('stops')}
                     WHERE TRY_CAST(stop_lat AS DOUBLE) IS NOT NULL""")
-    con.execute(f"""CREATE TABLE routes_ix AS SELECT row_number() OVER () - 1 AS rix, route FROM
+    con.execute(f"""CREATE TABLE routes_ix AS SELECT row_number() OVER (ORDER BY route) - 1 AS rix, route FROM
                     (SELECT DISTINCT {ROUTE_KEY.format(c='route_short_name')} AS route FROM {rd('routes')})""")
-    con.execute(f"""CREATE TABLE trips_ix AS SELECT row_number() OVER () - 1 AS tix, t.trip_id, ri.rix
+    con.execute(f"""CREATE TABLE trips_ix AS SELECT row_number() OVER (ORDER BY t.trip_id) - 1 AS tix, t.trip_id, ri.rix
                     FROM {rd('trips')} t JOIN {rd('routes')} r USING (route_id)
                     JOIN routes_ix ri ON ri.route = {ROUTE_KEY.format(c='r.route_short_name')}""")
     con.execute(f"""CREATE TABLE conns AS
@@ -98,9 +98,9 @@ def load_network(gtfs_dir: Path, interim_dir: Path | None = None, out_dir: Path 
                  lead(stop_id) OVER w AS next_stop, lead({secs('arrival_time')}) OVER w AS atime
           FROM {rd('stop_times')} WINDOW w AS (PARTITION BY trip_id ORDER BY CAST(stop_sequence AS INTEGER))) x
         JOIN trips_ix ti USING (trip_id) JOIN stops s1 ON s1.stop_id = x.stop_id JOIN stops s2 ON s2.stop_id = x.next_stop
-        WHERE x.atime IS NOT NULL AND x.dt IS NOT NULL AND x.atime >= x.dt ORDER BY x.dt""")
+        WHERE x.atime IS NOT NULL AND x.dt IS NOT NULL AND x.atime >= x.dt""")
     st = con.execute("SELECT stop_id, stop_name, lat, lon FROM stops ORDER BY ix").fetchnumpy()
-    cn = con.execute("SELECT tix, ds, asx, dt, atime FROM conns").fetchnumpy()
+    cn = con.execute("SELECT tix, ds, asx, dt, atime FROM conns ORDER BY dt, tix, ds, asx").fetchnumpy()
     ti = con.execute("SELECT trip_id, rix FROM trips_ix ORDER BY tix").fetchnumpy()
     rt = con.execute("SELECT route FROM routes_ix ORDER BY rix").fetchnumpy()
     net = Network(list(st["stop_id"]), list(st["stop_name"]), st["lat"], st["lon"],
@@ -158,7 +158,7 @@ def resolve_place(net: Network, place) -> tuple[float, float, str]:
 
 def nearby(net: Network, lat: float, lon: float) -> dict[int, float]:
     d = hav(lat, lon, net.lat, net.lon)
-    idx = np.argsort(d)[:MAX_ACCESS_STOPS]
+    idx = np.argsort(d, kind="stable")[:MAX_ACCESS_STOPS]
     return {int(i): float(d[i] * DETOUR / WALK_SPEED) for i in idx if d[i] <= MAX_ACCESS_M}
 
 
@@ -333,4 +333,4 @@ def plan(origin, destination, depart: str = "08:30", day_type: str = "weekday", 
                            + 2 * comfort_weight * o["crowd_penalty_min"], 1)
     for o in options:
         o.update(ends)
-    return sorted(options, key=lambda o: o["score"])[:max_options]
+    return sorted(options, key=lambda o: (o["score"], o["arrive"], o["routes"]))[:max_options]
