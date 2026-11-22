@@ -14,7 +14,7 @@ from . import config
 from .levels import scenarios, DEFAULT_SCENARIO
 
 ROOT = Path(__file__).resolve().parents[2]
-TIMES = [("08:30", "weekday"), ("13:00", "weekday"), ("18:00", "weekday"), ("18:00", "weekend")]
+TIMES = [("08:30", "weekday"), ("13:00", "weekday"), ("18:00", "weekday"), ("18:00", "weekend"), ("21:30", "weekday")]
 
 
 def run(pairs_path: Path | None = None, out_path: Path | None = None) -> None:

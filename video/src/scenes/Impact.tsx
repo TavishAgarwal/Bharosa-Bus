@@ -17,7 +17,7 @@ export const Impact: React.FC = () => {
   const f = useCurrentFrame();
   const {start, beats} = sectionRange("impact");
   const [i1, i2, i3] = beats.map((b) => b.start - start);
-  const steps = ["Same-day estimates from live ticket feeds", "Pass-holder data, not just e-tickets", "In-bus counts to calibrate", "A home in Delhi's official transit apps"];
+  const steps = ["Pink Saheli card data: women ride free and are missing from e-tickets", "Same-day estimates from live ticket feeds", "In-bus counts to calibrate", "A home in Delhi's official transit apps"];
   return (
     <AbsoluteFill style={{background: C.paper, fontFamily, color: C.ink, padding: "80px 110px"}}>
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>

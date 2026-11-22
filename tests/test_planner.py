@@ -84,3 +84,14 @@ def test_route_typical_fallback_when_stretches_lack_data(tmp_path):
     cr = _leg_crowding(net, "R1", "A", "C", 8 * 3600, "weekday")
     assert cr["level"] == "standing" and cr["basis"] == "route" and cr["evidence"]["grain"] == "route typical"
     assert _leg_crowding(net, "R1", "A", "C", 13 * 3600, "weekday")["level"] == "unknown"   # midday band has no route data
+
+
+def test_wait_and_walk_minutes(tmp_path):
+    # R1 reaches C at 08:10, R2 leaves C at 08:15: one 5-minute wait at a stop. The direct R3 has no wait.
+    net = _net(tmp_path)
+    by_routes = {tuple(o["routes"]): o for o in plan(A, D, "08:00", "weekday", 0.0, net)}
+    fast, direct = by_routes[("R1", "R2")], by_routes[("R3",)]
+    assert fast["wait_min"] == 5.0 and fast["max_wait_min"] == 5.0
+    assert direct["wait_min"] == 0.0 and direct["max_wait_min"] == 0.0
+    walks = sum(l["minutes"] for l in fast["legs"] if l["type"] == "walk")
+    assert abs(fast["walk_min"] - walks) < 0.2

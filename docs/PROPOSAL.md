@@ -19,7 +19,7 @@ Bus size is inferred per route: short `D…` routes (median 10 km) are 9 m DEVI 
 | Fare slab vs distance between matched stops | 83% exact, 99.9% within one slab (checks our stop matching) |
 | Known patterns | Peaks at 9:00 and 18:00, weekend at 69% of weekday, 2 Oct holiday dip |
 
-**What commuters get.** A planner for any stop pair, plus a faster-vs-comfortable slider. Each ride shows its crowding level, falling back to the route's typical level, clearly marked, when stretch data is thin. Every option has a one-line trade-off and an evidence card. There is also a route map coloured by crowding.
+**What commuters get.** A planner for any stop pair, plus a faster-vs-comfortable slider. Each ride shows its crowding level, falling back to the route's typical level, clearly marked, when stretch data is thin. Every option has a one-line trade-off and an evidence card. After dark the ranking adjusts by itself, putting fewer changes, short waits at stops and short walks first (it is not a safety score). There is also a route map coloured by crowding.
 
 **What operators get.** "If you add one bus here": standing passenger-minutes saved per day, by route and day part, ranked by the cautious estimate. Example: one more bus on 188DOWN at the weekday morning peak saves about 4,900 minutes a day (2,800 at the low end).
 
@@ -27,6 +27,7 @@ Bus size is inferred per route: short `D…` routes (median 10 km) are 9 m DEVI 
 
 - Absolute loads are not checked against an independent count.
 - Bus capacities come from press reports, and bus size per route is inferred. A sensitivity table covers all-9 m, all-12 m and 40 + 40.
+- Women ride free (Pink Saheli card) and free rides are not in the data: all 2.56M tickets are paid, with only 8 at zero fare. Crowding is likely underestimated where women are a large share of riders. Card-tap data from DTC would fix this.
 - Ticket share and pass-holder uplift are assumed ranges, and app use may differ by route. Same-route comparisons (a later bus, the other direction) are the safest thing we show.
 - We don't count per bus trip: the median bus has one e-ticket per route-hour.
 - Weekend labels are weak (9 days).
@@ -37,6 +38,6 @@ Bus size is inferred per route: short `D…` routes (median 10 km) are 9 m DEVI 
 - Rerunnable pipeline: `make crowding-all`, raw CSV to web data in 107 s.
 - Queryable tables: `python -m bharosa.query`.
 - Live demo: `make serve`. Static site: `make site`.
-- 30 tests.
+- 33 tests.
 - Technical note: `docs/METHOD.md`.
 - Backtest, fare-check, sanity and operator outputs in `data/out`.

@@ -7,6 +7,9 @@ or "unknown" when too few stretches have evidence). Travel times are SCHEDULED, 
 Alternatives come from re-running the scan at later departures and with each used route banned.
 Ranking: score = minutes_from_request + 4 * transfers + 2 * comfort_weight * crowd_penalty_min, where each ride minute
 costs 0 (seats), 0.35 (standing / unknown) or 1.0 (crowded).
+Each option also reports walk_min, wait_min (time spent waiting at stops between rides) and max_wait_min. After dark
+(leaving 20:00-04:59) the web UI's Balanced and Most comfortable rankings add 6 per change, 1.5 x wait_min and
+1.0 x walk_min, favouring fewer changes, short waits at stops and short walks. It does not measure safety.
 """
 from __future__ import annotations
 
@@ -267,14 +270,21 @@ def _leg_crowding(net: Network, route: str, board_stop: str, alight_stop: str, t
 def _describe(net: Network, res: dict, t_request: int, day_type: str, o_label: str, d_label: str) -> dict:
     dep_s, arr_s, dep_t, arr_t, trip = res["local"]
     legs, pen, rides, known_min, ride_min = [], 0.0, [], 0.0, 0.0
+    walk_s, waits, cursor = 0.0, [], None   # cursor: when the rider reaches the next stop (None before the first ride)
     for leg in res["legs"]:
         if leg[0] == "walk":
             legs.append({"type": "walk", "minutes": round(leg[1] / 60, 1)})
+            walk_s += leg[1]
+            if cursor is not None:
+                cursor += leg[1]
             continue
         _, tr, bk, k = leg
         route = net.routes[net.trip_route[tr]]
         bs, as_ = net.stop_ids[dep_s[bk]], net.stop_ids[arr_s[k]]
         cr = _leg_crowding(net, route, bs, as_, dep_t[bk], day_type)
+        if cursor is not None:   # waiting at a stop between rides (the first wait is spent at home)
+            waits.append(max(0.0, dep_t[bk] - cursor))
+        cursor = arr_t[k]
         mins = (arr_t[k] - dep_t[bk]) / 60
         pen += mins * LEVEL_COST[cr["level"]]
         ride_min += mins
@@ -295,6 +305,8 @@ def _describe(net: Network, res: dict, t_request: int, day_type: str, o_label: s
             "transfers": len(rides) - 1, "routes": rides, "legs": legs,
             "worst_crowding": ["seats", "standing", "crowded"][max(order)] if order else "unknown",
             "crowd_penalty_min": round(pen, 1), "day_type": day_type,
+            "walk_min": round(walk_s / 60, 1), "wait_min": round(sum(waits) / 60, 1),
+            "max_wait_min": round(max(waits, default=0.0) / 60, 1),
             "crowding_known_share": round(known_min / ride_min, 2) if ride_min else 0.0}
 
 

@@ -46,7 +46,7 @@ const LEVEL_EN={seats:"Seats likely",standing:"Standing room",crowded:"Crowded",
 const LEVEL_HI={seats:"सीट मिलेगी",standing:"खड़े होने की जगह",crowded:"भीड़",unknown:"पक्का नहीं"};
 const COLOR={seats:"#1a7f37",standing:"#b7791f",crowded:"#c62828",unknown:"#9e9e9e"};
 const RANK={seats:0,standing:1,crowded:2};
-let LT=LEVEL_EN, DATA=null, CUSTOM=null, MODE="demo", LIVE=false, W=0, SEL=0, MAP=null, LAYER=null;
+let LT=LEVEL_EN, DATA=null, CUSTOM=null, MODE="demo", LIVE=false, W=0, AUTO=false, LASTQ="", SEL=0, MAP=null, LAYER=null;
 const $=id=>document.getElementById(id);
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const hi=()=>LT===LEVEL_HI;
@@ -70,7 +70,7 @@ function init(){
  ["trip","time"].forEach(id=>$(id).addEventListener("input",()=>{SEL=0;render();}));
  document.querySelectorAll("#mode button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.m)));
  document.querySelectorAll("#rank button").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll("#rank button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));W=parseFloat(b.dataset.w);SEL=0;render();}));
+  document.querySelectorAll("#rank button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));W=parseFloat(b.dataset.w);AUTO=false;SEL=0;render();}));
  $("lang").addEventListener("input",e=>{LT=e.target.value==="hi"?LEVEL_HI:LEVEL_EN;legend();render();});
  $("demohint").textContent="This copy of the site only has saved sample trips. Run make serve to search any stop.";
  fetch("api/health").then(r=>r.ok?r.json():null).then(h=>{if(!h)return;LIVE=true;$("mode").hidden=false;
@@ -84,7 +84,7 @@ function init(){
   $("cgo").click();}).catch(()=>{});
  const a=DATA.assumptions;
  $("assume").innerHTML="Times are scheduled, not live. Crowding comes from about 2.5M October 2026 e-tickets (a small share of rides), scaled up with assumed ranges (ticket share "+esc(a.sample_rate.join("–"))+
-  ", pass-holder uplift "+esc(a.pass_holder_uplift.join("–"))+"). \"Crowded\" means over the bus's rated seats + standing; bus capacity "+esc(a.capacity_source)+". A level needs at least "+esc(a.min_tickets_per_cell)+" tickets.";
+  ", pass-holder uplift "+esc(a.pass_holder_uplift.join("–"))+"). \"Crowded\" means over the bus's rated seats + standing; bus capacity "+esc(a.capacity_source)+". A level needs at least "+esc(a.min_tickets_per_cell)+" tickets. Women ride free on the Pink Saheli card and those rides are not in the tickets, so crowding may be underestimated on routes and at times where many women travel.";
  render();
 }
 
@@ -100,13 +100,34 @@ function current(){
  return DATA.queries.find(q=>q.from===from&&q.to===to&&q.depart===dep&&q.day_type===dt);
 }
 // Fastest: earliest arrival (fewer changes breaks ties). Balanced / comfortable: minutes + 4 per change + crowding penalty.
-function ranked(q){return q.options.map(o=>({...o,score:W===0?o.minutes_from_request+0.01*o.transfers:o.minutes_from_request+4*o.transfers+2*W*o.crowd_penalty_min})).sort((a,b)=>a.score-b.score).slice(0,5);}
+// After dark (leaving 20:00-04:59) Balanced and Most comfortable also count time off the bus: +6 per change (10 in all),
+// +1.5 x minutes waiting at stops, +1 x minutes walking. Fastest stays fastest. Not a safety score.
+const lateHour=q=>{const h=parseInt((q.depart||"0").split(":")[0],10);return h>=20||h<5;};
+let LATE=false;
+function score(o){
+ if(W===0)return o.minutes_from_request+0.01*o.transfers;
+ let s=o.minutes_from_request+4*o.transfers+2*W*o.crowd_penalty_min;
+ if(LATE)s+=6*o.transfers+1.5*(o.wait_min||0)+(o.walk_min||0);
+ return s;}
+function ranked(q){LATE=lateHour(q);return q.options.map(o=>({...o,score:score(o)})).sort((a,b)=>a.score-b.score).slice(0,5);}
+// A new after-dark search on Fastest switches to Balanced by itself; the next daytime search goes back to Fastest.
+// Balanced and Most comfortable are kept, since they already include the after-dark rules.
+function autoRank(q){
+ const k=[MODE,q.from,q.to,q.depart,q.day_type].join("|");if(k===LASTQ)return;LASTQ=k;
+ if(lateHour(q)){if(W>0)return;W=0.5;AUTO=true;}   // on Fastest: switch; on Balanced / Most comfortable: already adjusted
+ else{if(!AUTO)return;W=0;AUTO=false;}
+ SEL=0;
+ document.querySelectorAll("#rank button").forEach(x=>x.setAttribute("aria-pressed",parseFloat(x.dataset.w)===W?"true":"false"));}
 function stretchKnown(o){const st=stretches(o).filter(x=>x.level!=="walk"),t=st.reduce((s,x)=>s+x.min,0);return t?st.filter(x=>x.level!=="unknown").reduce((s,x)=>s+x.min,0)/t:0;}
 function stretches(o){ // [{level, minutes}] across the whole trip, walks included
  const out=[];o.legs.forEach(l=>{if(l.type==="walk"){if(l.minutes>=0.5)out.push({level:"walk",min:l.minutes});return;}
   const n=Math.max(l.seg_levels?l.seg_levels.length:1,1);(l.seg_levels||[l.crowding]).forEach(s=>out.push({level:s,min:l.minutes/n}));});return out;}
 function tagOf(o,fastest){
  if(o===fastest)return hi()?"सबसे तेज़":"Fastest";
+ if(LATE&&W>0){const dm=Math.round(o.minutes_from_request-fastest.minutes_from_request),g=[];
+  const dc=fastest.transfers-o.transfers,dw=Math.round((fastest.wait_min||0)-(o.wait_min||0)),dk=Math.round((fastest.walk_min||0)-(o.walk_min||0));
+  if(dc>0)g.push(`${dc} fewer change${dc>1?"s":""}`);if(dw>=2)g.push(`${dw} min less waiting at stops`);if(dk>=2)g.push(`${dk} min less walking`);
+  if(g.length)return `${dm>0?"+"+dm+" min":"Same time"}, ${g.join(", ")}`;}
  if(o.worst_crowding==="unknown"||fastest.worst_crowding==="unknown")return "";
  if(RANK[o.worst_crowding]>=RANK[fastest.worst_crowding])return "";
  const dm=Math.round(o.minutes_from_request-fastest.minutes_from_request);
@@ -119,13 +140,17 @@ function why(o){
   if(!e)return `<p><b>${esc(l.route)}</b>: not enough tickets to estimate (${Math.round(l.evidence_coverage*100)}% of stretches covered, need 50%).</p>`;
   if(e.grain==="route typical")return `<p><b>${esc(l.route)}</b>: too few stretches on this ride have data, so this is the route's typical level at this time of day (busier-quarter stretch about ${cap(e.load)} people; ${e.stretches_with_data} stretches, ${e.tickets} tickets).${busTxt(e)}</p>`;
   return `<p><b>${esc(l.route)}</b>: busiest stretch ${esc(e.stretch)}. About ${cap(e.load)} people on board (range ${cap(e.low)}–${cap(e.high)}), from ${e.tickets} tickets over ${e.days} days${e.grain==="hour"?"":" (pooled across the day part)"}.${busTxt(e)}</p>`;}).join("");
- return `<details><summary>Why this estimate?</summary>${rows}<p>The range mixes day-to-day variation with the assumed ticket share and pass-holder uplift.</p></details>`;
+ return `<details><summary>Why this estimate?</summary>${rows}<p>The range mixes day-to-day variation with the assumed ticket share and pass-holder uplift. Free rides by women (Pink Saheli card) are not in the tickets, so this may be low where many women ride.</p></details>`;
 }
 
 function render(){
  const q=current(),out=$("out");out.innerHTML="";
  if(MODE==="live"&&!q){out.innerHTML=`<p class="hint">Type two stops and press Plan.</p>`;$("summary").hidden=true;if(LAYER)LAYER.clearLayers();return;}
  if(q&&!q.error)out.insertAdjacentHTML("beforeend",srcBar(q));
+ if(q&&!q.error&&q.options&&q.options.length)autoRank(q);
+ if(q&&!q.error&&lateHour(q))out.insertAdjacentHTML("beforeend",W>0
+  ?`<p class="hint"><b>After dark:</b> ranking also puts fewer changes, short waits at stops and short walks first. It is not a safety score: we have no data on lighting, policing or incidents.</p>`
+  :`<p class="hint"><b>After dark:</b> Balanced and Most comfortable also count waits at stops and walks.</p>`);
  if(!q||!q.options.length){out.insertAdjacentHTML("beforeend",`<p>${q&&q.error?esc(q.error):"No bus journey found for this trip and time."}</p>`);$("summary").hidden=true;if(LAYER)LAYER.clearLayers();return;}
  const opts=ranked(q),fastest=opts.reduce((a,b)=>a.minutes_from_request<=b.minutes_from_request?a:b);
  SEL=Math.min(SEL,opts.length-1);
@@ -139,6 +164,7 @@ function render(){
    h+=`<div class="bar" title="Crowding along the trip, stretch by stretch">${st.map(s=>`<span style="flex:${(s.min/tot).toFixed(4)};background:${s.level==="walk"?"#d9d9d6":COLOR[s.level]}"></span>`).join("")}</div>
     <div class="barkey"><span>${esc(q.from_resolved||o.from)}</span><span>${esc(q.to_resolved||o.to)}</span></div>
     <div class="grid"><div>Leave<b>${esc(o.leave_origin)}</b></div><div>Arrive<b>${esc(o.arrive)}</b></div><div>Door to door<b>${Math.round(o.door_to_door_min)} min</b></div><div>Ride with data<b>${Math.round(stretchKnown(o)*100)}%</b></div></div>
+    ${o.wait_min!==undefined?`<p class="m waits">Waiting at stops ${Math.round(o.wait_min)} min${o.transfers>1?` (longest ${Math.round(o.max_wait_min)})`:""} · walking ${Math.round(o.walk_min)} min</p>`:""}
     <ul class="legs">${o.legs.map(l=>l.type==="walk"?(l.minutes>=0.5?`<li><span class="dot" style="background:#d9d9d6"></span><span class="m">Walk ${Math.round(l.minutes)} min</span></li>`:"")
      :`<li><span class="dot" style="background:${COLOR[l.crowding]}"></span><span><b>${esc(l.route)}</b> ${esc(l.board_time)} ${esc(l.board)} → ${esc(l.alight_time)} ${esc(l.alight)}<br><span class="m">${Math.round(l.minutes)} min · ${esc(LT[l.crowding])}${l.basis==="route"?(hi()?" (रूट औसत)":" (route average)"):""}</span></span></li>`).join("")}</ul>${why(o)}`;
   }

@@ -14,6 +14,7 @@ Data: 2,559,899 October 2026 bus e-tickets (2,753,606 passengers) and the Transp
 7. **Pool thin cells.** Hour cells are also pooled into five day parts (5-6, 7-10, 11-16, 17-20, 21-4). The planner uses the hour cell if it has enough tickets, else the pooled cell, and says which.
 8. **Levels and abstention** (`levels.py`). `seats` if load ≤ seats, `standing` up to seats + rated standing, else `crowded`, using each route's inferred bus. A cell with fewer than 30 tickets in the month, or a suspect schedule, shows `insufficient_evidence`.
 9. **Planner** (`planner/csa.py`, live via `bharosa.serve`). Connection scan over scheduled GTFS with walking transfers. Each ride shows the level of its worst stretch. When under half of a ride's stretches have evidence, it falls back to the route's typical level at that time of day (marked "route average"), else "Not enough data". Options include later departures and alternatives that avoid each used route. Score = minutes + 4 per change + 2 × comfort weight × crowd penalty (0 / 0.35 / 1.0 per ride minute for seats / standing / crowded; unknown counts as 0.35).
+   - *After dark* (leaving 20:00-04:59) the planner adjusts by itself. Balanced and Most comfortable also add 6 per change (10 in all), 1.5 × minutes waiting at stops between rides and 1 × minutes walking. A search made on Fastest switches to Balanced, and the next daytime search switches back. After dark, the time spent off the bus (waiting at stops, walking to and from them, changing buses) is the part of a trip a rider cannot sit through, so it gets extra weight. All three come from the timetable. **It is not a safety score**: we have no data on lighting, policing or incidents, and the app says so. Example (weekday 21:30, Connaught Place → Anand Vihar): the fastest option includes a 20-minute walk; the after-dark ranking puts first one arriving 1 minute later with a 4-minute walk.
 
 ### Why not a running count per bus trip?
 The brief suggests grouping tickets by bus trip. We measured what that would rest on: for a bus with a vehicle number, the **median is 1 e-ticket per route-hour, and 92% have 3 or fewer**. A per-trip count would scale one or two tickets up by about 37× and mostly measure sampling noise. So we pool across the buses and days of a stretch-hour, which is the same running count in expectation, and say so. For the same reason we do not show "chance of a crowded bus" from day-to-day spread: with this sample that spread is mostly sampling noise, not real variation.
@@ -33,12 +34,24 @@ This tests our matching and stop order, not where people really got off. The far
 - The same share and uplift apply to every route. Route-level differences in app adoption are not modelled (see ledger).
 - The GTFS has one service for all days, so the schedule is the same on weekdays and weekends.
 
+### Women riding free are not in the data
+Women ride DTC and cluster buses free: first on a paper pink ticket, now on the Pink Saheli card. We checked whether those rides reach this dataset. They do not:
+- All 2,559,899 tickets have the same `ticket_type_id` (1), and **only 8 have a zero fare**. There is no gender or concession field.
+- Published estimates put women at **25-33% of bus riders in 2020-23** (government figures cited by The Wire) and at **about half in January-June 2025** (one press report: 10.48 lakh of about 20.9 lakh daily riders). A large group of riders is therefore missing from the raw counts.
+
+What this does to our numbers:
+- If the 3-4% ticket share is measured against all bus riders, free rides included, the scale-up puts women back **on average across the network**, but spreads them in proportion to paying e-ticket riders, not where women actually ride.
+- So crowding is **likely underestimated on routes and at times where women are a larger share of riders** than average, and slightly overestimated where they are a smaller share. If the share excludes free rides, every load is too low by the women's share.
+- We cannot tell which routes are affected from this data, so **we do not correct for it**. We state it in the app ("How to read this" and every evidence card) instead.
+
+Fix: Pink Saheli card taps by route, stop and hour from DTC. That would remove this bias directly, and it would also give the first stretch-by-stretch picture of where and when women ride.
+
 ## 4. Bias ledger: who is missing or over-counted
 | Issue | Direction | Handling |
 |---|---|---|
 | Tickets are a 3-4% e-ticket sample | App/QR riders may differ by route (80% of e-tickets are on AC buses) | One global scale-up. Within-route comparisons (leave later, other day part) do not depend on it; cross-route ones do |
 | Pass holders have no tickets | Undercount | Uplift range 1.0-1.6 (assumed) |
-| Pink Saheli free travel moved to a card tap from 1 Sep 2026 (reported) | Possible undercount of women riders | Not corrected |
+| Women ride free (paper pink ticket, then the Pink Saheli card) and free rides are not in the data | Undercounts routes and hours where many women ride; overcounts where few do | Not corrected. See "Women riding free are not in the data" in §3 |
 | Declared alighting stop may differ from the real one | Blurs loads | Not corrected. The fare check confirms our reading of the declared stop, not the real one |
 | 20% of tickets do not resolve to a stretch | Undercount, may not be random | Per-route coverage factor (capped at 2) on the point estimate |
 | Scheduled trips undercount running buses | Overstates load per bus | Floor from buses seen on tickets. Shown hour cells over 150 people/bus: 0.5%. Cells whose low estimate exceeds 100 abstain |

@@ -18,7 +18,7 @@ Put the data in `data/raw/`:
 make crowding-all               # clean, match stops, loads, route facts, fare check, levels, backtest, sanity, export (~110 s)
 make serve                      # http://localhost:8000  live planner: any stop to any stop, plus route map and operators
 make web                        # same pages, static, demo trips only
-make test                       # 30 tests
+make test                       # 33 tests
 make site                       # dist/: upload to any static host
 make query ROUTE=717AUP         # stretch-by-stretch table in the terminal
 ```
@@ -30,9 +30,10 @@ Most Problem 2 entries will turn tickets into a load, colour it, and draw a plan
 3. **Bus size from the data, not one guess.** Short `D…` routes (median 10 km) are 9 m DEVI buses, with fewer seats. The same 30 people read as "standing" there and "seats" on a 12 m bus.
 4. **Every ticket counted.** Route-name normalisation recovered 236k tickets (9% of all) that a plain join drops. A per-route coverage factor corrects for tickets that can't be placed on a stretch.
 5. **Week-to-week stability**, as the brief asks: weekday day-part Spearman 0.87-0.89 between each week and the rest.
-6. **"+3 min for a seat."** Each option says what it costs against the fastest, in one line. Leaving later, or taking the other direction of travel, are within-route comparisons that the scale-up assumptions can't distort.
-7. **An answer for operators, not just a heat map.** "If you add one bus here, standing time falls by X passenger-minutes a day", ranked by the cautious estimate.
-8. **We say when we don't know.** Thin cells abstain, and every label opens to its tickets, days, range and bus size.
+6. **After dark, the ranking adjusts by itself.** For trips leaving after 20:00 it puts fewer changes, short waits at stops and short walks first, all from the timetable. It says plainly that it is not a safety score.
+7. **"+3 min for a seat."** Each option says what it costs against the fastest, in one line. Leaving later, or taking the other direction of travel, are within-route comparisons that the scale-up assumptions can't distort.
+8. **An answer for operators, not just a heat map.** "If you add one bus here, standing time falls by X passenger-minutes a day", ranked by the cautious estimate.
+9. **We say when we don't know.** Thin cells abstain, and every label opens to its tickets, days, range and bus size.
 
 ## What you get
 - `data/out/crowding_levels.parquet` (hour) and `crowding_band_levels.parquet` (day parts): level, load and range, tickets, days, bus class per route stretch.
@@ -40,7 +41,7 @@ Most Problem 2 entries will turn tickets into a load, colour it, and draw a plan
 - `web/`: planner (option list beside a map that colours each trip stretch by stretch), route map, operators page. `make serve` adds live planning for any trip. The map uses OpenStreetMap tiles and the Leaflet library from a CDN, so it needs internet; without it the list still works.
 
 ## Status and limits
-All stages run on the real October tickets and GTFS. GPS cross-check not built. Absolute loads are not validated against an independent count: bus size per route is inferred, ticket share and pass-holder uplift are assumed ranges, and planner times are scheduled. See [docs/METHOD.md](docs/METHOD.md) §3-6.
+All stages run on the real October tickets and GTFS. GPS cross-check not built. Absolute loads are not validated against an independent count: bus size per route is inferred, ticket share and pass-holder uplift are assumed ranges, and planner times are scheduled. Women ride free on the Pink Saheli card and those rides are not in the tickets (all 2.56M are paid), so crowding is likely underestimated where many women ride. See [docs/METHOD.md](docs/METHOD.md) §3-6.
 
 ## Layout
 `src/bharosa/` pipeline stages (`python -m bharosa.<name>`) · `planner/` connection-scan planner · `web/` UI · `data/` raw (ignored), interim, out · `tests/`

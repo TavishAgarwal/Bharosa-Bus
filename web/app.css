@@ -87,3 +87,4 @@
  .mini{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-top:8px;gap:1px;background:#eee} .mini span{flex:1}
  .tops{font-size:.8em;margin:8px 0 0;padding:0;list-style:none} .tops li{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-top:1px dashed var(--line)} .tops li span:last-child{color:var(--mute);text-align:right;min-width:0;overflow-wrap:anywhere}
  .empty{color:var(--mute);font-size:.85em;padding:6px 4px}
+.card .waits{margin:6px 0 0;color:var(--mute);font-size:.86em}

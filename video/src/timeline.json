@@ -4,8 +4,8 @@
   "section": "hook",
   "cap": "Every evening, lakhs of people in Delhi wait for a bus. Every app tells them when it will come.",
   "audio": "vo/h1.wav",
-  "audioFrames": 156,
-  "frames": 166,
+  "audioFrames": 183,
+  "frames": 193,
   "shots": []
  },
  {
@@ -13,8 +13,8 @@
   "section": "hook",
   "cap": "None of them tells you whether you will get a seat, have to stand, or spend an hour squeezed in the aisle.",
   "audio": "vo/h2.wav",
-  "audioFrames": 160,
-  "frames": 170,
+  "audioFrames": 158,
+  "frames": 168,
   "shots": []
  },
  {
@@ -22,8 +22,8 @@
   "section": "solution",
   "cap": "Bharosa Bus (bharosa = trust) estimates how full each Delhi bus usually is, stretch by stretch, from 2.56 million October e-tickets and the city's GTFS timetable.",
   "audio": "vo/s1.wav",
-  "audioFrames": 296,
-  "frames": 308,
+  "audioFrames": 370,
+  "frames": 382,
   "shots": []
  },
  {
@@ -31,8 +31,8 @@
   "section": "solution",
   "cap": "Each ticket is matched to its boarding and alighting stops. We count people on board for every stretch, by route, direction and hour, and scale up with stated ranges.",
   "audio": "vo/s2.wav",
-  "audioFrames": 267,
-  "frames": 279,
+  "audioFrames": 321,
+  "frames": 333,
   "shots": []
  },
  {
@@ -40,8 +40,8 @@
   "section": "solution",
   "cap": "And it earns trust: a range on every number, “not enough data” instead of guesses, bus size inferred per route, and labels tested against lazy baselines.",
   "audio": "vo/s3.wav",
-  "audioFrames": 268,
-  "frames": 280,
+  "audioFrames": 307,
+  "frames": 319,
   "shots": []
  },
  {
@@ -50,14 +50,9 @@
   "chip": "Planner",
   "cap": "A real trip: Rohini Sector 22 to Nehru Place, on a weekday at six in the evening. The fastest option takes 121 minutes, and the map shows exactly where it gets crowded.",
   "audio": "vo/d1.wav",
-  "audioFrames": 299,
-  "frames": 344,
-  "shots": [
-   {
-    "file": "shots/p01_fastest.png",
-    "w": 1
-   }
-  ]
+  "audioFrames": 323,
+  "frames": 368,
+  "shots": []
  },
  {
   "id": "d2",
@@ -65,24 +60,9 @@
   "chip": "Planner",
   "cap": "Switch to Balanced. For four more minutes, the planner finds a trip where seats are likely, and says the trade-off in one line.",
   "audio": "vo/d2.wav",
-  "audioFrames": 189,
-  "frames": 234,
-  "shots": [
-   {
-    "file": "shots/p02_comfort.png",
-    "click": {
-     "x": 306,
-     "y": 338,
-     "box": [
-      214,
-      316,
-      184,
-      44
-     ]
-    },
-    "w": 1
-   }
-  ]
+  "audioFrames": 237,
+  "frames": 282,
+  "shots": []
  },
  {
   "id": "d3",
@@ -90,30 +70,9 @@
   "chip": "Evidence",
   "cap": "Every label can be checked. “Why this estimate?” shows the busiest stretch, the range, the tickets and days behind it, and the bus size. Where data is thin, it shows grey instead of guessing.",
   "audio": "vo/d3.wav",
-  "audioFrames": 299,
-  "frames": 389,
-  "shots": [
-   {
-    "file": "shots/p03_why.png",
-    "click": {
-     "x": 306,
-     "y": 1020,
-     "box": [
-      37,
-      1010,
-      537,
-      20
-     ]
-    },
-    "focus": [
-     37,
-     666,
-     537,
-     364
-    ],
-    "w": 1
-   }
-  ]
+  "audioFrames": 352,
+  "frames": 442,
+  "shots": []
  },
  {
   "id": "d4",
@@ -121,30 +80,9 @@
   "chip": "Hindi",
   "cap": "Labels switch to Hindi in one tap, for the people who actually ride these buses.",
   "audio": "vo/d4.wav",
-  "audioFrames": 131,
-  "frames": 176,
-  "shots": [
-   {
-    "file": "shots/p04_hindi.png",
-    "click": {
-     "x": 532,
-     "y": 45,
-     "box": [
-      476,
-      21,
-      112,
-      47
-     ]
-    },
-    "focus": [
-     19,
-     380,
-     575,
-     659
-    ],
-    "w": 1
-   }
-  ]
+  "audioFrames": 136,
+  "frames": 181,
+  "shots": []
  },
  {
   "id": "d5",
@@ -152,38 +90,9 @@
   "chip": "Direction and time",
   "cap": "Direction and time matter. Anand Vihar → Connaught Place at 8:30 am: every option is crowded. At 6 pm, against the flow, one extra minute buys a seat.",
   "audio": "vo/d5.wav",
-  "audioFrames": 297,
-  "frames": 342,
-  "shots": [
-   {
-    "file": "shots/p05_av_cp_0830.png",
-    "click": {
-     "x": 194,
-     "y": 246,
-     "box": [
-      24,
-      223,
-      341,
-      47
-     ]
-    },
-    "w": 1
-   },
-   {
-    "file": "shots/p06_av_cp_1800.png",
-    "click": {
-     "x": 480,
-     "y": 246,
-     "box": [
-      373,
-      223,
-      215,
-      47
-     ]
-    },
-    "w": 1
-   }
-  ]
+  "audioFrames": 333,
+  "frames": 378,
+  "shots": []
  },
  {
   "id": "d6",
@@ -191,83 +100,19 @@
   "chip": "Live search",
   "cap": "It is not limited to sample trips. In live mode, pick any two of 4,614 stops, and the planner searches the full timetable in under a second.",
   "audio": "vo/d6.wav",
-  "audioFrames": 267,
-  "frames": 372,
-  "shots": [
-   {
-    "file": "shots/p07_live.png",
-    "click": {
-     "x": 168,
-     "y": 185,
-     "box": [
-      29,
-      164,
-      277,
-      43
-     ]
-    },
-    "w": 0.7
-   },
-   {
-    "typing": true,
-    "frames": [
-     "shots/p08_from_02.png",
-     "shots/p08_from_04.png",
-     "shots/p08_from_06.png",
-     "shots/p08_from_08.png",
-     "shots/p08_from_10.png",
-     "shots/p08_from_12.png",
-     "shots/p08_from_14.png"
-    ],
-    "click": {
-     "x": 163,
-     "y": 245,
-     "box": [
-      24,
-      223,
-      278,
-      44
-     ]
-    },
-    "w": 0.55
-   },
-   {
-    "typing": true,
-    "frames": [
-     "shots/p09_to_02.png",
-     "shots/p09_to_04.png",
-     "shots/p09_to_06.png",
-     "shots/p09_to_08.png",
-     "shots/p09_to_10.png",
-     "shots/p09_to_12.png"
-    ],
-    "click": {
-     "x": 449,
-     "y": 245,
-     "box": [
-      310,
-      223,
-      278,
-      44
-     ]
-    },
-    "w": 0.55
-   },
-   {
-    "file": "shots/p10_live_result.png",
-    "click": {
-     "x": 550,
-     "y": 302,
-     "box": [
-      513,
-      277,
-      75,
-      49
-     ]
-    },
-    "w": 1.6
-   }
-  ]
+  "audioFrames": 278,
+  "frames": 383,
+  "shots": []
+ },
+ {
+  "id": "d6n",
+  "section": "demo",
+  "chip": "After dark",
+  "cap": "After dark, the planner adjusts by itself. Connaught Place → Anand Vihar at 9:30 pm: it switches to Balanced, and puts fewer changes, short waits at stops and short walks first. One minute more saves a 16-minute walk. It is not a safety score, and the app says so.",
+  "audio": "vo/d6n.wav",
+  "audioFrames": 530,
+  "frames": 620,
+  "shots": []
  },
  {
   "id": "d7",
@@ -275,42 +120,9 @@
   "chip": "Route map",
   "cap": "The route map shows every busy route stretch by stretch. Here is 717A in the morning peak, the evening peak, and on a weekend.",
   "audio": "vo/d7.wav",
-  "audioFrames": 228,
-  "frames": 318,
-  "shots": [
-   {
-    "file": "shots/r01_717_am.png",
-    "w": 1
-   },
-   {
-    "file": "shots/r02_717_pm.png",
-    "click": {
-     "x": 417,
-     "y": 305,
-     "box": [
-      361,
-      277,
-      111,
-      56
-     ]
-    },
-    "w": 1
-   },
-   {
-    "file": "shots/r03_717_pm_weekend.png",
-    "click": {
-     "x": 444,
-     "y": 231,
-     "box": [
-      306,
-      209,
-      277,
-      44
-     ]
-    },
-    "w": 1
-   }
-  ]
+  "audioFrames": 275,
+  "frames": 365,
+  "shots": []
  },
  {
   "id": "d8",
@@ -318,36 +130,17 @@
   "chip": "Operators",
   "cap": "For operators, we rank where one more bus saves the most standing time. One extra bus on route 188 at the morning peak saves about 4,900 standing minutes a day — 2,800 even on our cautious estimate.",
   "audio": "vo/d8.wav",
-  "audioFrames": 509,
-  "frames": 599,
-  "shots": [
-   {
-    "file": "shots/o01_extra_bus.png",
-    "w": 1.6
-   },
-   {
-    "file": "shots/o02_crowded.png",
-    "click": {
-     "x": 444,
-     "y": 155,
-     "box": [
-      306,
-      133,
-      277,
-      44
-     ]
-    },
-    "w": 1
-   }
-  ]
+  "audioFrames": 397,
+  "frames": 487,
+  "shots": []
  },
  {
   "id": "i1",
   "section": "impact",
   "cap": "For commuters, especially women, older riders and parents with children, a seat is the difference between an easy ride and a hard one. Now they can choose.",
   "audio": "vo/i1.wav",
-  "audioFrames": 253,
-  "frames": 283,
+  "audioFrames": 290,
+  "frames": 320,
   "shots": []
  },
  {
@@ -355,17 +148,17 @@
   "section": "impact",
   "cap": "For DTC and cluster operators, an evidence-backed list of where one more bus helps the most.",
   "audio": "vo/i2.wav",
-  "audioFrames": 164,
-  "frames": 194,
+  "audioFrames": 152,
+  "frames": 182,
   "shots": []
  },
  {
   "id": "i3",
   "section": "impact",
-  "cap": "Next: same-day estimates from live ticket feeds, pass-holder data, in-bus counts to calibrate, and a home inside Delhi's official transit apps.",
+  "cap": "Next: Pink Saheli card data, because women ride free and are missing from e-tickets today. Then same-day estimates from live ticket feeds, in-bus counts to calibrate, and a home inside Delhi's official transit apps.",
   "audio": "vo/i3.wav",
-  "audioFrames": 238,
-  "frames": 268,
+  "audioFrames": 391,
+  "frames": 421,
   "shots": []
  },
  {
@@ -373,8 +166,8 @@
   "section": "end",
   "cap": "",
   "audio": "vo/e1.wav",
-  "audioFrames": 75,
-  "frames": 129,
+  "audioFrames": 74,
+  "frames": 128,
   "shots": []
  }
 ]

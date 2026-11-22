@@ -9,6 +9,7 @@ Run first: `make crowding-all && make serve`, then open http://localhost:8000. T
 | 0:30 | Switch to Anand Vihar → Connaught Place, weekday 08:30, then 18:00 | "Same trip. Into town at 8:30, every option is crowded. At 18:00, against the evening flow, one extra minute gets a seat. Time and direction matter." |
 | 0:45 | Labels → हिन्दी | "Labels a commuter reads in a second, in their language." |
 | 0:55 | "Search any stop" tab: type two stops not in the sample list | "Not canned: any stop to any stop, planned live on the full timetable." |
+| 1:05 | Same tab: Connaught Place → Anand Vihar at 21:30, Plan | "After dark it switches to Balanced by itself and favours fewer changes, short waits and short walks: +1 min saves a 16-minute walk. Not a safety score, and the app says so." |
 | 1:10 | Open "Why this estimate?" | "Each label: the busiest stretch, a range, the tickets and days behind it, and the bus size. Grey means we refuse to guess." |
 | 1:30 | Operators page, top of the "+1 bus" table | "For DTC: one more bus on 188DOWN at the morning peak saves about 4,900 standing minutes a day, 2,800 even on our cautious estimate." |
 | 1:50 | METHOD.md §5 tables | "Most stretches really have seats, so accuracy alone is a trap. We beat an always-seats baseline with kappa 0.71, and the estimate holds from week to week." |
